@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta tag -->
+		<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="Radix" content="Responsive Multipurpose Business Template">
+		<meta name='copyright' content='Radix'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+		
+    <title> DOGTREKKING - Termínovka</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+               integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+               crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+               integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+               crossorigin=""></script>
+
+               
+        <link rel="icon" type="image/gif" href="/images/mcr_dt.gif">
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+        
+		<!-- Bootstrap Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="/css/slicknav.min.css">
+		<!-- Cube Portfolio CSS -->
+        <link rel="stylesheet" href="/css/cubeportfolio.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="/css/magnific-popup.min.css">
+		<!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+		<!-- Nice Select CSS -->
+        <link rel="stylesheet" href="/css/niceselect.css">
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="/css/owl.theme.default.css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+		<!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="/css/slickslider.min.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="/css/animate.min.css">
+		
+		<!-- Radix StyleShet CSS -->
+        <link rel="stylesheet" href="/css/reset.css">	
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/responsive.css">	
+
+		<!-- Radix Color CSS -->
+		<link rel="stylesheet" href="/css/color/color1.css">
+		<!--<link rel="stylesheet" href="css/color/color2.css">-->
+		<!--<link rel="stylesheet" href="css/color/color3.css">-->
+		<!--<link rel="stylesheet" href="css/color/color4.css">-->
+		<!--<link rel="stylesheet" href="css/color/color5.css">-->
+		<!--<link rel="stylesheet" href="css/color/color6.css">-->
+		<!--<link rel="stylesheet" href="css/color/color7.css">-->
+		<!--<link rel="stylesheet" href="css/color/color8.css">-->
+		<!--<link rel="stylesheet" href="css/color/color9.css">-->
+		<!--<link rel="stylesheet" href="css/color/color10.css">-->
+
+		<!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+
+        <link rel="stylesheet" href="/css/leaflet.css">
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="/css/gallery.css">
+    </head>
+    <body>
+      <header id="header" class="header">
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+							  <ul class="contact">
+                  <li><i class="fa fa-envelope"></i><a href="mailto:info@dogtrekking.cz">info@dogtrekking.cz</a></li>
+                  <li><i class="fa fa-clock"></i>Data platná k času: 27.06.2021 22:26:52</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <div class="logo">
+                  <a href="/index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="link"><a href="/index.html"><span>DT</span></a></div>
+                <button class="mobile-arrow"><i class="fa fa-bars"></i></button>
+                <div class="mobile-menu"></div>
+              </div>
+              <div class="col-lg-10 col-12">
+                <div class="mainmenu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      
+                        <li>
+                          <a href="/Aktuality">Aktuality</a></li>
+                      
+                        <li>
+                          <a href="/Informace">Informace</a><ul class="dropdown"><li>
+                                  <a href="/SoutezniRad">Soutěžní řád</a>
+                                </li><li>
+                                  <a href="/OStrankach">O stránkách</a>
+                                </li><li>
+                                  <a href="/NabidkaPrace">Nabídka práce</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="/Terminovka/2021">Termínovka</a></li>
+                      
+                        <li>
+                          <a href="/MCR">MČR</a></li>
+                      
+                        <li>
+                          <a href="/Zavodnici">Závodníci</a></li>
+                      
+                        <li>
+                          <a href="/Historie">Historie</a><ul class="dropdown"><li>
+                                  <a href="/SinSlavy">Síň slávy</a>
+                                </li><li>
+                                  <a href="/MinuleRocniky">Minulé ročníky</a>
+                                </li><li>
+                                  <a href="/Galerie">Galerie</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="https://muj.dogtrekking.cz/">Můj DT</a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+        
+            <section id="team" class="team section">
+      
+
+			<div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+              <h1><a href="/Terminovka/2019/">&lt;&lt;&lt;&nbsp;</a>Termínový kalendář 2020<a href="/Terminovka/2021/">&nbsp;&gt;&gt;&gt;</a></h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">Legenda</div>
+        </div>
+        <div class="row add-margin-bottom">
+          <div class="col-4 color-mcr-dt d-flex justify-content-center" style="height: 20px; padding-bottom: 20px;">MČR Dogtrekking</div>
+          <div class="col-4 color-mcr-dm d-flex justify-content-center" style="height: 20px; padding-bottom: 20px;">MČR Dogmaraton</div>
+          <div class="col-4 color-other d-flex justify-content-center" style="height: 20px; padding-bottom: 20px;">Ostatní závody mimo seriály</div>
+        </div>
+				<div class="row">
+					<div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
+						<div id="mapid" class='terminovkaMap'></div>
+					</div>
+				</div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="animated-tab" data-toggle="tab" href="#animated" role="tab" aria-controls="animated" aria-selected="true">Animované</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="table-tab" data-toggle="tab" href="#table" role="tab" aria-controls="table" aria-selected="false">Seznam</a>
+              </li>
+             </ul>            
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="animated" role="tabpanel" aria-labelledby="animated-tab">
+                  <div class="container">
+                  <div class="row"><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="0.2s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-03-26po-stopach-rudolfa-ii.-iv.-rocnik-zruseno-(covid19)/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>26. 3.</p>
+                              <a href="/action/2020-03-26po-stopach-rudolfa-ii.-iv.-rocnik-zruseno-(covid19)/"><h2>Po stopách Rudolfa II.  IV. ročník - ZRUŠENO (COVID19)</h2></a>
+                              <h6>Lhota (Praha - východ), Lhota (Praha - východ), za Starou Boleslaví, hřiště za hospodou Restaurace u Blanky</h6>
+                              <ul class="t-social"></ul><a href="https://postopachrudolfa8.webnode.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="0.4s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-04-09slapanicky-dogtrekking-zruseno-(covid19)/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>9. 4.</p>
+                              <a href="/action/2020-04-09slapanicky-dogtrekking-zruseno-(covid19)/"><h2>Šlapanický dogtrekking - ZRUŠENO (COVID19)</h2></a>
+                              <h6>Šlapanice, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li></ul><a href="http://slapanicky-vlk.kkslapanice.com/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="0.6000000000000001s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-04-23krusnohorsky-dogtrekking-zruseno-(covid19)/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>23. 4.</p>
+                              <a href="/action/2020-04-23krusnohorsky-dogtrekking-zruseno-(covid19)/"><h2>Krušnohorský dogtrekking - ZRUŠENO (COVID19)</h2></a>
+                              <h6>Prunéřov, okr. Chomutov, Autokemp Prunéřov</h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li></ul><a href="https://dogtrekking.estranky.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="0.8s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-05-07po-stopach-toulovce-zruseno-(covid19)/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>7. 5.</p>
+                              <a href="/action/2020-05-07po-stopach-toulovce-zruseno-(covid19)/"><h2>Po stopách Toulovce - ZRUŠENO (COVID19)</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li></ul><a href="http://www.toulovec.dogtrekking.info/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="1s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>11. 6.</p>
+                              <a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)/"><h2>Stínem beskydského rysa - ZRUŠENO (COVID19)</h2></a>
+                              <h6>Prostřední Bečva, kemp Pod Pustevnami, Prostřední Bečva</h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      Short
+                                    </li></ul><a href="https://stinemrysa.dogtrekking.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="1.2s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-07-16stopou-strejdy-seraka/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>16. 7.</p>
+                              <a href="/action/2020-07-16stopou-strejdy-seraka/"><h2>Stopou strejdy Šeráka</h2></a>
+                              <h6>Lipová - lázně, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-other">
+                                      MID
+                                    </li></ul><a href="https://www.strejdaserak.cz"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="1.4s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-07-30krajem-bridlice/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>30. 7.</p>
+                              <a href="/action/2020-07-30krajem-bridlice/"><h2>Krajem břidlice</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li></ul><a href="https://www.ledovastopa.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="1.5999999999999999s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-08-15po-stopach-jary-cimrmana/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>15. 8.</p>
+                              <a href="/action/2020-08-15po-stopach-jary-cimrmana/"><h2>Po stopách Járy Cimrmana</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li></ul><a href="https://dogtrekkingjc.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="1.7999999999999998s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div><div class="col color-other d-flex justify-content-center">Ostatní</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-08-21kotary/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>21. 8.</p>
+                              <a href="/action/2020-08-21kotary/"><h2>Kotáry</h2></a>
+                              <h6>Valašské Klobouky, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      LONG
+                                    </li><li class="race-padding color-other">
+                                      Short
+                                    </li></ul><a href="http://psisportyvk.cz/kotary/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="1.9999999999999998s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div><div class="col color-other d-flex justify-content-center">Ostatní</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-09-03frystacky-dogtrekking/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>3. 9.</p>
+                              <a href="/action/2020-09-03frystacky-dogtrekking/"><h2>Fryštácký dogtrekking</h2></a>
+                              <h6> Rusava -  RS Jestřabí, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      Canicross
+                                    </li><li class="race-padding color-other">
+                                      Dětská
+                                    </li></ul><a href="http://frystak.dogtrekking.info/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="2.1999999999999997s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-09-12beskydsky-dogmaraton/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>12. 9.</p>
+                              <a href="/action/2020-09-12beskydsky-dogmaraton/"><h2>Beskydský dogmaraton</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      SHORT
+                                    </li></ul><a href="https://www.dogmaraton.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="2.4s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-09-17zde-jsou-lvi/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>17. 9.</p>
+                              <a href="/action/2020-09-17zde-jsou-lvi/"><h2>Zde jsou lvi</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      SHORT
+                                    </li></ul><a href="https://centrumalfa.webnode.cz/dog/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="2.6s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-09-26aprilovy-dogmaraton/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>26. 9.</p>
+                              <a href="/action/2020-09-26aprilovy-dogmaraton/"><h2>Aprílový   Dogmaraton</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li></ul><a href="http://www.kppt.cz/aprilovy-dogmaraton/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp " data-wow-delay="2.8000000000000003s" data-tilt><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-other d-flex justify-content-center">Ostatní</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-10-01pes-v-tahu-pres-5-krizku/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>1. 10.</p>
+                              <a href="/action/2020-10-01pes-v-tahu-pres-5-krizku/"><h2>Pes v tahu - přes 5 křížků</h2></a>
+                              <h6>Hartvíkovice, Hartvíkovice, autokemp Wilsonka</h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-other">
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      SHORT
+                                    </li></ul><a href="http://www.pesvtahu.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="3.0000000000000004s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-other d-flex justify-content-center">Ostatní</div><div class="col color-other d-flex justify-content-center">Ostatní</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-10-15tlapka-na-stezce-zruseno-covid/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>15. 10.</p>
+                              <a href="/action/2020-10-15tlapka-na-stezce-zruseno-covid/"><h2>Tlapka na Stezce / ZRUŠENO COVID</h2></a>
+                              <h6>Ruda nad Moravou u Šumperka, Štědrákova Lhota 1</h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-other">
+                                      MID
+                                    </li><li class="race-padding color-other">
+                                      SHORT
+                                    </li></ul><a href="https://tlapkanastezce.dogtrekking.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="3.2000000000000006s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-10-22bloody-walk-zruseno-covid/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>22. 10.</p>
+                              <a href="/action/2020-10-22bloody-walk-zruseno-covid/"><h2>Bloody walk - ZRUŠENO COVID</h2></a>
+                              <h6>, </h6>
+                              <ul class="t-social"></ul><a href="http://sk-csv.maweb.eu/bloody-walk-over-krkonose/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div><!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp canceledAction" data-wow-delay="3.400000000000001s" data-tilt><h2>ZRUŠENO</h2><!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px"><div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div><div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div></div>
+                              <div class="t-icon">
+                                <a href="/action/2020-11-05witko-sapa-zruseno-covid/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>5. 11.</p>
+                              <a href="/action/2020-11-05witko-sapa-zruseno-covid/"><h2>Witko Sapa - ZRUŠENO COVID</h2></a>
+                              <h6>Zbraslavice (u Prahy), </h6>
+                              <ul class="t-social"><li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      LONG
+                                    </li><li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      MID
+                                    </li></ul><a href="https://wshc.estranky.cz/"><i class="fas fa-external-link-alt"></i></a></div>
+                          </div>
+                        </div></div>
+                </div>
+              </div>
+              <div class="tab-pane" id="table" role="tabpanel" aria-labelledby="table-tab">
+                  <div class="container">
+                  <div class="row">
+                    <table class='sortedTable'>
+                      <thead>
+                      </thead>
+                      <tbody><tr class="canceledAction"  style="background-color: #e37576; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>26. 3.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-03-26po-stopach-rudolfa-ii.-iv.-rocnik-zruseno-(covid19)/" style="color: #000;"><b>Po stopách Rudolfa II.  IV. ročník - ZRUŠENO (COVID19)</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-03-26po-stopach-rudolfa-ii.-iv.-rocnik-zruseno-(covid19)/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Lhota (Praha - východ), Lhota (Praha - východ), za Starou Boleslaví, hřiště za hospodou Restaurace u Blanky</td><tr class="canceledAction"  style="background-color: #f7a484; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>9. 4.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-04-09slapanicky-dogtrekking-zruseno-(covid19)/" style="color: #000;"><b>Šlapanický dogtrekking - ZRUŠENO (COVID19)</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-04-09slapanicky-dogtrekking-zruseno-(covid19)/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Šlapanice, </td><tr class="canceledAction"  style="background-color: #f7a484; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>23. 4.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-04-23krusnohorsky-dogtrekking-zruseno-(covid19)/" style="color: #000;"><b>Krušnohorský dogtrekking - ZRUŠENO (COVID19)</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-04-23krusnohorsky-dogtrekking-zruseno-(covid19)/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Prunéřov, okr. Chomutov, Autokemp Prunéřov</td><tr class="canceledAction"  style="background-color: #f6b679; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>7. 5.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-05-07po-stopach-toulovce-zruseno-(covid19)/" style="color: #000;"><b>Po stopách Toulovce - ZRUŠENO (COVID19)</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-05-07po-stopach-toulovce-zruseno-(covid19)/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class="canceledAction"  style="background-color: #f2f37e; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>11. 6.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div><div class="col color-other d-flex justify-content-center">Short</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)/" style="color: #000;"><b>Stínem beskydského rysa - ZRUŠENO (COVID19)</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Prostřední Bečva, kemp Pod Pustevnami, Prostřední Bečva</td><tr class=""  style="background-color: #d2f08e; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>16. 7.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-other d-flex justify-content-center">MID</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-07-16stopou-strejdy-seraka/" style="color: #000;"><b>Stopou strejdy Šeráka</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-07-16stopou-strejdy-seraka/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Lipová - lázně, </td><tr class=""  style="background-color: #d2f08e; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>30. 7.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-07-30krajem-bridlice/" style="color: #000;"><b>Krajem břidlice</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-07-30krajem-bridlice/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class=""  style="background-color: #9fdc96; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>15. 8.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-08-15po-stopach-jary-cimrmana/" style="color: #000;"><b>Po stopách Járy Cimrmana</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-08-15po-stopach-jary-cimrmana/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class=""  style="background-color: #9fdc96; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>21. 8.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div><div class="col color-other d-flex justify-content-center">LONG</div><div class="col color-other d-flex justify-content-center">Short</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-08-21kotary/" style="color: #000;"><b>Kotáry</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-08-21kotary/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Valašské Klobouky, </td><tr class=""  style="background-color: #79c9ca; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>3. 9.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div><div class="col color-other d-flex justify-content-center">Canicross</div><div class="col color-other d-flex justify-content-center">Dětská</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-09-03frystacky-dogtrekking/" style="color: #000;"><b>Fryštácký dogtrekking</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-09-03frystacky-dogtrekking/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a><a class="float-right" href="http://frystak.dogtrekking.info/prihlaska.php" style="color: 222; margin-right: 5px;">Přihláška</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td> Rusava -  RS Jestřabí, </td><tr class=""  style="background-color: #79c9ca; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>12. 9.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div><div class="col color-other d-flex justify-content-center">SHORT</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-09-12beskydsky-dogmaraton/" style="color: #000;"><b>Beskydský dogmaraton</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-09-12beskydsky-dogmaraton/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class=""  style="background-color: #79c9ca; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>17. 9.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div><div class="col color-other d-flex justify-content-center">SHORT</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-09-17zde-jsou-lvi/" style="color: #000;"><b>Zde jsou lvi</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-09-17zde-jsou-lvi/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class=""  style="background-color: #79c9ca; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>26. 9.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-09-26aprilovy-dogmaraton/" style="color: #000;"><b>Aprílový   Dogmaraton</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-09-26aprilovy-dogmaraton/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class=""  style="background-color: #7675f4; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>1. 10.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-other d-flex justify-content-center">MID</div><div class="col color-other d-flex justify-content-center">SHORT</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-10-01pes-v-tahu-pres-5-krizku/" style="color: #000;"><b>Pes v tahu - přes 5 křížků</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-10-01pes-v-tahu-pres-5-krizku/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Hartvíkovice, Hartvíkovice, autokemp Wilsonka</td><tr class="canceledAction"  style="background-color: #7675f4; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>15. 10.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-other d-flex justify-content-center">MID</div><div class="col color-other d-flex justify-content-center">SHORT</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-10-15tlapka-na-stezce-zruseno-covid/" style="color: #000;"><b>Tlapka na Stezce / ZRUŠENO COVID</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-10-15tlapka-na-stezce-zruseno-covid/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Ruda nad Moravou u Šumperka, Štědrákova Lhota 1</td><tr class="canceledAction"  style="background-color: #7675f4; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>22. 10.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-10-22bloody-walk-zruseno-covid/" style="color: #000;"><b>Bloody walk - ZRUŠENO COVID</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-10-22bloody-walk-zruseno-covid/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>, </td><tr class="canceledAction"  style="background-color: #8d71c6; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="arrow-left-red"></div><b>5. 11.</b>
+                                </div>
+                              </td>
+                              <td class="horizontal"><div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>LONG</div><div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>MID</div></td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/2020-11-05witko-sapa-zruseno-covid/" style="color: #000;"><b>Witko Sapa - ZRUŠENO COVID</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/2020-11-05witko-sapa-zruseno-covid/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a></div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>Zbraslavice (u Prahy), </td></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+			</div>
+		</section>
+
+<script>
+  let actionsLong = [];
+  let actionsMid = [];
+  let actionsOther = [];actionsLong = [...actionsLong, {
+          Latitude: "49.7138642",
+          Longitude: "16.161645",
+          From: "2018-03-22",
+          Name: "PO STOPÁCH TOULOVCE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.7138642",
+          Longitude: "16.161645",
+          From: "2018-03-22",
+          Name: "PO STOPÁCH TOULOVCE"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1731506",
+          Longitude: "16.72936",
+          From: "2018-04-05",
+          Name: "ŠLAPANICKÝ DOGTREKKING "
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1731506",
+          Longitude: "16.72936",
+          From: "2018-04-05",
+          Name: "ŠLAPANICKÝ DOGTREKKING "
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1731506",
+          Longitude: "16.72936",
+          From: "2018-04-05",
+          Name: "ŠLAPANICKÝ DOGTREKKING "
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.80312",
+          Longitude: "14.046688",
+          From: "2018-05-03",
+          Name: "KRUŠNOHORSKÝ DOGTREKKING 15 ročník "
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.80312",
+          Longitude: "14.046688",
+          From: "2018-05-03",
+          Name: "KRUŠNOHORSKÝ DOGTREKKING 15 ročník "
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.3364397",
+          Longitude: "16.7538653",
+          From: "2018-05-24",
+          Name: "Dogtrekking za pokladem Voka IV. z Holštejna "
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3364397",
+          Longitude: "16.7538653",
+          From: "2018-05-24",
+          Name: "Dogtrekking za pokladem Voka IV. z Holštejna "
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3364397",
+          Longitude: "16.7538653",
+          From: "2018-05-24",
+          Name: "Dogtrekking za pokladem Voka IV. z Holštejna "
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.6762047",
+          Longitude: "16.98693",
+          From: "2018-06-07",
+          Name: "ZDE JSOU LVI"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.6762047",
+          Longitude: "16.98693",
+          From: "2018-06-07",
+          Name: "ZDE JSOU LVI"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.6762047",
+          Longitude: "16.98693",
+          From: "2018-06-07",
+          Name: "ZDE JSOU LVI"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.612752",
+          Longitude: "15.696545",
+          From: "2018-06-22",
+          Name: "BLOODY WALK"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.612752",
+          Longitude: "15.696545",
+          From: "2018-06-22",
+          Name: "BLOODY WALK"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.612752",
+          Longitude: "15.696545",
+          From: "2018-06-22",
+          Name: "BLOODY WALK"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.612752",
+          Longitude: "15.696545",
+          From: "2018-06-22",
+          Name: "BLOODY WALK"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.2109397",
+          Longitude: "17.1285889",
+          From: "2018-07-13",
+          Name: "STOPOU STREJDY ŠERÁKA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.2109397",
+          Longitude: "17.1285889",
+          From: "2018-07-13",
+          Name: "STOPOU STREJDY ŠERÁKA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.5114142",
+          Longitude: "18.2447606",
+          From: "2018-07-26",
+          Name: "Stínem beskydského rysa"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.5114142",
+          Longitude: "18.2447606",
+          From: "2018-07-26",
+          Name: "Stínem beskydského rysa"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.5114142",
+          Longitude: "18.2447606",
+          From: "2018-07-26",
+          Name: "Stínem beskydského rysa"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4149778",
+          Longitude: "18.9221792",
+          From: "2018-08-30",
+          Name: "Kysucký Dogtrekking u Medveďa"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4149778",
+          Longitude: "18.9221792",
+          From: "2018-08-30",
+          Name: "Kysucký Dogtrekking u Medveďa"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4149778",
+          Longitude: "18.9221792",
+          From: "2018-08-30",
+          Name: "Kysucký Dogtrekking u Medveďa"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.3222872",
+          Longitude: "17.7929975",
+          From: "2018-09-07",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3222872",
+          Longitude: "17.7929975",
+          From: "2018-09-07",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3222872",
+          Longitude: "17.7929975",
+          From: "2018-09-07",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.7832288888889",
+          Longitude: "17.8453444444444",
+          From: "2018-09-15",
+          Name: "Lefa Grand Prix"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.7832288888889",
+          Longitude: "17.8453444444444",
+          From: "2018-09-15",
+          Name: "Lefa Grand Prix"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.7832288888889",
+          Longitude: "17.8453444444444",
+          From: "2018-09-15",
+          Name: "Lefa Grand Prix"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1621344",
+          Longitude: "16.0848314",
+          From: "2018-09-27",
+          Name: "PES V TAHU - OKOLO KOMÍNA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1621344",
+          Longitude: "16.0848314",
+          From: "2018-09-27",
+          Name: "PES V TAHU - OKOLO KOMÍNA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1621344",
+          Longitude: "16.0848314",
+          From: "2018-09-27",
+          Name: "PES V TAHU - OKOLO KOMÍNA"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.01058",
+          Longitude: "17.1426994",
+          From: "2018-10-19",
+          Name: "TLAPKA NA STEZCE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.01058",
+          Longitude: "17.1426994",
+          From: "2018-10-19",
+          Name: "TLAPKA NA STEZCE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.01058",
+          Longitude: "17.1426994",
+          From: "2018-10-19",
+          Name: "TLAPKA NA STEZCE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3223642",
+          Longitude: "17.7926542",
+          From: "2018-11-02",
+          Name: "Držkovský cross"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.333672",
+          Longitude: "16.771066",
+          From: "2019-03-28",
+          Name: "Dogtrekking za pokladem Voka IV. z Holštejna"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.333672",
+          Longitude: "16.771066",
+          From: "2019-03-28",
+          Name: "Dogtrekking za pokladem Voka IV. z Holštejna"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.333672",
+          Longitude: "16.771066",
+          From: "2019-03-28",
+          Name: "Dogtrekking za pokladem Voka IV. z Holštejna"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.789272",
+          Longitude: "16.552985",
+          From: "2019-04-06",
+          Name: "Aprílový Dogmaraton"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.789272",
+          Longitude: "16.552985",
+          From: "2019-04-06",
+          Name: "Aprílový Dogmaraton"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1730792",
+          Longitude: "16.7286917",
+          From: "2019-04-11",
+          Name: "ŠLAPANICKÝ DOGTREKKING"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1730792",
+          Longitude: "16.7286917",
+          From: "2019-04-11",
+          Name: "ŠLAPANICKÝ DOGTREKKING"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.5427894",
+          Longitude: "14.0216617",
+          From: "2019-04-25",
+          Name: "KRUŠNOHORSKÝ DOGTREKKING 16 ročník"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.5427894",
+          Longitude: "14.0216617",
+          From: "2019-04-25",
+          Name: "KRUŠNOHORSKÝ DOGTREKKING 16 ročník"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.536713",
+          Longitude: "18.236074",
+          From: "2019-05-16",
+          Name: "STÍNEM BESKYDSKÉHO RYSA"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.536713",
+          Longitude: "18.236074",
+          From: "2019-05-16",
+          Name: "STÍNEM BESKYDSKÉHO RYSA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.536713",
+          Longitude: "18.236074",
+          From: "2019-05-16",
+          Name: "STÍNEM BESKYDSKÉHO RYSA"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.2525203",
+          Longitude: "17.6260628",
+          From: "2019-05-30",
+          Name: "ZDE JSOU LVI"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "50.2525203",
+          Longitude: "17.6260628",
+          From: "2019-05-30",
+          Name: "ZDE JSOU LVI"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.2525203",
+          Longitude: "17.6260628",
+          From: "2019-05-30",
+          Name: "ZDE JSOU LVI"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.22081",
+          Longitude: "17.1251392",
+          From: "2019-07-11",
+          Name: "STOPOU STREJDY ŠERÁKA"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "50.22081",
+          Longitude: "17.1251392",
+          From: "2019-07-11",
+          Name: "STOPOU STREJDY ŠERÁKA"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.87057",
+          Longitude: "17.418997",
+          From: "2019-08-02",
+          Name: "KRAJEM BŘIDLICE"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.87057",
+          Longitude: "17.418997",
+          From: "2019-08-02",
+          Name: "KRAJEM BŘIDLICE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.87057",
+          Longitude: "17.418997",
+          From: "2019-08-02",
+          Name: "KRAJEM BŘIDLICE"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1405611",
+          Longitude: "15.1571797",
+          From: "2019-08-17",
+          Name: "Po stopách Járy Cimrmana"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.143551",
+          Longitude: "18.022769",
+          From: "2019-08-23",
+          Name: "Kotáry"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.3392292",
+          Longitude: "17.7003617",
+          From: "2019-09-05",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.3392292",
+          Longitude: "17.7003617",
+          From: "2019-09-05",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3392292",
+          Longitude: "17.7003617",
+          From: "2019-09-05",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2019-09-14",
+          Name: "Lefa Grand Prix"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2019-09-21",
+          Name: "Beskydský dogmaraton"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1612925",
+          Longitude: "16.0853247",
+          From: "2019-09-26",
+          Name: "PES V TAHU - PŘES ČÁRU"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1612925",
+          Longitude: "16.0853247",
+          From: "2019-09-26",
+          Name: "PES V TAHU - PŘES ČÁRU"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1612925",
+          Longitude: "16.0853247",
+          From: "2019-09-26",
+          Name: "PES V TAHU - PŘES ČÁRU"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4407853",
+          Longitude: "17.9676656",
+          From: "2019-10-06",
+          Name: "Neváhej - tlapkám s námi pomáhej"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4407853",
+          Longitude: "17.9676656",
+          From: "2019-10-06",
+          Name: "Neváhej - tlapkám s námi pomáhej"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.01058",
+          Longitude: "17.1426994",
+          From: "2019-10-17",
+          Name: "TLAPKA NA STEZCE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.01058",
+          Longitude: "17.1426994",
+          From: "2019-10-17",
+          Name: "TLAPKA NA STEZCE"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1730792",
+          Longitude: "16.7286917",
+          From: "2020-04-09",
+          Name: "Šlapanický dogtrekking - ZRUŠENO (COVID19)"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1730792",
+          Longitude: "16.7286917",
+          From: "2020-04-09",
+          Name: "Šlapanický dogtrekking - ZRUŠENO (COVID19)"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.4304878",
+          Longitude: "13.2606564",
+          From: "2020-04-23",
+          Name: "Krušnohorský dogtrekking - ZRUŠENO (COVID19)"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.8428269",
+          Longitude: "15.6475717",
+          From: "2020-05-07",
+          Name: "Po stopách Toulovce - ZRUŠENO (COVID19)"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.4422994",
+          Longitude: "18.2638992",
+          From: "2020-06-11",
+          Name: "Stínem beskydského rysa - ZRUŠENO (COVID19)"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.4422994",
+          Longitude: "18.2638992",
+          From: "2020-06-11",
+          Name: "Stínem beskydského rysa - ZRUŠENO (COVID19)"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4422994",
+          Longitude: "18.2638992",
+          From: "2020-06-11",
+          Name: "Stínem beskydského rysa - ZRUŠENO (COVID19)"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-07-16",
+          Name: "Stopou strejdy Šeráka"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-07-16",
+          Name: "Stopou strejdy Šeráka"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-07-30",
+          Name: "Krajem břidlice"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-07-30",
+          Name: "Krajem břidlice"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-08-15",
+          Name: "Po stopách Járy Cimrmana"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1433247",
+          Longitude: "18.0227911",
+          From: "2020-08-21",
+          Name: "Kotáry"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1433247",
+          Longitude: "18.0227911",
+          From: "2020-08-21",
+          Name: "Kotáry"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1433247",
+          Longitude: "18.0227911",
+          From: "2020-08-21",
+          Name: "Kotáry"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.3392297",
+          Longitude: "17.7003614",
+          From: "2020-09-03",
+          Name: "Fryštácký dogtrekking"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.3392297",
+          Longitude: "17.7003614",
+          From: "2020-09-03",
+          Name: "Fryštácký dogtrekking"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3392297",
+          Longitude: "17.7003614",
+          From: "2020-09-03",
+          Name: "Fryštácký dogtrekking"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.3392297",
+          Longitude: "17.7003614",
+          From: "2020-09-03",
+          Name: "Fryštácký dogtrekking"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-09-12",
+          Name: "Beskydský dogmaraton"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-09-12",
+          Name: "Beskydský dogmaraton"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-09-17",
+          Name: "Zde jsou lvi"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-09-17",
+          Name: "Zde jsou lvi"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-09-17",
+          Name: "Zde jsou lvi"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.789272",
+          Longitude: "16.552985",
+          From: "2020-09-26",
+          Name: "Aprílový   Dogmaraton"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1612925",
+          Longitude: "16.0853247",
+          From: "2020-10-01",
+          Name: "Pes v tahu - přes 5 křížků"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1612925",
+          Longitude: "16.0853247",
+          From: "2020-10-01",
+          Name: "Pes v tahu - přes 5 křížků"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.1612925",
+          Longitude: "16.0853247",
+          From: "2020-10-01",
+          Name: "Pes v tahu - přes 5 křížků"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.0180669",
+          Longitude: "16.8688567",
+          From: "2020-10-15",
+          Name: "Tlapka na Stezce / ZRUŠENO COVID"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.0180669",
+          Longitude: "16.8688567",
+          From: "2020-10-15",
+          Name: "Tlapka na Stezce / ZRUŠENO COVID"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.0180669",
+          Longitude: "16.8688567",
+          From: "2020-10-15",
+          Name: "Tlapka na Stezce / ZRUŠENO COVID"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-11-05",
+          Name: "Witko Sapa - ZRUŠENO COVID"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2020-11-05",
+          Name: "Witko Sapa - ZRUŠENO COVID"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1732381",
+          Longitude: "16.7289108",
+          From: "2021-04-08",
+          Name: "ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1732381",
+          Longitude: "16.7289108",
+          From: "2021-04-08",
+          Name: "ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.7401044",
+          Longitude: "16.4132625",
+          From: "2021-04-17",
+          Name: "Aprílový dogmaraton"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.842861",
+          Longitude: "15.647617",
+          From: "2021-05-06",
+          Name: "PO STOPÁCH TOULOVCE - ZRUŠENO"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.842861",
+          Longitude: "15.647617",
+          From: "2021-05-06",
+          Name: "PO STOPÁCH TOULOVCE - ZRUŠENO"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.842861",
+          Longitude: "15.647617",
+          From: "2021-05-06",
+          Name: "PO STOPÁCH TOULOVCE - ZRUŠENO"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2021-05-20",
+          Name: "Za štěkotem bígla - ZRUŠENO"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2021-05-20",
+          Name: "Za štěkotem bígla - ZRUŠENO"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.4415216",
+          Longitude: "18.2602298",
+          From: "2021-06-03",
+          Name: "STÍNEM BESKYDSKÉHO RYSA"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.4415216",
+          Longitude: "18.2602298",
+          From: "2021-06-03",
+          Name: "STÍNEM BESKYDSKÉHO RYSA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.4415216",
+          Longitude: "18.2602298",
+          From: "2021-06-03",
+          Name: "STÍNEM BESKYDSKÉHO RYSA"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.2455644",
+          Longitude: "14.6529806",
+          From: "2021-06-17",
+          Name: "Po stopách Rudolfa II"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "50.2455644",
+          Longitude: "14.6529806",
+          From: "2021-06-17",
+          Name: "Po stopách Rudolfa II"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.2455644",
+          Longitude: "14.6529806",
+          From: "2021-06-17",
+          Name: "Po stopách Rudolfa II"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2021-06-24",
+          Name: "DOGTREKKING ZA POKLADEM VOKA IV. Z HOLŠTEJNA - ZRUŠENO"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.2330565100049",
+          Longitude: "17.1214180276385",
+          From: "2021-07-15",
+          Name: "STOPOU STREJDY ŠERÁKA"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.7478631",
+          Longitude: "17.3056289",
+          From: "2021-07-29",
+          Name: "KRAJEM BŘIDLICE"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.7478631",
+          Longitude: "17.3056289",
+          From: "2021-07-29",
+          Name: "KRAJEM BŘIDLICE"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "49.7478631",
+          Longitude: "17.3056289",
+          From: "2021-07-29",
+          Name: "KRAJEM BŘIDLICE"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.5155678",
+          Longitude: "14.3855525",
+          From: "2021-08-12",
+          Name: "Po stopách Járy Cimrmana"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "50.5155678",
+          Longitude: "14.3855525",
+          From: "2021-08-12",
+          Name: "Po stopách Járy Cimrmana"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.418753",
+          Longitude: "18.0172393",
+          From: "2021-09-02",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.418753",
+          Longitude: "18.0172393",
+          From: "2021-09-02",
+          Name: "FRYŠTÁCKÝ DOGTREKKING"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.6461625",
+          Longitude: "18.5981944",
+          From: "2021-09-11",
+          Name: "Beskydský dogmaraton"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "49.1732381",
+          Longitude: "16.7289108",
+          From: "2021-09-16",
+          Name: "Šlapanický dogtrekking"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "49.1732381",
+          Longitude: "16.7289108",
+          From: "2021-09-16",
+          Name: "Šlapanický dogtrekking"
+        }];actionsLong = [...actionsLong, {
+          Latitude: "50.046473",
+          Longitude: "17.7445419",
+          From: "2021-09-30",
+          Name: "ZDE JSOU LVI"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "50.046473",
+          Longitude: "17.7445419",
+          From: "2021-09-30",
+          Name: "ZDE JSOU LVI"
+        }];actionsOther = [...actionsOther, {
+          Latitude: "50.046473",
+          Longitude: "17.7445419",
+          From: "2021-09-30",
+          Name: "ZDE JSOU LVI"
+        }];actionsMid = [...actionsMid, {
+          Latitude: "0",
+          Longitude: "0",
+          From: "2021-11-06",
+          Name: "WITKO SAPA HA"
+        }];var circles;
+  
+  
+	var mymap = L.map('mapid').setView([49.8037633, 15.4749126], 7);
+  
+  circles = new L.LayerGroup().addTo(mymap);
+
+  const reloadMarkers = (year) => {
+    circles.clearLayers();
+
+    actionsLong.forEach(action => {
+      if (action.From.substring(0, 4) == year) {
+        var circle = L.circle([action.Latitude, action.Longitude], {
+            color: '#094707',
+            radius: 10000
+        }).bindPopup(String(action.Name)).addTo(circles);
+      }
+    });
+
+    actionsMid.forEach(action => {
+      if (action.From.substring(0, 4) == year) {
+        var circle = L.circle([action.Latitude, action.Longitude], {
+            color: '#181885',
+            radius: 7500
+        }).bindPopup(String(action.Name)).addTo(circles);
+      }
+    });
+
+    actionsOther.forEach(action => {
+      if (action.From.substring(0, 4) == year) {
+        var circle = L.circle([action.Latitude, action.Longitude], {
+            color: '#851881',
+            radius: 5000
+        }).bindPopup(String(action.Name)).addTo(circles);
+      }
+    });
+  }
+
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+  reloadMarkers(2020);
+</script>
+
+        <!-- <footer id="footer" class="footer wow fadeIn">
+          <div class="top-arrow">
+            <a href="#header" class="btn"><i class="fa fa-angle-up"></i></a>
+          </div>
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget about">
+                    <h2>Office Location</h2>
+                    <p>Maecenas sapien erat, porta non porttitor non, dignissim et enim.</p>
+                    <ul class="list">
+                      <li><i class="fa fa-map-marker"></i>Address: House 20, Sector-7, Road-5, California, US</li>
+                      <li><i class="fa fa-headphones"></i>Phone: +(123) 45678 910</li>
+                      <li><i class="fa fa-headphones"></i>Email:<a href="mailto:info@youremail.com">Info@yourwebsite.com</a></li>
+                    </ul>	
+                  </div>
+                </div>	
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget links">
+                    <h2>Quick Links</h2>
+                    <ul class="list">
+                      <li><a href="about-us.html"><i class="fa fa-caret-right"></i>About Our Company</a></li>
+                      <li><a href="services.html"><i class="fa fa-caret-right"></i>Our Latest services</a></li>
+                      <li><a href="projects-masonry.html"><i class="fa fa-caret-right"></i>Our Recent Project</a></li>
+                      <li><a href="blogs-right-sidebar.html"><i class="fa fa-caret-right"></i>Latest Blog</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Help Desk</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Contact With Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget twitter">
+                    <h2>Recent Tweets</h2>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Mauris sagittis nibh et nibh commodo vehicula. Praesent blandit nulla nec tristique egestas. Integer in volutpat turpis</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Maecenas vulputate, dui eget varius sagittis, justo nunc efficitur sem, id vestibulum</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Praesent facilisis tortor nec diam suscipit condimentum</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget newsletter">
+                    <h2>Newsletter</h2>
+                    <p>consectetur adipiscing elit. Vestibulum vel sapien et lacus tempus varius. In finibus lorem vel.</p>
+                    <form>
+                      <input placeholder="Your Name" type="text">
+                      <input placeholder="your email" type="email">
+                      <button type="submit" class="button primary">Subscribe Now!</button>
+                    </form>	
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="bottom-top">
+                    <ul class="social">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <div class="copyright">
+                      <p>&copy; 2018 All Right Reserved. Design & Development By <a href="http://themelamp.com">ThemeLamp</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+       -->
+
+       <!-- Jquery -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery-migrate.min.js"></script>
+      <!-- Popper JS -->
+      <script src="/js/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="/js/bootstrap.min.js"></script>	
+      <!-- Modernizer JS -->
+      <script src="/js/modernizr.min.js"></script>
+      <!-- Nice select JS -->
+      <script src="/js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="/js/tilt.jquery.min.js"></script>
+      <!-- Fancybox  -->
+      <script src="/js/jquery.fancybox.min.js"></script>
+      <!-- Jquery Nav -->
+      <script src="/js/jquery.nav.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Slick Slider JS -->
+        <script src="/js/slickslider.min.js"></script>
+      <!-- Cube Portfolio JS -->
+      <script src="/js/cubeportfolio.min.js"></script>
+      <!-- Slicknav JS -->
+        <script src="/js/jquery.slicknav.min.js"></script>
+      <!-- Jquery Steller JS -->
+        <script src="/js/jquery.stellar.min.js"></script>
+      <!-- Magnific Popup JS -->
+        <script src="/js/magnific-popup.min.js"></script>
+      <!-- Wow JS -->
+      <script src="/js/wow.min.js"></script>
+      <!-- CounterUp JS -->
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Waypoint JS -->
+      <script src="/js/waypoints.min.js"></script>
+      <!-- Jquery Easing JS -->
+        <script src="/js/easing.min.js"></script>
+      <!-- Google Map JS -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM"></script>	
+        <script src="/js/gmap.min.js"></script>
+      <!-- Main JS -->
+      <script src="/js/main.js"></script>
+      <!-- <script src="/js/all.min.js"></script> -->
+
+      <script src="/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $('.sortedTable').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            }
+          });
+
+          $('.sortedTableDesc').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            },
+            "order": [[ 0, "desc" ]]
+          });
+        });
+      </script>
+    </body>
+</html>

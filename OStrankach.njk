@@ -1,0 +1,77 @@
+---
+layout: layout.liquid
+title: O stránkách
+---
+
+<section id="team" class="team section">
+  <div class="container">
+    <div class="row">
+      <h4>O dogtrekking.cz z pozadí</h4>
+    </div>
+    <div class="row">
+        <i>Občas se mi někdo zeptá, co vlastně ty stránky umí ... někdo je přesvědčen, že je to jen pár stránek... Tak si dovolím zveřejnit stromeček různých částí a jejich stručný popis... :)</i>
+    </div>
+    <br /><hr /><br />
+    <div class="row">
+        <br />
+        <h5>Běží to na dvou serverech + databáze</h5>
+        <br />
+        <ul>
+            <br />
+            <hr />
+            <br />
+            <li>
+                <h6>Veřejná část - Windows server, IIS, MS SQL databázový server</h6>
+                <ul>
+                    <li><b>WWW</b> - to, na co se teď díváte. Jsou to automaticky generované statické stránky, generování probíhá každých 15 minut z dat z několika REST služeb</li>
+                    <li><b>REST služby pro zpřístupnění dat</b>
+                        <ul>
+                            <li><b>rest</b> 
+                                <ul>
+                                    <li>přístup k veřejným datům (bez nutnosti autentifikace) - výsledovky, přihlášky, novinky, informace ...</li>
+                                    <li>přístup pro administrátory akcí po přihlášení speciálním heslem generovaným pro každou akci. Přístup pouze k datům vlastní akce</li>
+                                </ul>
+                            </li>
+                            <li><b>rest_auth</b> - přístup k vlastním datům pro jednotlivé uživatele. Je vyžadováno přihlášení</li>
+                            <li><b>img</b> - rest služba starající se o úložiště, konverzi ... obrázků, fotek ...</li>
+                            <li><b>qr</b> - rest služba starající se o generování QR kódů (pro platby, pro kontroly, pro jednotlivé závodníky - kartičky...)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        PWA aplikace (převážně psané v Reactu)
+                        <ul>
+                            <li><b>admin</b> - administrační část pro administrátory akcí. Nutná znalost generovaného hesla, které se vygeneruje při vytvoření akce a odešle na hlavní mail organizátora danné akce</li>
+                            <li><b>muj</b> - muj dogtrekking. Zcela uzavřený přístup, nutný vytvořený účet, heslo, platný mail ... Přístup k vlastním datům</li>
+                            <li><b>tisky</b> - PWA aplikace ulehčující pořadatelům generování různých tisků (kartičky, prezenční listiny, startovky ..., evidence loga sponzorů a automatické umístění na tisky...)</li>
+                        </ul>
+                    </li>
+                    <li>Další subdomény, převážně se týká vlastních akcí</li>
+                </ul>
+            </li>
+            <br />
+            <hr />
+            <br />
+            <li>
+                <h6>Neveřejná část - Ubuntu, Apache, Subversion ...</h6>
+                <ul>
+                    <li>Verzované úložiště zdrojových kódů aplikací</li>
+                    <li>BASH skripty pro automatické generování některých částí stránek a jejich upload na Windows server a následné zveřejnění</li>
+                    <li>BASH skripty pro automatické spouštění čistících procedur</li>
+                </ul>
+            </li>
+            <br />
+            <hr />
+            <br />
+            <li>
+                <h6>Databáze dat</h6>
+                <ul>
+                    <li>Byla zvolena profi databáze <b>MS SQL</b> na vlastním serveru, s kvalitní indexací dat, redundancí, replikovatelností, rozumným způsobem zálohování ...</li>
+                    <li>Databáze je přístupna pouze z jednoho serveru, tím jsou data poměrně v bezpečí</li>
+                    <li>Aktuálně schéma obsahuje 36 tabulek pro uložení různých dat... akce, závody, kategorie, přihlášky, jídla, trička, novinky ...</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+</section>
+

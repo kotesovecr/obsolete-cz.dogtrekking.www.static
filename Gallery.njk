@@ -1,0 +1,49 @@
+---
+layout: layout.liquid
+pagination:
+    data: galleries
+    size: 1
+    alias: gallery
+permalink: "gallery/{{ gallery.key | slug }}/"
+---
+
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Galerie</span>
+          <h1>{{ gallery.name }}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {%- if gallery.type == 'action' -%}
+        <h3>Autor: <b><a href="/action/{{ gallery.author.id }}/">{{ gallery.author.name }}</a></b></h3>
+      {%- else -%}
+        <h3>Autor: <b><a href="/competitor/{{ gallery.author.guid }}/">{{ gallery.author.name }} {{ gallery.author.surname }}</a></b></h3>
+      {%- endif -%}
+    </div>
+    <div class="row">
+      <h3>Nahráno: <b>{{ gallery.created }}</b></h3>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="lightbox-gallery">
+        <div class="container">
+          <div class="row photos">
+            {%- for img in gallery.images -%}
+              <div class="col-sm-6 col-md-4 col-lg-3 item">
+                <a href="{{ img.urls.orig }}" data-lightbox="photos">
+                  <img class="img-fluid" src="{{ img.urls.x240 }}">
+                </a>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

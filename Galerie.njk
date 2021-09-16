@@ -1,0 +1,25 @@
+---
+layout: layout.liquid
+---
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Galerie</span>
+          <h1>Galerie</h1>
+          <p>
+            <h4>Jak přidat novou galerii?</h4>
+            <p>Prozatím zabalit do nějakého archivu (7y, zip...) a nasdílet mi třeba na ulozto.cz a poslat mail na <a href="mailto:info@dogtrekking.cz">info@dogtrekking.cz</a>
+          <p>
+        </div>
+      </div>
+    </div>
+
+    {%- for gallery in galleries -%}
+      <div class="row">
+        <h3><a href="/Gallery/{{ gallery.key | slug }} ">{{ gallery.key }}</a></h3>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>

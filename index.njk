@@ -1,0 +1,28 @@
+---
+layout: layout.liquid
+title: Hlavní
+---
+
+<section id="team" class="team section">
+  <div class="container">
+    <div class="row">
+        <h4>Vítáme na oficiálních stránkách českého dogtrekkingu (i se zahraniční účastí)</h4>
+        <hr />
+        <div class="gallery">
+            {%- for gallery in galleries | limit(1) -%}
+              {%- set counter = 1 -%}
+              {%- for img in gallery.images | shuffle | limit(6) -%}
+                <figure class="gallery__item gallery__item-{{ counter }}">
+                    <img src="{{ img.urls.x240 }}" class="gallery__img">
+                </figure>
+                {%- set counter = counter + 1 -%}
+              {%- endfor -%}
+            {%- endfor -%}
+        </div>
+        <div id="images">
+        </div>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,22 @@
+.terminovkaMap {
+  width: 100%; 
+  height: 400px;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) { 
+  .terminovkaMap {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .terminovkaMap {
+    width: 100%;
+    height: 400px;
+  }
+
+  .leaflet-mobile-swap {
+    flex-flow: column-reverse;
+  }
+}

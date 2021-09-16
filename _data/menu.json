@@ -1,0 +1,20 @@
+[
+    { "title": "Aktuality", "url": "/Aktuality" },
+    { "title": "Informace", "url": "/Informace", "sub": [
+            { "title": "Soutěžní řád", "url": "/SoutezniRad" },
+            { "title": "O stránkách", "url": "/OStrankach" },
+            { "title": "Nabídka práce", "url": "/NabidkaPrace" }
+        ] 
+    },
+    { "title": "Termínovka", "url": "/Terminovka/2021" },
+    { "title": "MČR", "url": "/MCR" },
+    { "title": "Závodníci", "url": "/Zavodnici" },
+    { "title": "Historie", "url": "/Historie", "sub": [
+        { "title": "Síň slávy", "url": "/SinSlavy" },
+        { "title": "Minulé ročníky", "url": "/MinuleRocniky" },
+        { "title": "Galerie", "url": "/Galerie" }
+    ] 
+    },
+    { "title": "Můj DT", "url": "https://muj.dogtrekking.cz/"}
+]
+

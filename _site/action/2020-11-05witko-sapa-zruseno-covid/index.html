@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta tag -->
+		<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="Radix" content="Responsive Multipurpose Business Template">
+		<meta name='copyright' content='Radix'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+		
+    <title> DOGTREKKING - </title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+               integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+               crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+               integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+               crossorigin=""></script>
+
+               
+        <link rel="icon" type="image/gif" href="/images/mcr_dt.gif">
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+        
+		<!-- Bootstrap Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="/css/slicknav.min.css">
+		<!-- Cube Portfolio CSS -->
+        <link rel="stylesheet" href="/css/cubeportfolio.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="/css/magnific-popup.min.css">
+		<!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+		<!-- Nice Select CSS -->
+        <link rel="stylesheet" href="/css/niceselect.css">
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="/css/owl.theme.default.css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+		<!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="/css/slickslider.min.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="/css/animate.min.css">
+		
+		<!-- Radix StyleShet CSS -->
+        <link rel="stylesheet" href="/css/reset.css">	
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/responsive.css">	
+
+		<!-- Radix Color CSS -->
+		<link rel="stylesheet" href="/css/color/color1.css">
+		<!--<link rel="stylesheet" href="css/color/color2.css">-->
+		<!--<link rel="stylesheet" href="css/color/color3.css">-->
+		<!--<link rel="stylesheet" href="css/color/color4.css">-->
+		<!--<link rel="stylesheet" href="css/color/color5.css">-->
+		<!--<link rel="stylesheet" href="css/color/color6.css">-->
+		<!--<link rel="stylesheet" href="css/color/color7.css">-->
+		<!--<link rel="stylesheet" href="css/color/color8.css">-->
+		<!--<link rel="stylesheet" href="css/color/color9.css">-->
+		<!--<link rel="stylesheet" href="css/color/color10.css">-->
+
+		<!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+
+        <link rel="stylesheet" href="/css/leaflet.css">
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="/css/gallery.css">
+    </head>
+    <body>
+      <header id="header" class="header">
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+							  <ul class="contact">
+                  <li><i class="fa fa-envelope"></i><a href="mailto:info@dogtrekking.cz">info@dogtrekking.cz</a></li>
+                  <li><i class="fa fa-clock"></i>Data platná k času: 27.06.2021 22:26:52</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <div class="logo">
+                  <a href="/index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="link"><a href="/index.html"><span>DT</span></a></div>
+                <button class="mobile-arrow"><i class="fa fa-bars"></i></button>
+                <div class="mobile-menu"></div>
+              </div>
+              <div class="col-lg-10 col-12">
+                <div class="mainmenu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      
+                        <li>
+                          <a href="/Aktuality">Aktuality</a></li>
+                      
+                        <li>
+                          <a href="/Informace">Informace</a><ul class="dropdown"><li>
+                                  <a href="/SoutezniRad">Soutěžní řád</a>
+                                </li><li>
+                                  <a href="/OStrankach">O stránkách</a>
+                                </li><li>
+                                  <a href="/NabidkaPrace">Nabídka práce</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="/Terminovka/2021">Termínovka</a></li>
+                      
+                        <li>
+                          <a href="/MCR">MČR</a></li>
+                      
+                        <li>
+                          <a href="/Zavodnici">Závodníci</a></li>
+                      
+                        <li>
+                          <a href="/Historie">Historie</a><ul class="dropdown"><li>
+                                  <a href="/SinSlavy">Síň slávy</a>
+                                </li><li>
+                                  <a href="/MinuleRocniky">Minulé ročníky</a>
+                                </li><li>
+                                  <a href="/Galerie">Galerie</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="https://muj.dogtrekking.cz/">Můj DT</a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+        
+        
+<section id="about" class="about-us section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h1>[2020] - Witko Sapa - ZRUŠENO COVID</h1>
+          <p><p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <h4>Aktuality</h4>
+        <ul></ul>
+      </div>
+      <div class="col-lg-6 col-12">
+        <h4>Informace</h4>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              Domovské stránky:
+            </div>
+            <div class="col-6">
+              <a href="https://wshc.estranky.cz/">https://wshc.estranky.cz/</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Od - Do:
+            </div>
+            <div class="col-6">
+               5. 11. - 8. 11. 2020
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Kde:
+            </div>
+            <div class="col-6">
+              Zbraslavice (u Prahy), 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Pozice:
+            </div>
+            <div class="col-6">
+              0N, 0E
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Přihlašování:
+            </div>
+            <div class="col-6">Neuvedeno, vlastní na domovských stránkách</div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              Vypsané závody:
+            </div>
+            <div class="col-10"><div class="col color-mcr-dt">LONG [--kmkm][--mm], součástí seriálu MČR Dogtrekking
+                  Vypsané kategorie:
+                  <ul><li>- DTW1</li><li>- DTM1</li><li>- DTW2</li><li>- DTM2</li></ul>
+                  </div><div class="col color-mcr-dm">MID [--kmkm][--mm], součástí seriálu MČR Dogmaraton
+                    Vypsané kategorie:
+                      <ul><li>- DMM</li><li>- DMW</li></ul>
+                    </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+	  <div class="row">
+	    <div class="row">
+        <div class="col-12"></div>
+      </div>
+	  </div><div class="row">
+        <div class="col-12">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="entry-tab" data-toggle="tab" href="#entry" role="tab" aria-controls="entry" aria-selected="true">Přihláška</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="entries-tab" data-toggle="tab" href="#entries" role="tab" aria-controls="entries" aria-selected="false">Přihlášení</a>
+            </li>
+          </ul>            
+  
+          <div class="tab-content">
+            <div class="tab-pane active" id="entry" role="tabpanel" aria-labelledby="entry-tab">
+              <div class="container">
+                <form>
+                  <div class="row">
+                    <div class="col-3">
+                      Závod:
+                    </div>
+                    <div class="col-9">
+                      <select id="raceRaces">
+                        <option value="0">--== VYBER ZÁVOD ==--</option><option value=98>LONG [--kmkm][--mm]</option><option value=104>MID [--kmkm][--mm]</option></select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      Kategorie:
+                    </div>
+                    <div class="col-9">
+                      <select id="raceCategories">
+                        <option value="0">--== Nejdříve vyber závod ==--</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="fname">Jméno:</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" autocomplete="given-name" id="fname" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="lname">Příjmení:</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" autocomplete="family-name" id="lname" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="phone">Telefon</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="tel" autocomplete="tel" id="phone" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="mail">E-Mail</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="mail" autocomplete="email" id="mail" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="bday">Datum narození</label>
+                    </div>
+                    <div class="col-9">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-3">Den:</div>
+                          <div class="col-3">Měsíc:</div>
+                          <div class="col-3">Rok:</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-3"><input type="text" autocomplete="bday-day" id="bday" /></div>
+                          <div class="col-3"><input type="text" autocomplete="bday-month" id="bmonth" /></div>
+                          <div class="col-3"><input type="text" autocomplete="bday-year" id="byear" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="address">Adresa</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" autocomplete="street-address" id="address" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="city">Město</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" autocomplete="address-level2" id="city" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="dogs">Psi</label>
+                    </div>
+                    <div class="col-9">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-3">
+                            <label for="dog_name">Jméno psa</label>
+                          </div>
+                          <div class="col-9">
+                            <input type="text" id="dog_name" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-3">
+                            <label for="dog_pedigree">Plemeno</label>
+                          </div>
+                          <div class="col-9">
+                            <input type="text" id="dog_pedigree" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="entries" role="tabpanel" aria-labelledby="entries-tab">
+              <div class="container">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+</section>
+<section id="vysledky" class="portfolio section">
+			<div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+              <h1>Výsledky</h1>
+            </div>
+          </div>
+        </div><div class="row">
+            <div class="col-12">
+              <div class="container">
+                <div class="row"><div class="col-lg-6 col-12"><h4><div class="color-mcr-dt">LONG - DTW1</div></h4><table class="sortedTable add-margin-bottom" id="LONGdtw1">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody><tr><td data-order="99999999"></td><td data-order="Brlejová, Sarah">
+                                        <a href="/Zavodnik/b3e114fe-a8fe-4d8f-90a6-a2e208e2651c/index.html">Brlejová, Sarah</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Král Hajlichová, Iveta">
+                                        <a href="/Zavodnik/0a752de8-2194-42b7-a752-20983a7d4772/index.html">Král Hajlichová, Iveta</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Pichrtová, Lucie">
+                                        <a href="/Zavodnik/0e3731c6-7dd6-405a-8e6c-9b77b26e3061/index.html">Pichrtová, Lucie</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Moore, Veronica ">
+                                        <a href="/Zavodnik/14ee3e66-d53a-420e-a230-992d94a24f99/index.html">Moore, Veronica </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Wáwrová, Luisa">
+                                        <a href="/Zavodnik/abf38b21-2fb8-4953-9c49-f46278952231/index.html">Wáwrová, Luisa</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Machová, Kamila">
+                                        <a href="/Zavodnik/a83819dd-a13b-4b58-9ab8-058e262d6c9a/index.html">Machová, Kamila</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Pichrtová, Lucie">
+                                        <a href="/Zavodnik/0e3731c6-7dd6-405a-8e6c-9b77b26e3061/index.html">Pichrtová, Lucie</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Stejskalova, Soňa">
+                                        <a href="/Zavodnik/4312bfd3-e5d1-4257-a1ad-1f82ae682f69/index.html">Stejskalova, Soňa</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr></tbody>
+                      </table>
+                    </div><div class="col-lg-6 col-12"><h4><div class="color-mcr-dt">LONG - DTM1</div></h4><table class="sortedTable add-margin-bottom" id="LONGdtm1">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody><tr><td data-order="99999999"></td><td data-order="Knor, Oldřich">
+                                        <a href="/Zavodnik/d7a3e84f-18f2-4eba-950b-d55c1877a926/index.html">Knor, Oldřich</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Egg, Jiří">
+                                        <a href="/Zavodnik/e9cb7979-4a33-47d3-9c5f-f2ce1dff174d/index.html">Egg, Jiří</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Ďásek , Jan ">
+                                        <a href="/Zavodnik/5a825331-7739-47dc-9953-623d3ceb25f0/index.html">Ďásek , Jan </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr></tbody>
+                      </table>
+                    </div><div class="col-lg-6 col-12"><h4><div class="color-mcr-dt">LONG - DTW2</div></h4><table class="sortedTable add-margin-bottom" id="LONGdtw2">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody><tr><td data-order="99999999"></td><td data-order="Rožňová, Anna">
+                                        <a href="/Zavodnik/2557e1bb-79f6-4b0e-82ab-3f431114822d/index.html">Rožňová, Anna</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Krepsová, Kristýna">
+                                        <a href="/Zavodnik/a5515f1c-fa75-4d2c-8fdf-eefba6a220b7/index.html">Krepsová, Kristýna</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Bayerová, Helena">
+                                        <a href="/Zavodnik/eb87aa92-2f4f-481e-8413-2516da938691/index.html">Bayerová, Helena</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Veselá, Alena">
+                                        <a href="/Zavodnik/fb4ab6f4-02c5-42ce-a38a-8ef164ae45ce/index.html">Veselá, Alena</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr></tbody>
+                      </table>
+                    </div><div class="col-lg-6 col-12"><h4><div class="color-mcr-dt">LONG - DTM2</div></h4><table class="sortedTable add-margin-bottom" id="LONGdtm2">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody><tr><td data-order="99999999"></td><td data-order="Chvalný , Jaroslav ">
+                                        <a href="/Zavodnik/f88d7dc8-7f18-4f88-ad07-5d3d06b89ee3/index.html">Chvalný , Jaroslav </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Šeda, Jan">
+                                        <a href="/Zavodnik/34939ddf-1785-4cb3-befd-fe24c0c89a08/index.html">Šeda, Jan</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Tonder, Čestmír">
+                                        <a href="/Zavodnik/4f0d2385-b70b-4ce0-b17e-b22a93190a4d/index.html">Tonder, Čestmír</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Budiský, Martin">
+                                        <a href="/Zavodnik/d935d59d-a38f-4417-aaa3-f34cb9bfb33c/index.html">Budiský, Martin</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr></tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div><div class="row">
+            <div class="col-12">
+              <div class="container">
+                <div class="row"><div class="col-lg-6 col-12"><h4><div class="color-mcr-dm">MID - DMM</div></h4><table class="sortedTable add-margin-bottom" id="MIDdmm">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody><tr><td data-order="99999999"></td><td data-order="Sládeček, Jiří">
+                                        <a href="/Zavodnik/59c53fcc-c619-4fc3-8ca7-d6dc3e5e16f4/index.html">Sládeček, Jiří</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Balcar, Lukáš">
+                                        <a href="/Zavodnik/a76e2cbd-b0b7-4323-b796-971623add9f3/index.html">Balcar, Lukáš</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Větrovec, Jan">
+                                        <a href="/Zavodnik/4e361d3f-8f04-478e-b256-c4d0ab5694b7/index.html">Větrovec, Jan</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Stehlík, Bronislav">
+                                        <a href="/Zavodnik/09853297-4ac3-4428-9e09-a5b7c75e06b0/index.html">Stehlík, Bronislav</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Antoš, Jan">
+                                        <a href="/Zavodnik/b3640c3d-6f98-47f6-a1ea-2a7a19db02a2/index.html">Antoš, Jan</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Čada, Radomír ">
+                                        <a href="/Zavodnik/3e86054f-6db0-44c2-9d96-2191b0a505d3/index.html">Čada, Radomír </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Adámek, Lukáš">
+                                        <a href="/Zavodnik/0b36f4a0-985f-475c-96ee-7d1afbe5283c/index.html">Adámek, Lukáš</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Baborák, Marek">
+                                        <a href="/Zavodnik/4275c00d-06f4-4cee-9ceb-4a88e08f82e0/index.html">Baborák, Marek</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Karč, Jakub">
+                                        <a href="/Zavodnik/d3712490-deec-45d2-b953-89c21ad44a6b/index.html">Karč, Jakub</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Nedoma, Ondřej ">
+                                        <a href="/Zavodnik/01166e9d-ba92-4c7d-ae86-ef49daf0bb3f/index.html">Nedoma, Ondřej </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Nedoma, Ondřej Nedoma">
+                                        <a href="/Zavodnik/01166e9d-ba92-4c7d-ae86-ef49daf0bb3f/index.html">Nedoma, Ondřej Nedoma</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Dvořák, Petr">
+                                        <a href="/Zavodnik/aae94388-3fc1-4e55-aae6-4dbf22ed4d87/index.html">Dvořák, Petr</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr></tbody>
+                      </table>
+                    </div><div class="col-lg-6 col-12"><h4><div class="color-mcr-dm">MID - DMW</div></h4><table class="sortedTable add-margin-bottom" id="MIDdmw">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody><tr><td data-order="99999999"></td><td data-order="Opavská, Kateřina ">
+                                        <a href="/Zavodnik/caf9277b-1c10-4920-abfa-66c1079bd20a/index.html">Opavská, Kateřina </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Chuchelová , Petra">
+                                        <a href="/Zavodnik/3bac8a43-0f31-4d4e-b9d0-fc288dd09199/index.html">Chuchelová , Petra</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Deutschová, Vendula ">
+                                        <a href="/Zavodnik/05462d4e-2b0e-4cf0-996d-c07c4b155ab8/index.html">Deutschová, Vendula </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Martinů, Jana">
+                                        <a href="/Zavodnik/f855919c-97bb-4f07-86f4-d359fba97c10/index.html">Martinů, Jana</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Chmelařová , Lenka ">
+                                        <a href="/Zavodnik/14e39cba-e231-47fd-9238-14c15519b45a/index.html">Chmelařová , Lenka </a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Radvanská, Kateřina">
+                                        <a href="/Zavodnik/0302b266-5944-46b8-97ef-e0e63cd1047e/index.html">Radvanská, Kateřina</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Vyssiou, Anna">
+                                        <a href="/Zavodnik/c2f02a4b-bcb2-4a51-abb7-600dc06a6da4/index.html">Vyssiou, Anna</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Koutová, Helena">
+                                        <a href="/Zavodnik/ca5d4682-0337-4b53-874b-38a96f9f3bf1/index.html">Koutová, Helena</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Kouřil Vítková, Markéta">
+                                        <a href="/Zavodnik/0a8aa10a-2fff-4807-97aa-0dcf9844925b/index.html">Kouřil Vítková, Markéta</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr><tr><td data-order="99999999"></td><td data-order="Šandová, Aneta">
+                                        <a href="/Zavodnik/a7a955cf-6b90-4aec-bcc2-44155f46b556/index.html">Šandová, Aneta</a>
+                                      </td>
+                                      <td data-order="">---</td>
+                                      <td data-order="">---</td>
+                                      <td data-order="DNS">DNS</td>
+                                    </tr></tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+			</div>
+		</section>
+
+<a href="/Terminovka/2020/">Zpět na všechny akce</a>
+
+<script>
+  var mapmargin = 50;
+  let height = 0;
+
+  function resize(){
+    if(window.innerWidth >= 980) {
+      height = window.innerHeight - mapmargin; 
+      document.getElementById('mapid').style.marginTop = 50;
+    }
+	else {
+      height = window.innerHeight - (mapmargin+12);
+      document.getElementById('mapid').style.marginTop = -21;
+    }
+
+    document.getElementById('mapid').style.height = "" + height / 2 + "px";
+	document.getElementById('mapid').style.width = "" + height / 6 * 3 + "px";
+  }
+
+  window.onresize = resize;
+
+  resize();
+  
+  
+  var mymap = L.map('mapid').setView([0, 0], 11);
+  var marker = L.marker([0 , 0], { title: "Zde" }).addTo(mymap);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1
+  }).addTo(mymap);
+
+
+  document.getElementById("raceRaces").onchange = function(){
+    var value = document.getElementById("raceRaces").value;
+    var categoriesSelect = document.getElementById("raceCategories");
+
+    let races = [];{
+      let race = {};
+      race.Id = "98";
+      race.Name = "LONG";
+      
+      race.Categories = [];{
+          let category = {};
+
+          category.Id = "200";
+          category.Name = "DTW1";
+
+          race.Categories.push(category);
+        }{
+          let category = {};
+
+          category.Id = "201";
+          category.Name = "DTM1";
+
+          race.Categories.push(category);
+        }{
+          let category = {};
+
+          category.Id = "202";
+          category.Name = "DTW2";
+
+          race.Categories.push(category);
+        }{
+          let category = {};
+
+          category.Id = "203";
+          category.Name = "DTM2";
+
+          race.Categories.push(category);
+        }races.push(race);
+    }{
+      let race = {};
+      race.Id = "104";
+      race.Name = "MID";
+      
+      race.Categories = [];{
+          let category = {};
+
+          category.Id = "204";
+          category.Name = "DMM";
+
+          race.Categories.push(category);
+        }{
+          let category = {};
+
+          category.Id = "205";
+          category.Name = "DMW";
+
+          race.Categories.push(category);
+        }races.push(race);
+    }races.forEach(race => {
+      if (race.Id == value) {
+        var str = ""
+  
+        for (let i = 0; i < race.Categories.length; i++) {
+          str += "<option value='" + race.Categories[i].Id + "'>" + race.Categories[i].Name + "</option>"
+        }
+        categoriesSelect.innerHTML = str;
+        $('#raceCategories').niceSelect('update');
+      }
+    });
+  };
+</script>
+
+        <!-- <footer id="footer" class="footer wow fadeIn">
+          <div class="top-arrow">
+            <a href="#header" class="btn"><i class="fa fa-angle-up"></i></a>
+          </div>
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget about">
+                    <h2>Office Location</h2>
+                    <p>Maecenas sapien erat, porta non porttitor non, dignissim et enim.</p>
+                    <ul class="list">
+                      <li><i class="fa fa-map-marker"></i>Address: House 20, Sector-7, Road-5, California, US</li>
+                      <li><i class="fa fa-headphones"></i>Phone: +(123) 45678 910</li>
+                      <li><i class="fa fa-headphones"></i>Email:<a href="mailto:info@youremail.com">Info@yourwebsite.com</a></li>
+                    </ul>	
+                  </div>
+                </div>	
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget links">
+                    <h2>Quick Links</h2>
+                    <ul class="list">
+                      <li><a href="about-us.html"><i class="fa fa-caret-right"></i>About Our Company</a></li>
+                      <li><a href="services.html"><i class="fa fa-caret-right"></i>Our Latest services</a></li>
+                      <li><a href="projects-masonry.html"><i class="fa fa-caret-right"></i>Our Recent Project</a></li>
+                      <li><a href="blogs-right-sidebar.html"><i class="fa fa-caret-right"></i>Latest Blog</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Help Desk</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Contact With Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget twitter">
+                    <h2>Recent Tweets</h2>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Mauris sagittis nibh et nibh commodo vehicula. Praesent blandit nulla nec tristique egestas. Integer in volutpat turpis</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Maecenas vulputate, dui eget varius sagittis, justo nunc efficitur sem, id vestibulum</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Praesent facilisis tortor nec diam suscipit condimentum</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget newsletter">
+                    <h2>Newsletter</h2>
+                    <p>consectetur adipiscing elit. Vestibulum vel sapien et lacus tempus varius. In finibus lorem vel.</p>
+                    <form>
+                      <input placeholder="Your Name" type="text">
+                      <input placeholder="your email" type="email">
+                      <button type="submit" class="button primary">Subscribe Now!</button>
+                    </form>	
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="bottom-top">
+                    <ul class="social">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <div class="copyright">
+                      <p>&copy; 2018 All Right Reserved. Design & Development By <a href="http://themelamp.com">ThemeLamp</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+       -->
+
+       <!-- Jquery -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery-migrate.min.js"></script>
+      <!-- Popper JS -->
+      <script src="/js/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="/js/bootstrap.min.js"></script>	
+      <!-- Modernizer JS -->
+      <script src="/js/modernizr.min.js"></script>
+      <!-- Nice select JS -->
+      <script src="/js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="/js/tilt.jquery.min.js"></script>
+      <!-- Fancybox  -->
+      <script src="/js/jquery.fancybox.min.js"></script>
+      <!-- Jquery Nav -->
+      <script src="/js/jquery.nav.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Slick Slider JS -->
+        <script src="/js/slickslider.min.js"></script>
+      <!-- Cube Portfolio JS -->
+      <script src="/js/cubeportfolio.min.js"></script>
+      <!-- Slicknav JS -->
+        <script src="/js/jquery.slicknav.min.js"></script>
+      <!-- Jquery Steller JS -->
+        <script src="/js/jquery.stellar.min.js"></script>
+      <!-- Magnific Popup JS -->
+        <script src="/js/magnific-popup.min.js"></script>
+      <!-- Wow JS -->
+      <script src="/js/wow.min.js"></script>
+      <!-- CounterUp JS -->
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Waypoint JS -->
+      <script src="/js/waypoints.min.js"></script>
+      <!-- Jquery Easing JS -->
+        <script src="/js/easing.min.js"></script>
+      <!-- Google Map JS -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM"></script>	
+        <script src="/js/gmap.min.js"></script>
+      <!-- Main JS -->
+      <script src="/js/main.js"></script>
+      <!-- <script src="/js/all.min.js"></script> -->
+
+      <script src="/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $('.sortedTable').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            }
+          });
+
+          $('.sortedTableDesc').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            },
+            "order": [[ 0, "desc" ]]
+          });
+        });
+      </script>
+    </body>
+</html>

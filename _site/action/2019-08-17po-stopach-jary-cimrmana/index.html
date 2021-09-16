@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta tag -->
+		<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="Radix" content="Responsive Multipurpose Business Template">
+		<meta name='copyright' content='Radix'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+		
+    <title> DOGTREKKING - </title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+               integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+               crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+               integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+               crossorigin=""></script>
+
+               
+        <link rel="icon" type="image/gif" href="/images/mcr_dt.gif">
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+        
+		<!-- Bootstrap Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="/css/slicknav.min.css">
+		<!-- Cube Portfolio CSS -->
+        <link rel="stylesheet" href="/css/cubeportfolio.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="/css/magnific-popup.min.css">
+		<!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+		<!-- Nice Select CSS -->
+        <link rel="stylesheet" href="/css/niceselect.css">
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="/css/owl.theme.default.css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+		<!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="/css/slickslider.min.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="/css/animate.min.css">
+		
+		<!-- Radix StyleShet CSS -->
+        <link rel="stylesheet" href="/css/reset.css">	
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/responsive.css">	
+
+		<!-- Radix Color CSS -->
+		<link rel="stylesheet" href="/css/color/color1.css">
+		<!--<link rel="stylesheet" href="css/color/color2.css">-->
+		<!--<link rel="stylesheet" href="css/color/color3.css">-->
+		<!--<link rel="stylesheet" href="css/color/color4.css">-->
+		<!--<link rel="stylesheet" href="css/color/color5.css">-->
+		<!--<link rel="stylesheet" href="css/color/color6.css">-->
+		<!--<link rel="stylesheet" href="css/color/color7.css">-->
+		<!--<link rel="stylesheet" href="css/color/color8.css">-->
+		<!--<link rel="stylesheet" href="css/color/color9.css">-->
+		<!--<link rel="stylesheet" href="css/color/color10.css">-->
+
+		<!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+
+        <link rel="stylesheet" href="/css/leaflet.css">
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="/css/gallery.css">
+    </head>
+    <body>
+      <header id="header" class="header">
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+							  <ul class="contact">
+                  <li><i class="fa fa-envelope"></i><a href="mailto:info@dogtrekking.cz">info@dogtrekking.cz</a></li>
+                  <li><i class="fa fa-clock"></i>Data platná k času: 27.06.2021 22:26:52</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <div class="logo">
+                  <a href="/index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="link"><a href="/index.html"><span>DT</span></a></div>
+                <button class="mobile-arrow"><i class="fa fa-bars"></i></button>
+                <div class="mobile-menu"></div>
+              </div>
+              <div class="col-lg-10 col-12">
+                <div class="mainmenu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      
+                        <li>
+                          <a href="/Aktuality">Aktuality</a></li>
+                      
+                        <li>
+                          <a href="/Informace">Informace</a><ul class="dropdown"><li>
+                                  <a href="/SoutezniRad">Soutěžní řád</a>
+                                </li><li>
+                                  <a href="/OStrankach">O stránkách</a>
+                                </li><li>
+                                  <a href="/NabidkaPrace">Nabídka práce</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="/Terminovka/2021">Termínovka</a></li>
+                      
+                        <li>
+                          <a href="/MCR">MČR</a></li>
+                      
+                        <li>
+                          <a href="/Zavodnici">Závodníci</a></li>
+                      
+                        <li>
+                          <a href="/Historie">Historie</a><ul class="dropdown"><li>
+                                  <a href="/SinSlavy">Síň slávy</a>
+                                </li><li>
+                                  <a href="/MinuleRocniky">Minulé ročníky</a>
+                                </li><li>
+                                  <a href="/Galerie">Galerie</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="https://muj.dogtrekking.cz/">Můj DT</a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+        
+        
+<section id="about" class="about-us section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h1>[2019] - Po stopách Járy Cimrmana</h1>
+          <p><p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <h4>Aktuality</h4>
+        <ul></ul>
+      </div>
+      <div class="col-lg-6 col-12">
+        <h4>Informace</h4>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              Domovské stránky:
+            </div>
+            <div class="col-6">
+              <a href="https://dogtrekking.wgz.cz/">https://dogtrekking.wgz.cz/</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Od - Do:
+            </div>
+            <div class="col-6">
+               17. 8. - 17. 8. 2019
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Kde:
+            </div>
+            <div class="col-6">
+              Střížovice, 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Pozice:
+            </div>
+            <div class="col-6">
+              49.1405611N, 15.1571797E
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              Přihlašování:
+            </div>
+            <div class="col-6">Neuvedeno, vlastní na domovských stránkách</div>
+          </div>
+          <div class="row">
+            <div class="col-2">
+              Vypsané závody:
+            </div>
+            <div class="col-10"><div class="col color-mcr-dm">Mid [--kmkm][--mm], součástí seriálu MČR Dogmaraton
+                    Vypsané kategorie:
+                      <ul><li>- DMW</li><li>- DMM</li></ul>
+                    </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+	  <div class="row">
+	    <div class="row">
+        <div class="col-12"><div id="mapid"></div></div>
+      </div>
+	  </div></div>
+</section>
+<section id="vysledky" class="portfolio section">
+			<div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+              <h1>Výsledky</h1>
+            </div>
+          </div>
+        </div><div class="row">
+            <div class="col-12">
+              <div class="container">
+                <div class="row"><div class="col-lg-6 col-12"><h4><div class="color-mcr-dm">Mid - DMW</div></h4><table class="sortedTable add-margin-bottom" id="Middmw">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </div><div class="col-lg-6 col-12"><h4><div class="color-mcr-dm">Mid - DMM</div></h4><table class="sortedTable add-margin-bottom" id="Middmm">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Příjmení, jméno</th>
+                            <th>Start</th>
+                            <th>Cíl</th>
+                            <th>Čas</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+			</div>
+		</section>
+
+<a href="/Terminovka/2019/">Zpět na všechny akce</a>
+
+<script>
+  var mapmargin = 50;
+  let height = 0;
+
+  function resize(){
+    if(window.innerWidth >= 980) {
+      height = window.innerHeight - mapmargin; 
+      document.getElementById('mapid').style.marginTop = 50;
+    }
+	else {
+      height = window.innerHeight - (mapmargin+12);
+      document.getElementById('mapid').style.marginTop = -21;
+    }
+
+    document.getElementById('mapid').style.height = "" + height / 2 + "px";
+	document.getElementById('mapid').style.width = "" + height / 6 * 3 + "px";
+  }
+
+  window.onresize = resize;
+
+  resize();
+  
+  
+  var mymap = L.map('mapid').setView([49.1405611, 15.1571797], 11);
+  var marker = L.marker([49.1405611 , 15.1571797], { title: "Zde" }).addTo(mymap);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1
+  }).addTo(mymap);
+
+
+  document.getElementById("raceRaces").onchange = function(){
+    var value = document.getElementById("raceRaces").value;
+    var categoriesSelect = document.getElementById("raceCategories");
+
+    let races = [];{
+      let race = {};
+      race.Id = "74";
+      race.Name = "Mid";
+      
+      race.Categories = [];{
+          let category = {};
+
+          category.Id = "170";
+          category.Name = "DMW";
+
+          race.Categories.push(category);
+        }{
+          let category = {};
+
+          category.Id = "171";
+          category.Name = "DMM";
+
+          race.Categories.push(category);
+        }races.push(race);
+    }races.forEach(race => {
+      if (race.Id == value) {
+        var str = ""
+  
+        for (let i = 0; i < race.Categories.length; i++) {
+          str += "<option value='" + race.Categories[i].Id + "'>" + race.Categories[i].Name + "</option>"
+        }
+        categoriesSelect.innerHTML = str;
+        $('#raceCategories').niceSelect('update');
+      }
+    });
+  };
+</script>
+
+        <!-- <footer id="footer" class="footer wow fadeIn">
+          <div class="top-arrow">
+            <a href="#header" class="btn"><i class="fa fa-angle-up"></i></a>
+          </div>
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget about">
+                    <h2>Office Location</h2>
+                    <p>Maecenas sapien erat, porta non porttitor non, dignissim et enim.</p>
+                    <ul class="list">
+                      <li><i class="fa fa-map-marker"></i>Address: House 20, Sector-7, Road-5, California, US</li>
+                      <li><i class="fa fa-headphones"></i>Phone: +(123) 45678 910</li>
+                      <li><i class="fa fa-headphones"></i>Email:<a href="mailto:info@youremail.com">Info@yourwebsite.com</a></li>
+                    </ul>	
+                  </div>
+                </div>	
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget links">
+                    <h2>Quick Links</h2>
+                    <ul class="list">
+                      <li><a href="about-us.html"><i class="fa fa-caret-right"></i>About Our Company</a></li>
+                      <li><a href="services.html"><i class="fa fa-caret-right"></i>Our Latest services</a></li>
+                      <li><a href="projects-masonry.html"><i class="fa fa-caret-right"></i>Our Recent Project</a></li>
+                      <li><a href="blogs-right-sidebar.html"><i class="fa fa-caret-right"></i>Latest Blog</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Help Desk</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Contact With Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget twitter">
+                    <h2>Recent Tweets</h2>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Mauris sagittis nibh et nibh commodo vehicula. Praesent blandit nulla nec tristique egestas. Integer in volutpat turpis</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Maecenas vulputate, dui eget varius sagittis, justo nunc efficitur sem, id vestibulum</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Praesent facilisis tortor nec diam suscipit condimentum</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget newsletter">
+                    <h2>Newsletter</h2>
+                    <p>consectetur adipiscing elit. Vestibulum vel sapien et lacus tempus varius. In finibus lorem vel.</p>
+                    <form>
+                      <input placeholder="Your Name" type="text">
+                      <input placeholder="your email" type="email">
+                      <button type="submit" class="button primary">Subscribe Now!</button>
+                    </form>	
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="bottom-top">
+                    <ul class="social">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <div class="copyright">
+                      <p>&copy; 2018 All Right Reserved. Design & Development By <a href="http://themelamp.com">ThemeLamp</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+       -->
+
+       <!-- Jquery -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery-migrate.min.js"></script>
+      <!-- Popper JS -->
+      <script src="/js/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="/js/bootstrap.min.js"></script>	
+      <!-- Modernizer JS -->
+      <script src="/js/modernizr.min.js"></script>
+      <!-- Nice select JS -->
+      <script src="/js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="/js/tilt.jquery.min.js"></script>
+      <!-- Fancybox  -->
+      <script src="/js/jquery.fancybox.min.js"></script>
+      <!-- Jquery Nav -->
+      <script src="/js/jquery.nav.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Slick Slider JS -->
+        <script src="/js/slickslider.min.js"></script>
+      <!-- Cube Portfolio JS -->
+      <script src="/js/cubeportfolio.min.js"></script>
+      <!-- Slicknav JS -->
+        <script src="/js/jquery.slicknav.min.js"></script>
+      <!-- Jquery Steller JS -->
+        <script src="/js/jquery.stellar.min.js"></script>
+      <!-- Magnific Popup JS -->
+        <script src="/js/magnific-popup.min.js"></script>
+      <!-- Wow JS -->
+      <script src="/js/wow.min.js"></script>
+      <!-- CounterUp JS -->
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Waypoint JS -->
+      <script src="/js/waypoints.min.js"></script>
+      <!-- Jquery Easing JS -->
+        <script src="/js/easing.min.js"></script>
+      <!-- Google Map JS -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM"></script>	
+        <script src="/js/gmap.min.js"></script>
+      <!-- Main JS -->
+      <script src="/js/main.js"></script>
+      <!-- <script src="/js/all.min.js"></script> -->
+
+      <script src="/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $('.sortedTable').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            }
+          });
+
+          $('.sortedTableDesc').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            },
+            "order": [[ 0, "desc" ]]
+          });
+        });
+      </script>
+    </body>
+</html>

@@ -1,0 +1,263 @@
+---
+layout: layout.liquid
+title: Termínovka
+pagination: 
+  data: years
+  size: 1
+  alias: year
+permalink: "Terminovka/{{ year }}/"
+---
+    <section id="team" class="team section">
+      {{ 0.0 | incInit }}
+
+			<div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+              <h1>
+                {%- if (years | min) <= (year - 1) -%}
+                  <a href="/Terminovka/{{ year - 1 }}/">&lt;&lt;&lt;&nbsp;</a>
+                {%- endif -%}
+
+                Termínový kalendář {{ year }}
+                
+                {%- if (years | max) >= (year + 1) -%}
+                  <a href="/Terminovka/{{ year + 1 }}/">&nbsp;&gt;&gt;&gt;</a>
+                {%- endif -%}
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">Legenda</div>
+        </div>
+        <div class="row add-margin-bottom">
+          <div class="col-4 color-mcr-dt d-flex justify-content-center" style="height: 20px; padding-bottom: 20px;">MČR Dogtrekking</div>
+          <div class="col-4 color-mcr-dm d-flex justify-content-center" style="height: 20px; padding-bottom: 20px;">MČR Dogmaraton</div>
+          <div class="col-4 color-other d-flex justify-content-center" style="height: 20px; padding-bottom: 20px;">Ostatní závody mimo seriály</div>
+        </div>
+				<div class="row">
+					<div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
+						<div id="mapid" class='terminovkaMap'></div>
+					</div>
+				</div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="animated-tab" data-toggle="tab" href="#animated" role="tab" aria-controls="animated" aria-selected="true">Animované</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="table-tab" data-toggle="tab" href="#table" role="tab" aria-controls="table" aria-selected="false">Seznam</a>
+              </li>
+             </ul>            
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="animated" role="tabpanel" aria-labelledby="animated-tab">
+                  <div class="container">
+                  <div class="row">
+                    {%- for action in actions | sortedActions -%}
+                      {%- if action.From | firstFour == year -%}
+                        <!-- class="col-lg-3 col-md-6 col-12 fadeInUp wow ..." -->
+                        <div class="col-lg-3 col-md-6 col-12 fadeInUp {{ action.ActionCanceled | checkForActionCanceled }}" data-wow-delay="{{ 0.2 | incBy }}s" data-tilt>
+                          {%- if action.ActionCanceled == 1 -%}
+                          <h2>ZRUŠENO</h2>
+                          {%- endif -%}
+        
+                          <!-- Single Team -->
+                          <div class="single-team">
+                            <div class="t-head">
+                              <div class="row" style="height: 20px">
+                                {%- for race in action.Races -%}
+                                  {%- if race.SerieType == 'MCR_DT' -%}
+                                    <div class="col color-mcr-dt d-flex justify-content-center">MČR DT</div>
+                                  {%- elif race.SerieType == 'MCR_DM' -%}
+                                    <div class="col color-mcr-dm d-flex justify-content-center">MČR DM</div>
+                                  {%- else -%}
+                                    <div class="col color-other d-flex justify-content-center">Ostatní</div>
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              </div>
+                              <div class="t-icon">
+                                <a href="/action/{{ action.From + action.Name | slug }}/"><i class="fa fa-plus"></i></a>
+                              </div>
+                            </div>
+                            <div class="t-bottom">
+                              <p>{{ action.From | actionDateNoYear }}</p>
+                              <a href="/action/{{ action.From + action.Name | slug }}/"><h2>{{ action.Name }}</h2></a>
+                              <h6>{{ action.Where }}</h6>
+                              <ul class="t-social">
+                                {%- for race in action.Races -%}
+                                    {%- if race.SerieType == 'MCR_DT' -%}
+                                    <li class="race-padding color-mcr-dt">
+                                      <span style='color: gold'>☆</span>
+                                      {{ race.Name }}
+                                    </li>
+                                    {%- elif race.SerieType == 'MCR_DM' -%}
+                                    <li class="race-padding color-mcr-dm">
+                                      <span style='color: gold'>☆</span>
+                                      {{ race.Name }}
+                                    </li>
+                                    {%- else -%}
+                                    <li class="race-padding color-other">
+                                      {{ race.Name }}
+                                    </li>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                              </ul>
+                              {%- if action.Url !== "" -%}
+                                <a href="{{ action.Url }}"><i class="fas fa-external-link-alt"></i></a>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="table" role="tabpanel" aria-labelledby="table-tab">
+                  <div class="container">
+                  <div class="row">
+                    <table class='sortedTable'>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        {%- for action in actions | sortedActions -%}
+                          {%- if action.From | firstFour == year -%}
+                            <tr class="{{ action.ActionCanceled | checkForActionCanceled }}"  style="background-color: {{ action.From | colorForMonth }}; color: #000;">
+                              <td style="white-space: nowrap;">
+                                <div class="horizontal">
+                                  <div class="{{ action.From | checkActionIsActual }}"></div><b>{{ action.From | actionDateNoYear }}</b>
+                                </div>
+                              </td>
+                              <td class="horizontal">
+                                {%- for race in action.Races -%}
+                                  {%- if race.SerieType == 'MCR_DT' -%}
+                                    <div class="col color-mcr-dt d-flex justify-content-center"><span style='color: gold'>☆</span>{{ race.Name }}</div>
+                                  {%- elif race.SerieType == 'MCR_DM' -%}
+                                    <div class="col color-mcr-dm d-flex justify-content-center"><span style='color: gold'>☆</span>{{ race.Name }}</div>
+                                  {%- else -%}
+                                    <div class="col color-other d-flex justify-content-center">{{ race.Name }}</div>
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              </td>
+                              <td>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a href="/action/{{ action.From + action.Name | slug }}/" style="color: #000;"><b>{{ action.Name }}</b></a>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <a class="float-right" href="/action/{{ action.From + action.Name | slug }}/#vysledky" style="color: 222; margin-right: 5px;">Výsledky</a>
+                                      {%- if action.CustomApplyLink != "" -%}
+                                        <a class="float-right" href="{{ action.CustomApplyLink }}" style="color: 222; margin-right: 5px;">Přihláška</a>
+                                      {%- endif -%}
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>{{ action.Where }}</td>
+                          {%- endif -%}
+                       {%- endfor -%}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+			</div>
+		</section>
+
+<script>
+  let actionsLong = [];
+  let actionsMid = [];
+  let actionsOther = [];
+
+  {%- for action in actions -%}
+    {%- for race in action.Races -%}
+      {%- if race.SerieType == 'MCR_DT' -%}
+        actionsLong = [...actionsLong, {
+          Latitude: "{{ action.Latitude }}",
+          Longitude: "{{ action.Longitude }}",
+          From: "{{ action.From }}",
+          Name: "{{ action.Name }}"
+        }];
+      {%- elif race.SerieType == 'MCR_DM' -%}
+        actionsMid = [...actionsMid, {
+          Latitude: "{{ action.Latitude }}",
+          Longitude: "{{ action.Longitude }}",
+          From: "{{ action.From }}",
+          Name: "{{ action.Name }}"
+        }];
+      {%- else -%}
+        actionsOther = [...actionsOther, {
+          Latitude: "{{ action.Latitude }}",
+          Longitude: "{{ action.Longitude }}",
+          From: "{{ action.From }}",
+          Name: "{{ action.Name }}"
+        }];
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  
+  
+  var circles;
+  
+  
+	var mymap = L.map('mapid').setView([49.8037633, 15.4749126], 7);
+  
+  circles = new L.LayerGroup().addTo(mymap);
+
+  const reloadMarkers = (year) => {
+    circles.clearLayers();
+
+    actionsLong.forEach(action => {
+      if (action.From.substring(0, 4) == year) {
+        var circle = L.circle([action.Latitude, action.Longitude], {
+            color: '#094707',
+            radius: 10000
+        }).bindPopup(String(action.Name)).addTo(circles);
+      }
+    });
+
+    actionsMid.forEach(action => {
+      if (action.From.substring(0, 4) == year) {
+        var circle = L.circle([action.Latitude, action.Longitude], {
+            color: '#181885',
+            radius: 7500
+        }).bindPopup(String(action.Name)).addTo(circles);
+      }
+    });
+
+    actionsOther.forEach(action => {
+      if (action.From.substring(0, 4) == year) {
+        var circle = L.circle([action.Latitude, action.Longitude], {
+            color: '#851881',
+            radius: 5000
+        }).bindPopup(String(action.Name)).addTo(circles);
+      }
+    });
+  }
+
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+  reloadMarkers({{ year }});
+</script>

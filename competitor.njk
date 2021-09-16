@@ -1,0 +1,83 @@
+---
+layout: layout.liquid
+pagination: 
+  data: competitors.competitors
+  size: 1
+  alias: competitor
+permalink: "Zavodnik/{{ competitor.guid | slug }}/"
+---
+
+		<section id="fun-facts" class="fun-facts section">
+			<div class="container">	
+				<div class="row">
+					<div class="col-lg-5 col-12 wow fadeInLeft" data-wow-delay="0.5s">
+						<div class="text-content">
+							<div class="section-title">
+								<h1>{{ competitor.name }} {{ competitor.surname }}</h1>
+								<p>
+                  Celkem akcí: <b>{{ competitor.actions | count }}</b><br />
+                  Nachozeno kilometrů: <b>{{ competitor.actions | countOfKm }}km</b><br />
+                  Nastoupáno metrů: <b>{{ competitor.actions | countOfElevatedM }}m</b><br />
+                  Průměrná rychlost: <b>{{ competitor.actions | averageSpeed }}km/hod</b><br />
+                </p>
+              </div>
+						</div>
+					</div>
+					<div class="col-lg-7 col-12">
+            Pro umístění fotky pošlete vlastní foto s názvem <b>{{ competitor.guid }}.jpeg</b> na adresu info@dogtrekking.cz.
+					</div>
+				</div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="sortedTableDesc">
+              <thead>
+                <th style="display:none"></th>
+                <th>#</th>
+                <th>Název akce</th>
+                <th>Start</th>
+                <th>Cíl</th>
+                <th>Čas</th>
+                <th>Vzdálenost</th>
+                <th>Převýšení</th>
+                <th>Psi</th>
+              </thead>
+              <tbody>
+                {%- for akce in competitor.actions | onlyValidActions -%}
+                <tr>
+                  <td style="display:none">{{ akce.action_start }}</td>
+                  <td>{{ akce.order }}</td>
+                  <td>
+                    {%- if (akce.race_type == "MCR_DT") -%}
+                    <span class="color-mcr-dt"><a href="/action/{{ akce.action_start + akce.name | slug }}">[MČR DT] {{ akce.name }}</a></span><br />
+                    {%- elif (akce.race_type == "MCR_DM") -%}
+                    <span class="color-mcr-dm"><a href="/action/{{ akce.action_start + akce.name | slug }}">[MČR DM] {{ akce.name }}</a></span><br />
+                    {%- else -%}
+                    <span class="color-other"><a href="/action/{{ akce.action_start + akce.name | slug }}">[{{ akce.race_name }}] {{ akce.name }}</a></span><br />
+                    {%- endif -%}
+                  </td>
+                  <td>{{ akce.start }}</td>
+                  <td>{{ akce.finish }}</td>
+                  <td>{{ akce.time }}</td>
+                  <td>{{ akce.distance }}km</td>
+                  <td>{{ akce.elevation }}m</td>
+                  <td>
+                    {%- for dog in akce.dogs -%}
+                      <span>{{ dog }}, </span>
+                    {%- endfor -%}
+                  </td>
+                </tr>
+                {%- endfor -%}
+              </tbody>
+            </table>
+          </div>
+        </div>
+			</div>
+		</section>
+
+<hr />
+<a href="/Zavodnici/">Zpět na všechny závodníky</a>

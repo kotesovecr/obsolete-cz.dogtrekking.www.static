@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta tag -->
+		<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="Radix" content="Responsive Multipurpose Business Template">
+		<meta name='copyright' content='Radix'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+		
+    <title> DOGTREKKING - Aktuality</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+               integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+               crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+               integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+               crossorigin=""></script>
+
+               
+        <link rel="icon" type="image/gif" href="/images/mcr_dt.gif">
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+        
+		<!-- Bootstrap Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="/css/slicknav.min.css">
+		<!-- Cube Portfolio CSS -->
+        <link rel="stylesheet" href="/css/cubeportfolio.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="/css/magnific-popup.min.css">
+		<!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+		<!-- Nice Select CSS -->
+        <link rel="stylesheet" href="/css/niceselect.css">
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="/css/owl.theme.default.css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+		<!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="/css/slickslider.min.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="/css/animate.min.css">
+		
+		<!-- Radix StyleShet CSS -->
+        <link rel="stylesheet" href="/css/reset.css">	
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/responsive.css">	
+
+		<!-- Radix Color CSS -->
+		<link rel="stylesheet" href="/css/color/color1.css">
+		<!--<link rel="stylesheet" href="css/color/color2.css">-->
+		<!--<link rel="stylesheet" href="css/color/color3.css">-->
+		<!--<link rel="stylesheet" href="css/color/color4.css">-->
+		<!--<link rel="stylesheet" href="css/color/color5.css">-->
+		<!--<link rel="stylesheet" href="css/color/color6.css">-->
+		<!--<link rel="stylesheet" href="css/color/color7.css">-->
+		<!--<link rel="stylesheet" href="css/color/color8.css">-->
+		<!--<link rel="stylesheet" href="css/color/color9.css">-->
+		<!--<link rel="stylesheet" href="css/color/color10.css">-->
+
+		<!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+
+        <link rel="stylesheet" href="/css/leaflet.css">
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="/css/gallery.css">
+    </head>
+    <body>
+      <header id="header" class="header">
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+							  <ul class="contact">
+                  <li><i class="fa fa-envelope"></i><a href="mailto:info@dogtrekking.cz">info@dogtrekking.cz</a></li>
+                  <li><i class="fa fa-clock"></i>Data platná k času: 27.06.2021 22:26:52</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <div class="logo">
+                  <a href="/index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="link"><a href="/index.html"><span>DT</span></a></div>
+                <button class="mobile-arrow"><i class="fa fa-bars"></i></button>
+                <div class="mobile-menu"></div>
+              </div>
+              <div class="col-lg-10 col-12">
+                <div class="mainmenu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      
+                        <li>
+                          <a href="/Aktuality">Aktuality</a></li>
+                      
+                        <li>
+                          <a href="/Informace">Informace</a><ul class="dropdown"><li>
+                                  <a href="/SoutezniRad">Soutěžní řád</a>
+                                </li><li>
+                                  <a href="/OStrankach">O stránkách</a>
+                                </li><li>
+                                  <a href="/NabidkaPrace">Nabídka práce</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="/Terminovka/2021">Termínovka</a></li>
+                      
+                        <li>
+                          <a href="/MCR">MČR</a></li>
+                      
+                        <li>
+                          <a href="/Zavodnici">Závodníci</a></li>
+                      
+                        <li>
+                          <a href="/Historie">Historie</a><ul class="dropdown"><li>
+                                  <a href="/SinSlavy">Síň slávy</a>
+                                </li><li>
+                                  <a href="/MinuleRocniky">Minulé ročníky</a>
+                                </li><li>
+                                  <a href="/Galerie">Galerie</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="https://muj.dogtrekking.cz/">Můj DT</a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+        
+        
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Aktuality</span>
+          <h1>Aktuality akcí</h1>
+          <p>Poslední provedené aktualizace v nastavení jednotlivých akcí<p>
+        </div>
+      </div>
+    </div>
+    <div class="row"><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-29krajem-bridlice">KRAJEM BŘIDLICE</a></h4>
+              <p>Změna linku pro přihlašování na akci na: <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-kPzHxqeBYuW4J0NT6EihNpuo0qVgpms82VPJxavZDsnVKQ/viewform">https://docs.google.com/forms/d/e/1FAIpQLSf-kPzHxqeBYuW4J0NT6EihNpuo0qVgpms82VPJxavZDsnVKQ/viewform</a></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-26 09:06:44</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-29krajem-bridlice">KRAJEM BŘIDLICE</a></h4>
+              <p>Upraven popisek akce</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-26 08:51:56</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-29krajem-bridlice">KRAJEM BŘIDLICE</a></h4>
+              <p>Změna domovských stránek na <a href="https://www.ledovastopa.cz/dt-krajem-bridlice-2021/">https://www.ledovastopa.cz/dt-krajem-bridlice-2021/</a></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-26 08:51:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-29krajem-bridlice">KRAJEM BŘIDLICE</a></h4>
+              <p>Upravena adresa konání akce na: Autokemp HSTS ZO Šternberk, Dolní Žleb 26</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-26 08:48:37</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-29krajem-bridlice">KRAJEM BŘIDLICE</a></h4>
+              <p>Změna místa konání na: Šternberk</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-26 08:48:36</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-15stopou-strejdy-seraka">STOPOU STREJDY ŠERÁKA</a></h4>
+              <p>Upravena adresa konání akce na: Lipová-lázně - lyžařské středisko MIROSLAV</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-17 14:35:51</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-07-15stopou-strejdy-seraka">STOPOU STREJDY ŠERÁKA</a></h4>
+              <p>Změna místa konání na: Lipová-lázně</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-17 14:35:51</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p><p><a href="https://cdn.dogtrekking.cz/download/actions/65/short_rys.xlsx"></a></p><p><span style="font-size: 1rem;">Přidali jsme časy z doprovodné akce SHORT&nbsp;<a href="https://cdn.dogtrekking.cz/download/actions/65/short_rys.xlsx">zde</a>﻿</span></p></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-15 06:21:56</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-09-30zde-jsou-lvi">ZDE JSOU LVI</a></h4>
+              <p>Upravena adresa konání akce na: Rychta</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-11 10:50:13</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-09-30zde-jsou-lvi">ZDE JSOU LVI</a></h4>
+              <p>Změna místa konání na: Úvalno, okres Bruntál</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-11 10:50:13</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p><p>Protože některým z vás nepřišel informační mail (ještě hledáme příčinu), tak zveřejňujeme znění mailu i zde v novinkách:</p><p><br></p><p class="MsoNormal" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px; line-height: 16.05px; font-family: Calibri, sans-serif; text-align: justify; font-size: 15px;"><span style="outline: none; font-size: 18px;"><strong style="outline: none;">Ahoj závodníci!</strong></span></p><p class="MsoNormal" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px; line-height: 16.05px; font-family: Calibri, sans-serif; text-align: justify; font-size: 15px;"><span style="outline: none; font-size: 18px;">Tak už se nám to blíží, těšíte se? Týden Rysa je tady!</span></p><p class="MsoNormal" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px; line-height: 16.05px; font-family: Calibri, sans-serif; text-align: justify; font-size: 15px;"><span style="outline: none; font-size: 18px;">Máte tady pro vás pár organizačních informací, tak jim, prosím, věnujte chvíli čas.</span></p><p class="MsoNormal" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px; line-height: 16.05px; font-family: Calibri, sans-serif; text-align: justify; font-size: 15px;"><span style="outline: none; font-size: 18px;"><br style="outline: none;"></span></p><p class="MsoNormal" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px; line-height: 16.05px; font-family: Calibri, sans-serif; text-align: justify; font-size: 15px;"><strong style="outline: none;"><span style="outline: none; font-size: 18px;">PREZENCE</span></strong></p><ul style="outline: none; padding: inherit; margin-top: inherit; margin-right: inherit; margin-bottom: inherit; margin-left: 7px; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;">Bude pro všechny závodníky probíhat od 17:00 do 22:00, pro longaře ve čtvrtek, pro dogmaraton a short v&nbsp;pátek. Meeting vždy ve 21:00. Obzvláště dogmaratoncům doporučujeme účast<span>&nbsp;</span><span style="outline: none; font-family: &quot;Segoe UI Emoji&quot;, sans-serif;">😊</span></li><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;">Lze se odprezentovat i v&nbsp;sobotu, tady<span>&nbsp;</span><strong style="outline: none;">POZOR<span>&nbsp;</span></strong>na změnu časového plánu – prezence bude probíhat<span>&nbsp;</span><strong style="outline: none;">SOUBĚŽNĚ<span>&nbsp;</span></strong>se starty, startujeme oba dny od 6:00 (do 8:30)&nbsp; prostředněbečvovského času.</li><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;">Po příjezdu se nejdříve nahlaste na recepci kempu, poté zvolna pokračujte na prezenci.</li></ul><p class="MsoListParagraphCxSpLast" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px 48px; line-height: 16.05px; font-size: 15px; font-family: Calibri, sans-serif; text-align: justify;">&nbsp;</p><p class="MsoNormal" style="outline: none; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px 0px 11px; line-height: 16.05px; font-family: Calibri, sans-serif; text-align: justify; font-size: 15px;"><strong style="outline: none;"><span style="outline: none; font-size: 18px;">COVID</span></strong></p><ul style="outline: none; padding: inherit; margin-top: inherit; margin-right: inherit; margin-bottom: inherit; margin-left: 7px; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;">Klasika, znáte to, 4R (respirátor, ruce, rozestup, rozum…), prosíme všechny o dodržování.</li><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;">Na trase respirátor nahrazuje rum.</li><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;">Na prezenci budete podepisovat čestné prohlášení (jednak, že jste blázni divocí a přihlásili jste se dobrovolně), že jste v&nbsp;posledních 72 hodinách absolvovali antigenní, nebo v&nbsp;posledních 7 dnech PCR test s&nbsp;negativním výsledkem – nebo – máte ukončené očkování – nebo – jste ve lhůtě od prodělaného covidu.</li></ul><p style="outline: none; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="outline: none; font-size: 16px;"><strong style="outline: none;">PLECHÁČEK</strong>&nbsp;</span></p><ul style="outline: none; padding: inherit; margin-top: inherit; margin-right: inherit; margin-bottom: inherit; margin-left: 7px; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;"><span style="outline: none; font-size: 16px;">Do středy si ještě můžete objednat plecháček, objem 460ml, cena 250Kč.&nbsp;Svůj plecháček si můžete rezervovat na mailu<a href="javascript:webmail.View.mailto({mailto:'stinemrysa@seznam.cz', subject: ''})" target="_self" style="outline: none; text-decoration: inherit; color: rgb(0, 102, 203);"><span>&nbsp;</span>stinemrysa@seznam.cz<span>&nbsp;</span></a>- k vyzvednutí u prezence. Nezbytný pro zbloudilé dogtrekaře, pomůže tam, kde i GPS selhává :)&nbsp;</span></li><li style="outline: none; list-style-type: inherit; clear: inherit; list-style-position: inside;"><span style="outline: none; font-size: 16px;">Náhled plecháčku tu -&gt;&nbsp;</span><a href="https://1url.cz/FKoTT" target="_blank" rel="noopener noreferrer" style="outline: none; text-decoration: inherit; color: rgb(0, 102, 203);">plecháček</a></li></ul><p style="outline: none; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Díky za pozornost a upírejte při pondělku zraky k víkendu :)</p><p style="outline: none; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Těšíme se na vás</p>﻿</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-06-01 10:36:55</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p><p>Během dneška bude rozeslán všem účastníkům mail s podrobnými informacemi a časovým harmonogramem akce&nbsp;</p></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-05-30 23:08:15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p><p><strong>Opatření v&nbsp;souvislosti s&nbsp;Covid-19</strong></p><p>﻿Účastníci závodu budou muset dodržovat obecná hygienická pravidla (roušky, rozestupy). Během<br>
+samotného sportování nemusí mít sportovci roušku, ale po ukončení závodu je nutné si v souladu<br>
+s předpisy roušku opět nasadit.<br>
+Každý účastník musí na místě vyplnit a podepsat čestné prohlášení ohledně Covid 19, <br>
+pokud tak neučiní, nebude moci startovat.<br>
+Na místě samotném budou k dispozici kromě dezinfekce také antigenní samotesty pro případné<br>
+zájemce.<br></p></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-05-30 23:06:57</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p><p>Rozeslali jsme mail pro zaplacení přihlášek. </p><p>Pokud jste registrováni (jste v seznamu registrovaných) a mail vám nepřišel, prosíme, kontaktujte nás mailem - pravděpodobně jste uvedli chybný mail. Pokud jste provedli registraci a do teď vám nepřišla informace (mail) o registraci (a současně se nevidíte v seznamu), prosíme, zašlete přihlášku znovu.&nbsp;</p><p>Děkujeme</p></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-05-17 00:11:45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p><p>Otevřeny přihlášky. Prosíme nicméně, <strong>platby prozatím neposílejte</strong>, budete vyzváni dalším mailem v průběhu května&nbsp;</p></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-04-22 19:13:35</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-03stinem-beskydskeho-rysa">STÍNEM BESKYDSKÉHO RYSA</a></h4>
+              <p>Upravena adresa konání akce na: KEMP POD PUSTEVNAMI PROSTŘEDNÍ BEČVA 291</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-04-20 12:42:42</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-17po-stopach-rudolfa-ii">Po stopách Rudolfa II</a></h4>
+              <p>Upraven popisek akce</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-02-01 13:58:17</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-09-11beskydsky-dogmaraton">Beskydský dogmaraton</a></h4>
+              <p>Upravena adresa konání akce na: PZKO Třinec – Guty</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-02-01 13:43:17</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-09-11beskydsky-dogmaraton">Beskydský dogmaraton</a></h4>
+              <p>Změna místa konání na: Guty 76, Třinec 73961</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-02-01 13:43:17</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-09-11beskydsky-dogmaraton">Beskydský dogmaraton</a></h4>
+              <p>Upraven popisek akce</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-02-01 13:42:37</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-09-11beskydsky-dogmaraton">Beskydský dogmaraton</a></h4>
+              <p>Změna domovských stránek na <a href="https://www.dogmaraton.cz/">https://www.dogmaraton.cz/</a></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-02-01 13:41:35</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-04-08slapanicky-dogtrekking-presunuto">ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</a></h4>
+              <p>Upraven popisek akce</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-02-01 12:39:25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-17po-stopach-rudolfa-ii">Po stopách Rudolfa II</a></h4>
+              <p>Změna místa konání na: Lhota (Praha - východ)</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 16:12:21</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-06-17po-stopach-rudolfa-ii">Po stopách Rudolfa II</a></h4>
+              <p>Upravena adresa konání akce na: hřiště za hospodou Restaurace u Blanky</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 16:12:20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-04-17aprilovy-dogmaraton">Aprílový dogmaraton</a></h4>
+              <p>Změna místa konání na: Vendolí</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 16:08:06</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-04-17aprilovy-dogmaraton">Aprílový dogmaraton</a></h4>
+              <p>Upravena adresa konání akce na: Fotbalové hřiště - Vendolí</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 16:08:05</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-08-12po-stopach-jary-cimrmana">Po stopách Járy Cimrmana</a></h4>
+              <p>Upravena adresa konání akce na:  Sportovní areál Střížovice u Snědovic</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 10:45:53</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-08-12po-stopach-jary-cimrmana">Po stopách Járy Cimrmana</a></h4>
+              <p>Změna domovských stránek na <a href="https://dogtrekkingjc.cz/">https://dogtrekkingjc.cz/</a></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 10:44:51</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-08-12po-stopach-jary-cimrmana">Po stopách Járy Cimrmana</a></h4>
+              <p>Změna místa konání na: Snědovice (okres Litoměřice).</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 10:43:51</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-08-12po-stopach-jary-cimrmana">Po stopách Járy Cimrmana</a></h4>
+              <p>Upravena adresa konání akce na:  Střížovice</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-19 10:43:50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-04-08slapanicky-dogtrekking-presunuto">ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</a></h4>
+              <p>Změna domovských stránek na <a href="http://slapanicky-vlk.kkslapanice.com/">http://slapanicky-vlk.kkslapanice.com/</a></p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-09 09:21:53</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-04-08slapanicky-dogtrekking-presunuto">ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</a></h4>
+              <p>Změna místa konání na: Šlapanice</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-09 09:13:44</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2021-04-08slapanicky-dogtrekking-presunuto">ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</a></h4>
+              <p>Upravena adresa konání akce na: Hřbitovní 504</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2021-01-09 09:13:42</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)">Stínem beskydského rysa - ZRUŠENO (COVID19)</a></h4>
+              <p>ZRUŠENO - Je nám to moc líto, ale současná situace nám nedovolí uspořádat Rysa takového, jakého bychom si přáli :( . Věříme, že příští rok to klapne a sejdeme se v hojném počtu! Startovné (a částka za tričko) bude vráceno do 3.5.2020.</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2020-04-20 09:47:18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)">Stínem beskydského rysa - ZRUŠENO (COVID19)</a></h4>
+              <p>Prosíme závodníky - až do odvolání neposílejte platbu za startovné. Děkujeme.</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2020-03-16 13:24:05</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)">Stínem beskydského rysa - ZRUŠENO (COVID19)</a></h4>
+              <p>Milí závodníci, již nám chodí spousta přihlášek, děkujeme. Vyplňujte nám, prosím, i čísla čipů vašich pejsků, popř. nám je pošlete dodatečně. Přihlášky bez čísla čipu budou po 14 dnech smazány. Kontrola plateb bude probíhat každou neděli :)</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2020-03-06 22:38:16</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+        <div class="single-blog">
+          <div class="blog-head add-margin-bottom">
+          </div>
+          <div class="blog-bottom">
+            <div class="blog-inner">
+              <h4><a href="/action/2020-06-11stinem-beskydskeho-rysa-zruseno-(covid19)">Stínem beskydského rysa - ZRUŠENO (COVID19)</a></h4>
+              <p>Přihlašování na 2. ročník dogtrekkingu Stínem beskydského rysa bude spuštěno 26.2.2020 ve 20:20 :)</p>
+              <div class="meta">
+                <span><i class="fa fa-calendar"></i>2020-01-25 14:02:51</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+  </div>
+</section>
+
+        <!-- <footer id="footer" class="footer wow fadeIn">
+          <div class="top-arrow">
+            <a href="#header" class="btn"><i class="fa fa-angle-up"></i></a>
+          </div>
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget about">
+                    <h2>Office Location</h2>
+                    <p>Maecenas sapien erat, porta non porttitor non, dignissim et enim.</p>
+                    <ul class="list">
+                      <li><i class="fa fa-map-marker"></i>Address: House 20, Sector-7, Road-5, California, US</li>
+                      <li><i class="fa fa-headphones"></i>Phone: +(123) 45678 910</li>
+                      <li><i class="fa fa-headphones"></i>Email:<a href="mailto:info@youremail.com">Info@yourwebsite.com</a></li>
+                    </ul>	
+                  </div>
+                </div>	
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget links">
+                    <h2>Quick Links</h2>
+                    <ul class="list">
+                      <li><a href="about-us.html"><i class="fa fa-caret-right"></i>About Our Company</a></li>
+                      <li><a href="services.html"><i class="fa fa-caret-right"></i>Our Latest services</a></li>
+                      <li><a href="projects-masonry.html"><i class="fa fa-caret-right"></i>Our Recent Project</a></li>
+                      <li><a href="blogs-right-sidebar.html"><i class="fa fa-caret-right"></i>Latest Blog</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Help Desk</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Contact With Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget twitter">
+                    <h2>Recent Tweets</h2>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Mauris sagittis nibh et nibh commodo vehicula. Praesent blandit nulla nec tristique egestas. Integer in volutpat turpis</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Maecenas vulputate, dui eget varius sagittis, justo nunc efficitur sem, id vestibulum</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Praesent facilisis tortor nec diam suscipit condimentum</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget newsletter">
+                    <h2>Newsletter</h2>
+                    <p>consectetur adipiscing elit. Vestibulum vel sapien et lacus tempus varius. In finibus lorem vel.</p>
+                    <form>
+                      <input placeholder="Your Name" type="text">
+                      <input placeholder="your email" type="email">
+                      <button type="submit" class="button primary">Subscribe Now!</button>
+                    </form>	
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="bottom-top">
+                    <ul class="social">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <div class="copyright">
+                      <p>&copy; 2018 All Right Reserved. Design & Development By <a href="http://themelamp.com">ThemeLamp</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+       -->
+
+       <!-- Jquery -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery-migrate.min.js"></script>
+      <!-- Popper JS -->
+      <script src="/js/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="/js/bootstrap.min.js"></script>	
+      <!-- Modernizer JS -->
+      <script src="/js/modernizr.min.js"></script>
+      <!-- Nice select JS -->
+      <script src="/js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="/js/tilt.jquery.min.js"></script>
+      <!-- Fancybox  -->
+      <script src="/js/jquery.fancybox.min.js"></script>
+      <!-- Jquery Nav -->
+      <script src="/js/jquery.nav.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Slick Slider JS -->
+        <script src="/js/slickslider.min.js"></script>
+      <!-- Cube Portfolio JS -->
+      <script src="/js/cubeportfolio.min.js"></script>
+      <!-- Slicknav JS -->
+        <script src="/js/jquery.slicknav.min.js"></script>
+      <!-- Jquery Steller JS -->
+        <script src="/js/jquery.stellar.min.js"></script>
+      <!-- Magnific Popup JS -->
+        <script src="/js/magnific-popup.min.js"></script>
+      <!-- Wow JS -->
+      <script src="/js/wow.min.js"></script>
+      <!-- CounterUp JS -->
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Waypoint JS -->
+      <script src="/js/waypoints.min.js"></script>
+      <!-- Jquery Easing JS -->
+        <script src="/js/easing.min.js"></script>
+      <!-- Google Map JS -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM"></script>	
+        <script src="/js/gmap.min.js"></script>
+      <!-- Main JS -->
+      <script src="/js/main.js"></script>
+      <!-- <script src="/js/all.min.js"></script> -->
+
+      <script src="/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $('.sortedTable').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            }
+          });
+
+          $('.sortedTableDesc').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            },
+            "order": [[ 0, "desc" ]]
+          });
+        });
+      </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+---
+layout: layout.liquid
+title: Síň slávy
+---
+
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Síň slávy</span>
+          <h1>Síň slávy</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    {# <section id="team" class="team section">
+      {{ 0.0 | incInit }}
+
+	  <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+                <h1>Síň slávy</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"><h3>Nejvíce akcí</h3></div>
+            {%- for competitor in competitors.competitors | theBests_countOfActions(5) -%}
+            <div class="col-2 wow fadeInUp" data-wow-delay="{{ 0.2 | incBy }}s" data-tilt>
+              <div class="single-team">
+                <div class="t-head">
+                  <div class="row" style="height: 20px"></div>
+
+                  <div class="t-icon">
+                    <a href="/Zavodnik/{{ competitor.guid }}/"><i class="fa fa-plus"></i></a>
+                  </div>
+                </div>
+                <div class="t-bottom">
+                    <p>{{ competitor.actions | count }}</p>
+                    <h2>{{ competitor.surname }}, {{ competitor.name }}</h2>
+                </div>
+              </div>
+            </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </section> #}

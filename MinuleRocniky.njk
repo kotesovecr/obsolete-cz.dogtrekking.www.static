@@ -1,0 +1,23 @@
+---
+layout: layout.liquid
+title: Minulé ročníky
+---
+
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Minulé ročníky</span>
+          <h1>Minulé ročníky</h1>
+        </div>
+      </div>
+    </div>
+
+    {%- for year in years -%}
+      <div class="row">
+        <h3><a href="/Terminovka/{{ year }}/">{{ year }}</a></h3>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>

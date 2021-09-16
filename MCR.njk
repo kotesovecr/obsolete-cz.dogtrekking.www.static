@@ -1,0 +1,29 @@
+---
+layout: layout.liquid
+title: Výsledky seriálů MČR
+---
+
+
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Seriály</span>
+          <h1>Výsledky seriálu Mistrovství ČR v Dogtrekkingu</h1>
+          <h6>a neoficiální výsledky v Mistrovství ČR v Dogmaratonu <i>(snaha o přepisování, ale výsledky nejsou kontrolovány)</i></h6>      
+        </div>
+      </div>
+    </div>
+
+    {%- for s in series.series -%}
+    <div class="row">
+        <a href="/serie/{{ s.info.name | slug }}/">
+          <div class="col">
+            {{ s.info.name }}
+          </div>
+        </a>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>

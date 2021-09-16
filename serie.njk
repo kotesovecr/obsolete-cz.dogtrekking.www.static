@@ -1,0 +1,57 @@
+---
+layout: layout.liquid
+pagination: 
+  data: series.series
+  size: 1
+  alias: serie
+permalink: "serie/{{ serie.info.name | slug }}/"
+---
+
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Seriál</span>
+          <h1>{{ serie.info.name }}</h1>
+        </div>
+      </div>
+    </div>
+    {%- for ctg in serie.results.Definitions.Categories -%}
+      <div class="row">
+        <div class="col">
+          <h1>{{ ctg.Name }}</h1>
+          <table>
+            <thead>
+              <th><div class="text">#</div></th>
+              <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th>
+              {%- for race in serie.results.Definitions.Races -%}
+                <th class='rotate'><div><span>{{ race.ActionName }}</span></div></th>
+              {%- endfor -%}
+              <th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+            </thead>
+            <tbody>
+            {%- for rCtg in serie.results.Results.Categories -%}
+              {%- if rCtg.Id == ctg.Id -%}
+                {%- for rCompetitor in rCtg.Competitors -%}
+                  <tr>
+                    <td>{{ rCompetitor.Order }}</td>
+                    <td><a href="/Zavodnik/{{ rCompetitor.GuidCompetitor}}/">{{ rCompetitor.Surname }}, {{ rCompetitor.Name }}</a></td>
+                    {%- for race in serie.results.Definitions.Races -%}
+                      <td>{{ rCompetitor.Results | getPointsForRace(race) }}</td>
+                    {%- endfor -%}
+                    <td>{{ rCompetitor.TheBestNScore }} / {{ rCompetitor.Score }} / {{ rCompetitor.Distance }}</td>
+                  </tr>
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<hr />
+<a href="/MCR/">Zpět na MČR</a>

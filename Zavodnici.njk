@@ -1,0 +1,35 @@
+---
+layout: layout.liquid
+title: Závodníci
+---
+
+<section id="team" class="team section">
+  <div class="container">
+    <div class="row">
+      <h4>Závodníci</h4>
+    </div>
+    <hr />
+    <table class="sortedTableDesc">
+      <thead>
+        <th style="display:none"></th>
+        <th>Příjmení, jméno</th>
+        <th>Celkem akcí</th>
+        <th>Nachozeno km</th>
+        <th>Nastoupáno metrů</th>
+        <th>Průměrná rychlost km/hod</th>
+      </thead>
+      <tbody>
+      {%- for competitor in competitors.competitors -%}
+        <tr>
+          <td style="display:none">{{ competitor.actions | count }}</td>
+          <td><a href="/Zavodnik/{{competitor.guid}}/index.html">{{ competitor.surname }}, {{ competitor.name }}</a></td>
+          <td>{{ competitor.actions | count }}</td>
+          <td>{{ competitor.actions | countOfKm }}</td>
+          <td>{{ competitor.actions | countOfElevatedM }}</td>
+          <td>{{ competitor.actions | averageSpeed }}</td>
+        </tr>
+      {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+</section>

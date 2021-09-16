@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta tag -->
+		<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="Radix" content="Responsive Multipurpose Business Template">
+		<meta name='copyright' content='Radix'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+		
+    <title> DOGTREKKING - </title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+               integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+               crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+               integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+               crossorigin=""></script>
+
+               
+        <link rel="icon" type="image/gif" href="/images/mcr_dt.gif">
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+        
+		<!-- Bootstrap Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Slick Nav CSS -->
+        <link rel="stylesheet" href="/css/slicknav.min.css">
+		<!-- Cube Portfolio CSS -->
+        <link rel="stylesheet" href="/css/cubeportfolio.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="/css/magnific-popup.min.css">
+		<!-- Fancy Box CSS -->
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+		<!-- Nice Select CSS -->
+        <link rel="stylesheet" href="/css/niceselect.css">
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="/css/owl.theme.default.css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+		<!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="/css/slickslider.min.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="/css/animate.min.css">
+		
+		<!-- Radix StyleShet CSS -->
+        <link rel="stylesheet" href="/css/reset.css">	
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/responsive.css">	
+
+		<!-- Radix Color CSS -->
+		<link rel="stylesheet" href="/css/color/color1.css">
+		<!--<link rel="stylesheet" href="css/color/color2.css">-->
+		<!--<link rel="stylesheet" href="css/color/color3.css">-->
+		<!--<link rel="stylesheet" href="css/color/color4.css">-->
+		<!--<link rel="stylesheet" href="css/color/color5.css">-->
+		<!--<link rel="stylesheet" href="css/color/color6.css">-->
+		<!--<link rel="stylesheet" href="css/color/color7.css">-->
+		<!--<link rel="stylesheet" href="css/color/color8.css">-->
+		<!--<link rel="stylesheet" href="css/color/color9.css">-->
+		<!--<link rel="stylesheet" href="css/color/color10.css">-->
+
+		<!--[if lt IE 9]>
+           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+
+        <link rel="stylesheet" href="/css/leaflet.css">
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="/css/gallery.css">
+    </head>
+    <body>
+      <header id="header" class="header">
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+							  <ul class="contact">
+                  <li><i class="fa fa-envelope"></i><a href="mailto:info@dogtrekking.cz">info@dogtrekking.cz</a></li>
+                  <li><i class="fa fa-clock"></i>Data platná k času: 27.06.2021 22:26:52</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <div class="logo">
+                  <a href="/index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="link"><a href="/index.html"><span>DT</span></a></div>
+                <button class="mobile-arrow"><i class="fa fa-bars"></i></button>
+                <div class="mobile-menu"></div>
+              </div>
+              <div class="col-lg-10 col-12">
+                <div class="mainmenu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      
+                        <li>
+                          <a href="/Aktuality">Aktuality</a></li>
+                      
+                        <li>
+                          <a href="/Informace">Informace</a><ul class="dropdown"><li>
+                                  <a href="/SoutezniRad">Soutěžní řád</a>
+                                </li><li>
+                                  <a href="/OStrankach">O stránkách</a>
+                                </li><li>
+                                  <a href="/NabidkaPrace">Nabídka práce</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="/Terminovka/2021">Termínovka</a></li>
+                      
+                        <li>
+                          <a href="/MCR">MČR</a></li>
+                      
+                        <li>
+                          <a href="/Zavodnici">Závodníci</a></li>
+                      
+                        <li>
+                          <a href="/Historie">Historie</a><ul class="dropdown"><li>
+                                  <a href="/SinSlavy">Síň slávy</a>
+                                </li><li>
+                                  <a href="/MinuleRocniky">Minulé ročníky</a>
+                                </li><li>
+                                  <a href="/Galerie">Galerie</a>
+                                </li></ul></li>
+                      
+                        <li>
+                          <a href="https://muj.dogtrekking.cz/">Můj DT</a></li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+        
+        
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Seriál</span>
+          <h1>Dogtrekking MČR 2021</h1>
+        </div>
+      </div>
+    </div><div class="row">
+        <div class="col">
+          <h1>DTW1</h1>
+          <table>
+            <thead>
+              <th><div class="text">#</div></th>
+              <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th><th class='rotate'><div><span>DOGTREKKING ZA POKLADEM VOKA IV. Z HOLŠTEJNA - ZRUŠENO</span></div></th><th class='rotate'><div><span>ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</span></div></th><th class='rotate'><div><span>PO STOPÁCH TOULOVCE - ZRUŠENO</span></div></th><th class='rotate'><div><span>STÍNEM BESKYDSKÉHO RYSA</span></div></th><th class='rotate'><div><span>STOPOU STREJDY ŠERÁKA</span></div></th><th class='rotate'><div><span>KRAJEM BŘIDLICE</span></div></th><th class='rotate'><div><span>FRYŠTÁCKÝ DOGTREKKING</span></div></th><th class='rotate'><div><span>ZDE JSOU LVI</span></div></th><th class='rotate'><div><span>Po stopách Járy Cimrmana</span></div></th><th class='rotate'><div><span>Šlapanický dogtrekking</span></div></th><th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+            </thead>
+            <tbody><tr>
+                    <td>1</td>
+                    <td><a href="/Zavodnik/0e3731c6-7dd6-405a-8e6c-9b77b26e3061/">Pichrtová, Lucie</a></td><td>0</td><td>0</td><td>0</td><td>15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>15 / 15 / 0</td>
+                  </tr><tr>
+                    <td>2</td>
+                    <td><a href="/Zavodnik/b3e114fe-a8fe-4d8f-90a6-a2e208e2651c/">Brlejová, Sarah</a></td><td>0</td><td>0</td><td>0</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>14 / 14 / 0</td>
+                  </tr><tr>
+                    <td>3</td>
+                    <td><a href="/Zavodnik/da2bb87e-bcde-476f-92e2-992bd19b2c5f/">Foralová, Anna</a></td><td>0</td><td>0</td><td>0</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>13 / 13 / 0</td>
+                  </tr><tr>
+                    <td>4</td>
+                    <td><a href="/Zavodnik/a5ffb69c-56be-4b9b-8d57-055b03d6ce24/">Podstavka, Monika</a></td><td>0</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12 / 12 / 0</td>
+                  </tr><tr>
+                    <td>5</td>
+                    <td><a href="/Zavodnik/be6b8c09-57d0-42f1-89a2-0098f6f9f699/">Král Hajlichová, Iveta</a></td><td>0</td><td>0</td><td>0</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11 / 11 / 0</td>
+                  </tr><tr>
+                    <td>6</td>
+                    <td><a href="/Zavodnik/fafee598-74f9-4414-bdf9-be48d3987229/">Hamáková, Nikol</a></td><td>0</td><td>0</td><td>0</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>10 / 10 / 0</td>
+                  </tr><tr>
+                    <td>7</td>
+                    <td><a href="/Zavodnik/b17934f8-4895-412e-91d0-4f72b083d60d/">Hambergerová, Marie</a></td><td>0</td><td>0</td><td>0</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9 / 9 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/86c8febf-03bd-4fe0-8c13-6b288d3bc7bd/">Horáčková , Stanislava </a></td><td>0</td><td>0</td><td>0</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>8 / 8 / 0</td>
+                  </tr><tr>
+                    <td>9</td>
+                    <td><a href="/Zavodnik/73d4599e-cd4e-4ceb-989f-1916fda2f44e/">Juřenová, Renáta</a></td><td>0</td><td>0</td><td>0</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>7 / 7 / 0</td>
+                  </tr><tr>
+                    <td>10</td>
+                    <td><a href="/Zavodnik/23331399-9730-4a1e-8561-476389a33e90/">Foberová, Markéta</a></td><td>0</td><td>0</td><td>0</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>6 / 6 / 0</td>
+                  </tr><tr>
+                    <td>11</td>
+                    <td><a href="/Zavodnik/e9ee4afa-5c24-407a-8ddd-8607deb97ff3/">Čermáková, Kristýna</a></td><td>0</td><td>0</td><td>0</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>5 / 5 / 0</td>
+                  </tr><tr>
+                    <td>12</td>
+                    <td><a href="/Zavodnik/6557687b-500c-4101-a5ff-5dfaf861c154/">Jandeková, Nela</a></td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4 / 4 / 0</td>
+                  </tr><tr>
+                    <td>13</td>
+                    <td><a href="/Zavodnik/37829026-53ca-4bb8-a094-ddb2e1cd462a/">Ledvinková, Juliána</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>13</td>
+                    <td><a href="/Zavodnik/051f42f1-7a19-421b-9c25-c93781a1636b/">Barvínková , Petra </a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>13</td>
+                    <td><a href="/Zavodnik/14ee3e66-d53a-420e-a230-992d94a24f99/">Moore , Veronica </a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>13</td>
+                    <td><a href="/Zavodnik/12d268b5-edcf-4d99-9ae1-8f695a743bff/">Průchová, Martina</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>13</td>
+                    <td><a href="/Zavodnik/1bbf46f9-f9d6-48e1-92ee-af5ec245b8a2/">Dohnalová , Karolína </a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr></tbody>
+          </table>
+        </div>
+      </div><div class="row">
+        <div class="col">
+          <h1>DTM1</h1>
+          <table>
+            <thead>
+              <th><div class="text">#</div></th>
+              <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th><th class='rotate'><div><span>DOGTREKKING ZA POKLADEM VOKA IV. Z HOLŠTEJNA - ZRUŠENO</span></div></th><th class='rotate'><div><span>ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</span></div></th><th class='rotate'><div><span>PO STOPÁCH TOULOVCE - ZRUŠENO</span></div></th><th class='rotate'><div><span>STÍNEM BESKYDSKÉHO RYSA</span></div></th><th class='rotate'><div><span>STOPOU STREJDY ŠERÁKA</span></div></th><th class='rotate'><div><span>KRAJEM BŘIDLICE</span></div></th><th class='rotate'><div><span>FRYŠTÁCKÝ DOGTREKKING</span></div></th><th class='rotate'><div><span>ZDE JSOU LVI</span></div></th><th class='rotate'><div><span>Po stopách Járy Cimrmana</span></div></th><th class='rotate'><div><span>Šlapanický dogtrekking</span></div></th><th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+            </thead>
+            <tbody><tr>
+                    <td>1</td>
+                    <td><a href="/Zavodnik/67b7cec5-0883-4cc1-a4ee-22737fdfae7f/">Adámek, Zbyněk</a></td><td>0</td><td>0</td><td>0</td><td>15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>15 / 15 / 0</td>
+                  </tr><tr>
+                    <td>2</td>
+                    <td><a href="/Zavodnik/64907fda-d625-413d-a116-96139415fa9d/">Jurča, Petr</a></td><td>0</td><td>0</td><td>0</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>14 / 14 / 0</td>
+                  </tr><tr>
+                    <td>3</td>
+                    <td><a href="/Zavodnik/7c839a68-cb25-4570-b409-603c445abbb9/">Panáček, Lukáš</a></td><td>0</td><td>0</td><td>0</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>13 / 13 / 0</td>
+                  </tr><tr>
+                    <td>4</td>
+                    <td><a href="/Zavodnik/b9f0690d-9524-4757-9221-0b19a15ae2aa/">Fortelný, Stanislav</a></td><td>0</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12 / 12 / 0</td>
+                  </tr><tr>
+                    <td>5</td>
+                    <td><a href="/Zavodnik/ccf7bb93-c755-4f0d-bf2c-7ea1723dc643/">Rečka, Vojtěch</a></td><td>0</td><td>0</td><td>0</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11 / 11 / 0</td>
+                  </tr><tr>
+                    <td>6</td>
+                    <td><a href="/Zavodnik/c1747b88-d14e-4207-9221-e09c4beda49f/">Hamberger, Martin</a></td><td>0</td><td>0</td><td>0</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>10 / 10 / 0</td>
+                  </tr><tr>
+                    <td>7</td>
+                    <td><a href="/Zavodnik/7ab05023-d86a-49ec-8892-ce5c1bc41c66/">Mihok, Michal</a></td><td>0</td><td>0</td><td>0</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9 / 9 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/1da963ca-3420-43cb-aa6b-a5e4d3794bcd/">Swaczyna, Radek</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/e9cb7979-4a33-47d3-9c5f-f2ce1dff174d/">Egg, Jiří</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/aee641fa-99f4-4454-8c43-62b6c0ba81b6/">Ledvinka, Bořivoj</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/7e88b58d-5f01-400e-b3ee-c2506e89921d/">Fuk, Petr</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/b2196c25-56c1-4783-9510-79ab3b9b9bf8/">Kovář, Martin</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/b90a681e-b202-47f1-ba4d-3ababd3728d9/">Družba, Lukáš</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/aaffd218-48d3-4aef-9a5c-484ae919e700/">Hájek, Daniel</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr></tbody>
+          </table>
+        </div>
+      </div><div class="row">
+        <div class="col">
+          <h1>DTW2</h1>
+          <table>
+            <thead>
+              <th><div class="text">#</div></th>
+              <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th><th class='rotate'><div><span>DOGTREKKING ZA POKLADEM VOKA IV. Z HOLŠTEJNA - ZRUŠENO</span></div></th><th class='rotate'><div><span>ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</span></div></th><th class='rotate'><div><span>PO STOPÁCH TOULOVCE - ZRUŠENO</span></div></th><th class='rotate'><div><span>STÍNEM BESKYDSKÉHO RYSA</span></div></th><th class='rotate'><div><span>STOPOU STREJDY ŠERÁKA</span></div></th><th class='rotate'><div><span>KRAJEM BŘIDLICE</span></div></th><th class='rotate'><div><span>FRYŠTÁCKÝ DOGTREKKING</span></div></th><th class='rotate'><div><span>ZDE JSOU LVI</span></div></th><th class='rotate'><div><span>Po stopách Járy Cimrmana</span></div></th><th class='rotate'><div><span>Šlapanický dogtrekking</span></div></th><th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+            </thead>
+            <tbody><tr>
+                    <td>1</td>
+                    <td><a href="/Zavodnik/eb87aa92-2f4f-481e-8413-2516da938691/">Bayerová, Helena </a></td><td>0</td><td>0</td><td>0</td><td>15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>15 / 15 / 0</td>
+                  </tr><tr>
+                    <td>2</td>
+                    <td><a href="/Zavodnik/a99c3e9a-b2a6-4ecc-adcf-f5feca396897/">Pacáková, Kateřina</a></td><td>0</td><td>0</td><td>0</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>14 / 14 / 0</td>
+                  </tr><tr>
+                    <td>3</td>
+                    <td><a href="/Zavodnik/b8a08d7d-9855-4300-8c66-563ccdc6f989/">Knopová, Kateřina</a></td><td>0</td><td>0</td><td>0</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>13 / 13 / 0</td>
+                  </tr><tr>
+                    <td>4</td>
+                    <td><a href="/Zavodnik/d28e8807-7620-4e9e-b279-7dab38ea0a4e/">Staníková , Dáša </a></td><td>0</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12 / 12 / 0</td>
+                  </tr><tr>
+                    <td>5</td>
+                    <td><a href="/Zavodnik/d695480d-d272-4b67-9f47-5e7bfaef7965/">Kourdi, Soolaima</a></td><td>0</td><td>0</td><td>0</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11 / 11 / 0</td>
+                  </tr><tr>
+                    <td>6</td>
+                    <td><a href="/Zavodnik/f8850ee6-03eb-44df-84ca-0d9167f94e9b/">Hrubcová, Dana</a></td><td>0</td><td>0</td><td>0</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>10 / 10 / 0</td>
+                  </tr><tr>
+                    <td>7</td>
+                    <td><a href="/Zavodnik/3e95e481-3edb-4f41-8227-91c0d2317cc8/">Majerová, Simona</a></td><td>0</td><td>0</td><td>0</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9 / 9 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/2fba7c87-1a57-4c20-9609-7fd54e257926/">Lojkásková, Irena</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/6d057cd7-67c2-4a43-a2f0-2113e721564a/">Grigelová, Ľubica</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/ff4a1d62-2ea0-4fec-a803-431faa4dc0b0/">Šestáková, Petra</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/b8eda40c-1378-44ff-8d72-72cac529bacd/">Ondrášková, Jana Gwen</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr></tbody>
+          </table>
+        </div>
+      </div><div class="row">
+        <div class="col">
+          <h1>DTM2</h1>
+          <table>
+            <thead>
+              <th><div class="text">#</div></th>
+              <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th><th class='rotate'><div><span>DOGTREKKING ZA POKLADEM VOKA IV. Z HOLŠTEJNA - ZRUŠENO</span></div></th><th class='rotate'><div><span>ŠLAPANICKÝ DOGTREKKING - PŘESUNUTO</span></div></th><th class='rotate'><div><span>PO STOPÁCH TOULOVCE - ZRUŠENO</span></div></th><th class='rotate'><div><span>STÍNEM BESKYDSKÉHO RYSA</span></div></th><th class='rotate'><div><span>STOPOU STREJDY ŠERÁKA</span></div></th><th class='rotate'><div><span>KRAJEM BŘIDLICE</span></div></th><th class='rotate'><div><span>FRYŠTÁCKÝ DOGTREKKING</span></div></th><th class='rotate'><div><span>ZDE JSOU LVI</span></div></th><th class='rotate'><div><span>Po stopách Járy Cimrmana</span></div></th><th class='rotate'><div><span>Šlapanický dogtrekking</span></div></th><th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+            </thead>
+            <tbody><tr>
+                    <td>1</td>
+                    <td><a href="/Zavodnik/0d327df1-7051-428c-afda-9ce6787316de/">Kocourek, Lubomír</a></td><td>0</td><td>0</td><td>0</td><td>15</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>15 / 15 / 0</td>
+                  </tr><tr>
+                    <td>2</td>
+                    <td><a href="/Zavodnik/abaa66f4-2430-416d-af7b-e4753b2b62da/">Koláček, Patrik</a></td><td>0</td><td>0</td><td>0</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>14 / 14 / 0</td>
+                  </tr><tr>
+                    <td>3</td>
+                    <td><a href="/Zavodnik/9e0b171f-5b02-407f-befa-73cea51b2483/">Školník, Pavel</a></td><td>0</td><td>0</td><td>0</td><td>13</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>13 / 13 / 0</td>
+                  </tr><tr>
+                    <td>4</td>
+                    <td><a href="/Zavodnik/4f0d2385-b70b-4ce0-b17e-b22a93190a4d/">Tonder, Čestmír</a></td><td>0</td><td>0</td><td>0</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12 / 12 / 0</td>
+                  </tr><tr>
+                    <td>5</td>
+                    <td><a href="/Zavodnik/34939ddf-1785-4cb3-befd-fe24c0c89a08/">Šeda, Jan</a></td><td>0</td><td>0</td><td>0</td><td>11</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11 / 11 / 0</td>
+                  </tr><tr>
+                    <td>6</td>
+                    <td><a href="/Zavodnik/23565766-af61-4e2e-a291-d5b7fd1d827b/">Zeman, Kryštof</a></td><td>0</td><td>0</td><td>0</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>10 / 10 / 0</td>
+                  </tr><tr>
+                    <td>7</td>
+                    <td><a href="/Zavodnik/648df4ec-61a4-4054-bac7-27b86fbd15e2/">Lédl, Martin</a></td><td>0</td><td>0</td><td>0</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>9 / 9 / 0</td>
+                  </tr><tr>
+                    <td>8</td>
+                    <td><a href="/Zavodnik/262bc9ad-596d-4b52-8ea9-468c47757c2f/">Hrubec, Tomáš</a></td><td>0</td><td>0</td><td>0</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>8 / 8 / 0</td>
+                  </tr><tr>
+                    <td>9</td>
+                    <td><a href="/Zavodnik/60b50e0c-62a4-479d-8b75-981bc6dff101/">Soudek, Vojta</a></td><td>0</td><td>0</td><td>0</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>7 / 7 / 0</td>
+                  </tr><tr>
+                    <td>10</td>
+                    <td><a href="/Zavodnik/08402044-e356-408b-92cd-ae3ca766b6b7/">Bolehovský, Libor</a></td><td>0</td><td>0</td><td>0</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>6 / 6 / 0</td>
+                  </tr><tr>
+                    <td>11</td>
+                    <td><a href="/Zavodnik/fdb0b1ce-6875-44da-bda0-1747b85286b2/">Běhal, Josef</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>11</td>
+                    <td><a href="/Zavodnik/f401bca5-044a-4749-a907-15445d11c76f/">Bodlák, Luboš</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>11</td>
+                    <td><a href="/Zavodnik/5af40551-2aa3-415e-b21d-0008805bf1d6/">Šesták, Lukáš</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>11</td>
+                    <td><a href="/Zavodnik/663df162-d9a2-4f80-b4af-d45c07c5150b/">Hirsch, Jan</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr><tr>
+                    <td>11</td>
+                    <td><a href="/Zavodnik/aae94388-3fc1-4e55-aae6-4dbf22ed4d87/">Dvořák, Petr</a></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 / 0 / 0</td>
+                  </tr></tbody>
+          </table>
+        </div>
+      </div></div>
+</section>
+
+<hr />
+<a href="/MCR/">Zpět na MČR</a>
+
+        <!-- <footer id="footer" class="footer wow fadeIn">
+          <div class="top-arrow">
+            <a href="#header" class="btn"><i class="fa fa-angle-up"></i></a>
+          </div>
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget about">
+                    <h2>Office Location</h2>
+                    <p>Maecenas sapien erat, porta non porttitor non, dignissim et enim.</p>
+                    <ul class="list">
+                      <li><i class="fa fa-map-marker"></i>Address: House 20, Sector-7, Road-5, California, US</li>
+                      <li><i class="fa fa-headphones"></i>Phone: +(123) 45678 910</li>
+                      <li><i class="fa fa-headphones"></i>Email:<a href="mailto:info@youremail.com">Info@yourwebsite.com</a></li>
+                    </ul>	
+                  </div>
+                </div>	
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget links">
+                    <h2>Quick Links</h2>
+                    <ul class="list">
+                      <li><a href="about-us.html"><i class="fa fa-caret-right"></i>About Our Company</a></li>
+                      <li><a href="services.html"><i class="fa fa-caret-right"></i>Our Latest services</a></li>
+                      <li><a href="projects-masonry.html"><i class="fa fa-caret-right"></i>Our Recent Project</a></li>
+                      <li><a href="blogs-right-sidebar.html"><i class="fa fa-caret-right"></i>Latest Blog</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Help Desk</a></li>
+                      <li><a href="contact.html"><i class="fa fa-caret-right"></i>Contact With Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget twitter">
+                    <h2>Recent Tweets</h2>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Mauris sagittis nibh et nibh commodo vehicula. Praesent blandit nulla nec tristique egestas. Integer in volutpat turpis</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Maecenas vulputate, dui eget varius sagittis, justo nunc efficitur sem, id vestibulum</p>
+                    </div>
+                    <div class="single-tweet">
+                      <i class="fa fa-twitter"></i>
+                      <p><a href="#">@Radix</a>Praesent facilisis tortor nec diam suscipit condimentum</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="single-widget newsletter">
+                    <h2>Newsletter</h2>
+                    <p>consectetur adipiscing elit. Vestibulum vel sapien et lacus tempus varius. In finibus lorem vel.</p>
+                    <form>
+                      <input placeholder="Your Name" type="text">
+                      <input placeholder="your email" type="email">
+                      <button type="submit" class="button primary">Subscribe Now!</button>
+                    </form>	
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="bottom-top">
+                    <ul class="social">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                    <div class="copyright">
+                      <p>&copy; 2018 All Right Reserved. Design & Development By <a href="http://themelamp.com">ThemeLamp</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+       -->
+
+       <!-- Jquery -->
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery-migrate.min.js"></script>
+      <!-- Popper JS -->
+      <script src="/js/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="/js/bootstrap.min.js"></script>	
+      <!-- Modernizer JS -->
+      <script src="/js/modernizr.min.js"></script>
+      <!-- Nice select JS -->
+      <script src="/js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="/js/tilt.jquery.min.js"></script>
+      <!-- Fancybox  -->
+      <script src="/js/jquery.fancybox.min.js"></script>
+      <!-- Jquery Nav -->
+      <script src="/js/jquery.nav.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="/js/owl.carousel.min.js"></script>
+      <!-- Slick Slider JS -->
+        <script src="/js/slickslider.min.js"></script>
+      <!-- Cube Portfolio JS -->
+      <script src="/js/cubeportfolio.min.js"></script>
+      <!-- Slicknav JS -->
+        <script src="/js/jquery.slicknav.min.js"></script>
+      <!-- Jquery Steller JS -->
+        <script src="/js/jquery.stellar.min.js"></script>
+      <!-- Magnific Popup JS -->
+        <script src="/js/magnific-popup.min.js"></script>
+      <!-- Wow JS -->
+      <script src="/js/wow.min.js"></script>
+      <!-- CounterUp JS -->
+      <script src="/js/jquery.counterup.min.js"></script>
+      <!-- Waypoint JS -->
+      <script src="/js/waypoints.min.js"></script>
+      <!-- Jquery Easing JS -->
+        <script src="/js/easing.min.js"></script>
+      <!-- Google Map JS -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM"></script>	
+        <script src="/js/gmap.min.js"></script>
+      <!-- Main JS -->
+      <script src="/js/main.js"></script>
+      <!-- <script src="/js/all.min.js"></script> -->
+
+      <script src="/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $('.sortedTable').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            }
+          });
+
+          $('.sortedTableDesc').DataTable( {
+            language: {
+              url: '/js/dataTables.Czech.json'
+            },
+            "order": [[ 0, "desc" ]]
+          });
+        });
+      </script>
+    </body>
+</html>

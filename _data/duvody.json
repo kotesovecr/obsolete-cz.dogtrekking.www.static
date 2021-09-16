@@ -1,0 +1,4 @@
+[
+    "Náhrada dynamicky generovaného webu vytvořeného pomocí ASP.NET MVC a pomocí šablonovitého systému RAZOR, což vytváří extrémní zátěž na webový server",
+    "Možnost automatického spouštění skriptu pro generování statického webu z jiného serveru (každou hodinu, což je pro četnost úprav dat dostatečné)"
+]
