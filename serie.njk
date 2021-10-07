@@ -17,6 +17,12 @@ permalink: "serie/{{ serie.info.name | slug }}/"
         </div>
       </div>
     </div>
+    <div class="row">
+      <h3>Nastavená pravidla bodování: <i>{{ serie.info.sorting_name }}</i></h3>
+      <p>
+        {{ serie.info.sorting_description }}
+      </p>
+    </div>
     {%- for ctg in serie.results.Definitions.Categories -%}
       <div class="row">
         <div class="col">
