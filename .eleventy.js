@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
 
   eleventyConfig.addPlugin(syntaxHighlight, {
-    lineSeparator: ""
+    lineSeparator: "\n"
   });
 
   eleventyConfig.addFilter('log', value => {
