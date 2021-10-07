@@ -19,7 +19,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("js");
 
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    lineSeparator: ""
+  });
 
   eleventyConfig.addFilter('log', value => {
     console.log(value)
