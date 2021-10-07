@@ -18,10 +18,18 @@ permalink: "serie/{{ serie.info.name | slug }}/"
       </div>
     </div>
     <div class="row">
-      <h5>Nastavená pravidla bodování: <i>{{ serie.info.sorting_name }}</i></h5>
-      <p>
-        {{ serie.info.sorting_description }}
-      </p>
+      <div class="col-12">
+        <h5>Nastavená pravidla bodování: <i>{{ serie.info.sorting_name }}</i></h5>
+        <p>
+          {{ serie.info.sorting_description }}
+          <input type='button' value='Zobraz kód pro řazení' onClick='toggleCodeView()' />
+        </p>
+        <div id="codeView" style="display: none">
+          {% highlight "csharp" %}
+            {{ serie.info.sorting_algorithm | safe }}
+          {% endhighlight %}
+        </div>
+      </div>
     </div>
     {%- for ctg in serie.results.Definitions.Categories -%}
       <div class="row">
@@ -61,3 +69,14 @@ permalink: "serie/{{ serie.info.name | slug }}/"
 
 <hr />
 <a href="/MCR/">Zpět na MČR</a>
+
+<script>
+  var codeViewHidden = true;
+  function toggleCodeView() {
+    let ele = document.getElementById('codeView');
+    ele.style.display = codeViewHidden ? "block" : "none";
+    ele.value = codeViewHidden ? "Skrýt kód pro řazení" : "Zobraz kód pro řazení";
+
+    codeViewHidden = !codeViewHidden;
+  }
+</script>

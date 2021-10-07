@@ -1,6 +1,8 @@
 const { default: fetch } = require("node-fetch");
 const moment = require("moment");
 const stringify = require('javascript-stringify').stringify;
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 
 var globalI = 0;
 
@@ -16,6 +18,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("js");
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addFilter('log', value => {
     console.log(value)
