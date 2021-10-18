@@ -23,7 +23,7 @@ permalink: "Zavodnik/{{ competitor.guid | slug }}/"
               </div>
 						</div>
 					</div>
-					<div class="col-lg-7 col-12">
+					<div class="col-lg-7 col-12" id="profileImage">
             Pro umístění fotky pošlete vlastní foto s názvem <b>{{ competitor.guid }}.jpeg</b> na adresu info@dogtrekking.cz.
 					</div>
 				</div>
@@ -81,3 +81,25 @@ permalink: "Zavodnik/{{ competitor.guid | slug }}/"
 
 <hr />
 <a href="/Zavodnici/">Zpět na všechny závodníky</a>
+
+<script>
+  function checkImage(imageSrc, good, bad) {
+    var img = new Image();
+    img.onload = good; 
+    img.onerror = bad;
+    img.src = imageSrc;
+  }
+
+  // Append profile image to the profile DIV
+  checkImage("/Zavodnik/{{ competitor.guid | slug }}/{{ competitor.guid | slug }}.jpeg"
+    , function() { 
+	  var img = new Image();
+      img.src = "/Zavodnik/{{ competitor.guid | slug }}/{{ competitor.guid | slug }}.jpeg";
+	  
+	  getElementById("profileImage").appendChild(img);
+    }
+    , function() {
+      // ... 
+    } 
+  );
+</script>
