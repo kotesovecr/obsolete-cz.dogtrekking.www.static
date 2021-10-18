@@ -94,9 +94,9 @@ permalink: "Zavodnik/{{ competitor.guid | slug }}/"
   checkImage("/Zavodnik/{{ competitor.guid | slug }}/{{ competitor.guid | slug }}.jpeg"
     , function() { 
 	  var img = new Image();
-      img.src = "/Zavodnik/{{ competitor.guid | slug }}/{{ competitor.guid | slug }}.jpeg";
+      img.src = "/images/Zavodnici/{{ competitor.guid | slug }}.jpeg";
 	  
-	  getElementById("profileImage").appendChild(img);
+	  document.getElementById("profileImage").appendChild(img);
     }
     , function() {
       // ... 
