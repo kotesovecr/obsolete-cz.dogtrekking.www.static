@@ -3276,3 +3276,42 @@ Version: 1.0
 
 	margin-right: 5px;
   }
+
+  table.styled {
+	overflow: hidden !important;
+	z-index: 100;
+  }
+
+  table.styled tbody > tr:hover {
+	background-color: #ffa;
+  }
+
+  table.styled td {
+	position: relative !important;
+  }
+
+  table.styled td:hover::after {
+	content: "" !important;
+	position: absolute !important;
+	background-color: #ffa !important;
+	left: 0 !important;
+	top: -5000px  !important;
+	height: 10000px  !important;
+	width: 100% !important;
+	z-index: -1 !important;
+  }
+
+  th.rotate {	
+	vertical-align: bottom;
+    text-align: center;
+	min-width: 45px;
+  }
+
+  th.rotate span 
+  {
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	transform: rotate(-170deg);
+	white-space: nowrap;
+  }

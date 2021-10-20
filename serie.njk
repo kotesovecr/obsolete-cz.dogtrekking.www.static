@@ -31,18 +31,23 @@ permalink: "serie/{{ serie.info.name | slug }}/"
         </div>
       </div>
     </div>
-    {%- for ctg in serie.results.Definitions.Categories -%}
-      <div class="row">
-        <div class="col">
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+      {%- for ctg in serie.results.Definitions.Categories -%}
+        <div class="col" style="border: 1px solid black; margin: 5px;">
           <h1>{{ ctg.Name }}</h1>
-          <table>
+          <table class="styled">
             <thead>
-              <th><div class="text">#</div></th>
-              <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th>
-              {%- for race in serie.results.Definitions.Races -%}
-                <th class='rotate'><div><span>{{ race.ActionName }}</span></div></th>
-              {%- endfor -%}
-              <th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+              <tr>
+                <th><div class="text">#</div></th>
+                <th class='rotate'><div><span class='namesurname'>Příjmení, jméno</span></div></th>
+                {%- for race in serie.results.Definitions.Races -%}
+                  <th class='rotate'><div><span>{{ race.ActionName }}</span></div></th>
+                {%- endfor -%}
+                <th class='rotate'><div><span class='result'>Výsledek</span></div></th>
+              </tr>
             </thead>
             <tbody>
             {%- for rCtg in serie.results.Results.Categories -%}
@@ -62,11 +67,9 @@ permalink: "serie/{{ serie.info.name | slug }}/"
             </tbody>
           </table>
         </div>
-      </div>
-    {%- endfor -%}
+      {%- endfor -%}
   </div>
-</section>
-
+</div>
 <hr />
 <a href="/MCR/">Zpět na MČR</a>
 
