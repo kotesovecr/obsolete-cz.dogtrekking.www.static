@@ -10,7 +10,7 @@ const httpsAgent = new https.Agent({
 module.exports = async function() {
   // let json = await Cache("http://localhost:13124/serie_all", {
     let json = await Cache("https://rest.dogtrekking.cz/serie_all", {
-      duration: "1d", // 1 day
+      duration: "1h", // 1 day
       type: "json", // also supports "text" or "buffer"
       fetchOptions: {
         method: 'GET',

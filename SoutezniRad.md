@@ -3,8 +3,23 @@ layout: layout.liquid
 title: Soutěžní řád
 ---
 
-<p class="normalni" align="center" style="text-align:center"><b>
-    <span style="font-size:18.0pt;font-family:Tahoma">SOUTĚŽNÍ ŘÁD DOGTREKKINGU</span></b></p>
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Řád DT</span>
+          <h1>Soutěžní řád dogtrekkingu</h1>
+        </div>
+      </div>
+    </div>
+    <br /><hr /><br />
+    <div class="row">
+
+
+<p class="normalni" align="center" style="text-align:center">
+  <b><span style="font-size:18.0pt;font-family:Tahoma">SOUTĚŽNÍ ŘÁD DOGTREKKINGU</span></b>
+</p>
 	<p align="center"><i><b><font size="1">aktualizace na základě schůzky TVDT 
     12/2017</font></b></i><!--mstheme--></font></td>
     <p class="normalni" align="center" style="text-align:center"><b>
@@ -352,3 +367,7 @@ font-family:Tahoma">Disciplinární řízení</span><span style="font-size:10.0p
 Tahoma">Odvolání</span></b><span style="font-size:10.0pt;font-family:Tahoma"> - 
     rozhodnutí vedení akce je pro danou akci konečné a nenapadnutelné. </span>
     </p>
+
+</div>
+  </div>
+</div>

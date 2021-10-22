@@ -17,19 +17,45 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         </div>
       </div>
     </div>
+    <hr />
     <div class="row">
-      <div class="col-lg-6 col-12">
-        <h4>Aktuality</h4>
-        <ul>
-        {%- for news in actionNews.actionNews | sortedNews -%}
-          {%- if news.id_action == action.Id -%}
-            <li>{{ news.created }}: {{ news.text | safe }}</li>
+      <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="true">Informace</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="false">Aktuality</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="propositions-tab" data-toggle="tab" href="#propositions" role="tab" aria-controls="propositions" aria-selected="false">Propozice</a>
+        </li>
+        <li class="nav-item">
+          {%- if action.IsEnteringOpened == "1" -%}
+            <a class="nav-link" id="applying-tab" data-toggle="tab" href="#applying" role="tab" aria-controls="applying" aria-selected="false">Přihláška</a>
+          {%- else -%}
+            <a class="nav-link disabled" id="applying-tab" data-toggle="tab" href="#applying" role="tab" aria-controls="applying" aria-selected="false">Přihláška</a>
           {%- endif -%}
-        {%- endfor -%}
-        </ul>
-      </div>
-      <div class="col-lg-6 col-12">
+        </li>
+        <li class="nav-item">
+            {%- if action.IsEnteringOpened == "1" -%}
+              <a class="nav-link" id="entered-tab" data-toggle="tab" href="#entered" role="tab" aria-controls="entered" aria-selected="false">Přihlášení</a>
+            {%- else -%}
+              <a class="nav-link disabled" id="entered-tab" data-toggle="tab" href="#entered" role="tab" aria-controls="entered" aria-selected="false">Přihlášení</a>
+            {%- endif -%}
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="results-tab" data-toggle="tab" href="#results" role="tab" aria-controls="results" aria-selected="false">Výsledky</a>
+        </li>
+      </ul>
+    </div>
+
+    {# =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #}
+
+    <div class="tab-content">
+      {# Informations #}
+      <div class="tab-pane active" id="information" role="tabpanel" aria-labelledby="information-tab">
         <h4>Informace</h4>
+        <hr />
         <div class="container">
           <div class="row">
             <div class="col-6">
@@ -112,233 +138,227 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               {%- endfor -%}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-	  <div class="row">
-	    <div class="row">
-        <div class="col-12">
-		      {%- if action.Latitude > 0.0 -%}
-            <div id="mapid"></div>
+          {%- if action.Latitude > 0.0 -%}
+          <div class="row">
+            <div class="col-12">
+              <div id="mapid"></div>
+            </div>
+          </div>
 		      {%- endif -%}
         </div>
       </div>
-	  </div>
 
-    {%- if action.IsEnteringOpened == "1" -%}
-      <div class="row">
-        <div class="col-12">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="entry-tab" data-toggle="tab" href="#entry" role="tab" aria-controls="entry" aria-selected="true">Přihláška</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="entries-tab" data-toggle="tab" href="#entries" role="tab" aria-controls="entries" aria-selected="false">Přihlášení</a>
-            </li>
-          </ul>            
-  
-          <div class="tab-content">
-            <div class="tab-pane active" id="entry" role="tabpanel" aria-labelledby="entry-tab">
-              <div class="container">
-                <form>
-                  <div class="row">
-                    <div class="col-3">
-                      Závod:
-                    </div>
-                    <div class="col-9">
-                      <select id="raceRaces">
-                        <option value="0">--== VYBER ZÁVOD ==--</option>
-                        {%- for race in action.Races -%}
-                          <option value={{ race.Id }}>{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m]</option>
-                        {%- endfor -%}
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      Kategorie:
-                    </div>
-                    <div class="col-9">
-                      <select id="raceCategories">
-                        <option value="0">--== Nejdříve vyber závod ==--</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="fname">Jméno:</label>
-                    </div>
-                    <div class="col-9">
-                      <input type="text" autocomplete="given-name" id="fname" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="lname">Příjmení:</label>
-                    </div>
-                    <div class="col-9">
-                      <input type="text" autocomplete="family-name" id="lname" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="phone">Telefon</label>
-                    </div>
-                    <div class="col-9">
-                      <input type="tel" autocomplete="tel" id="phone" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="mail">E-Mail</label>
-                    </div>
-                    <div class="col-9">
-                      <input type="mail" autocomplete="email" id="mail" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="bday">Datum narození</label>
-                    </div>
-                    <div class="col-9">
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-3">Den:</div>
-                          <div class="col-3">Měsíc:</div>
-                          <div class="col-3">Rok:</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-3"><input type="text" autocomplete="bday-day" id="bday" /></div>
-                          <div class="col-3"><input type="text" autocomplete="bday-month" id="bmonth" /></div>
-                          <div class="col-3"><input type="text" autocomplete="bday-year" id="byear" /></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="address">Adresa</label>
-                    </div>
-                    <div class="col-9">
-                      <input type="text" autocomplete="street-address" id="address" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="city">Město</label>
-                    </div>
-                    <div class="col-9">
-                      <input type="text" autocomplete="address-level2" id="city" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <label for="dogs">Psi</label>
-                    </div>
-                    <div class="col-9">
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-3">
-                            <label for="dog_name">Jméno psa</label>
-                          </div>
-                          <div class="col-9">
-                            <input type="text" id="dog_name" />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-3">
-                            <label for="dog_pedigree">Plemeno</label>
-                          </div>
-                          <div class="col-9">
-                            <input type="text" id="dog_pedigree" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="tab-pane active" id="entries" role="tabpanel" aria-labelledby="entries-tab">
-              <div class="container">
-              </div>
+      {# News #}
+      <div class="tab-pane" id="news" role="tabpanel" aria-labelledby="news-tab">
+        <h4>Aktuality</h4>
+        <hr />
+        <ul>
+        {%- for news in actionNews.actionNews | sortedNews -%}
+          {%- if news.id_action == action.Id -%}
+            <li>{{ news.created }}: {{ news.text | safe }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+        </ul>
+      </div>
+      
+      {# Propositions #}
+      <div class="tab-pane" id="propositions" role="tabpanel" aria-labelledby="propositions-tab">
+        <h4>Propozice</h4>
+        <hr />
+        <div class="container">
+          <div class="row">
+            <div class="col">
             </div>
           </div>
         </div>
       </div>
-    {%- endif -%}
-  </div>
-</section>
-<section id="vysledky" class="portfolio section">
-			<div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title">
-              <h1>Výsledky</h1>
+      
+      {# Applying #}
+      <div class="tab-pane" id="applying" role="tabpanel" aria-labelledby="applying-tab">
+        <h4>Přihláška</h4>
+        <hr />
+        <div class="container">
+          <form>
+            <div class="row">
+              <div class="col-3">
+                Závod:
+              </div>
+              <div class="col-9">
+                <select id="raceRaces">
+                  <option value="0">--== VYBER ZÁVOD ==--</option>
+                  {%- for race in action.Races -%}
+                    <option value={{ race.Id }}>{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m]</option>
+                  {%- endfor -%}
+                </select>
+              </div>
             </div>
-          </div>
-        </div>
-        {%- for race in action.Races -%}
-          <div class="row">
-            <div class="col-12">
-              <div class="container">
-                <div class="row">
-                  {%- for category in race.Categories -%}
-                    <div class="col-lg-6 col-12">
-                      {%- if race.SerieType == 'MCR_DT' -%}
-                        <h4><div class="color-mcr-dt">{{ race.Name }} - {{ category.Name }}</div></h4>
-                      {%- elif race.SerieType == 'MCR_DM' -%}
-                        <h4><div class="color-mcr-dm">{{ race.Name }} - {{ category.Name }}</div></h4>
-                      {%- else -%}
-                        <h4><div class="color-other">{{ race.Name }} - {{ category.Name }}</div></h4>
-                      {%- endif -%}
-                      <table class="sortedTable add-margin-bottom" id="{{ race.Name + category.Name | slug }}">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Příjmení, jméno</th>
-                            <th>Start</th>
-                            <th>Cíl</th>
-                            <th>Čas</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {%- for raceResults in action.Results.Races -%}
-                            {%- for categoryResults in raceResults.Categories -%}
-                              {%- if raceResults.Name == race.Name -%}
-                                {%- if categoryResults.Name == category.Name -%}
-                                  {%- for competitor in categoryResults.Competitors -%}
-                                    <tr>
-                                      {%- if competitor.Order == 0 -%}
-                                      <td data-order="99999999"></td>
-                                      {%- else -%}
-                                      <td data-order="{{ competitor.Order }}">{{ competitor.Order }}</td>
-                                      {%- endif -%}
-                                      <td data-order="{{ competitor.Surname }}, {{ competitor.Name }}">
-                                        <a href="/Zavodnik/{{ competitor.Id }}/index.html">{{ competitor.Surname }}, {{ competitor.Name }}</a>
-                                      </td>
-                                      <td data-order="{{ competitor.Start }}">{{ competitor.Start | wdTime }}</td>
-                                      <td data-order="{{ competitor.Finish }}">{{ competitor.Finish | wdTime }}</td>
-                                      <td data-order="{{ competitor.Time }}">{{ competitor.Time | simpleTime }}</td>
-                                    </tr>
-                                  {%- endfor -%}
-                                {%- endif -%}
-                              {%- endif -%}
-                            {%- endfor -%}
-                          {%- endfor -%}
-                        </tbody>
-                      </table>
-                    </div>
-                  {%- endfor -%} {# Category #}
+            <div class="row">
+              <div class="col-3">
+                Kategorie:
+              </div>
+              <div class="col-9">
+                <select id="raceCategories">
+                  <option value="0">--== Nejdříve vyber závod ==--</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="fname">Jméno:</label>
+              </div>
+              <div class="col-9">
+                <input type="text" autocomplete="given-name" id="fname" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="lname">Příjmení:</label>
+              </div>
+              <div class="col-9">
+                <input type="text" autocomplete="family-name" id="lname" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="phone">Telefon</label>
+              </div>
+              <div class="col-9">
+                <input type="tel" autocomplete="tel" id="phone" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="mail">E-Mail</label>
+              </div>
+              <div class="col-9">
+                <input type="mail" autocomplete="email" id="mail" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="bday">Datum narození</label>
+              </div>
+              <div class="col-9">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-3">Den:</div>
+                    <div class="col-3">Měsíc:</div>
+                    <div class="col-3">Rok:</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3"><input type="text" autocomplete="bday-day" id="bday" /></div>
+                    <div class="col-3"><input type="text" autocomplete="bday-month" id="bmonth" /></div>
+                    <div class="col-3"><input type="text" autocomplete="bday-year" id="byear" /></div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="address">Adresa</label>
+              </div>
+              <div class="col-9">
+                <input type="text" autocomplete="street-address" id="address" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="city">Město</label>
+              </div>
+              <div class="col-9">
+                <input type="text" autocomplete="address-level2" id="city" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <label for="dogs">Psi</label>
+              </div>
+              <div class="col-9">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="dog_name">Jméno psa</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" id="dog_name" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="dog_pedigree">Plemeno</label>
+                    </div>
+                    <div class="col-9">
+                      <input type="text" id="dog_pedigree" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {# Results #}
+      <div class="tab-pane" id="results" role="tabpanel" aria-labelledby="results-tab">
+        <h4>Výsledky</h4>
+        <hr />
+        <div class="container">
+        {%- for race in action.Races -%}
+          <div class="row">
+          {%- for category in race.Categories -%}
+            <div class="col-lg-6 col-12">
+            {%- if race.SerieType == 'MCR_DT' -%}
+              <h4><div class="color-mcr-dt">{{ race.Name }} - {{ category.Name }}</div></h4>
+            {%- elif race.SerieType == 'MCR_DM' -%}
+              <h4><div class="color-mcr-dm">{{ race.Name }} - {{ category.Name }}</div></h4>
+            {%- else -%}
+              <h4><div class="color-other">{{ race.Name }} - {{ category.Name }}</div></h4>
+            {%- endif -%}
+              <table class="sortedTable add-margin-bottom" id="{{ race.Name + category.Name | slug }}">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Příjmení, jméno</th>
+                    <th>Start</th>
+                    <th>Cíl</th>
+                    <th>Čas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {%- for raceResults in action.Results.Races -%}
+                 {%- for categoryResults in raceResults.Categories -%}
+                  {%- if raceResults.Name == race.Name -%}
+                   {%- if categoryResults.Name == category.Name -%}
+                    {%- for competitor in categoryResults.Competitors -%}
+                      <tr>
+                      {%- if competitor.Order == 0 -%}
+                        <td data-order="99999999"></td>
+                      {%- else -%}
+                        <td data-order="{{ competitor.Order }}">{{ competitor.Order }}</td>
+                      {%- endif -%}
+                        <td data-order="{{ competitor.Surname }}, {{ competitor.Name }}">
+                          <a href="/Zavodnik/{{ competitor.Id }}/index.html">{{ competitor.Surname }}, {{ competitor.Name }}</a>
+                        </td>
+                        <td data-order="{{ competitor.Start }}">{{ competitor.Start | wdTime }}</td>
+                        <td data-order="{{ competitor.Finish }}">{{ competitor.Finish | wdTime }}</td>
+                        <td data-order="{{ competitor.Time }}">{{ competitor.Time | simpleTime }}</td>
+                      </tr>
+                    {%- endfor -%} <!-- competitor -->
+                   {%- endif -%} <!-- category.Name -->
+                  {%- endif -%} <!-- result.Name -->
+                 {%- endfor -%} <!-- catogory -->
+                {%- endfor -%} <!-- race -->
+                </tbody>
+              </table>
+            </div>
+          {%- endfor -%} {# Category #}
           </div>
         {%- endfor -%} {# race #}
-			</div>
-		</section>
+        </div> {# container #}
+      </div>
+    </div>
+  </div>
+</section>
 
 <a href="/Terminovka/{{ action.From | firstFour }}/">Zpět na všechny akce</a>
 
