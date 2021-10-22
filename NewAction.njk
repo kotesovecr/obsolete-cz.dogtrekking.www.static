@@ -1,0 +1,63 @@
+---
+layout: layout.liquid
+title: Žádost o novou akci
+---
+<section id="blogs" class="blogs-main section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 wow fadeInUp">
+        <div class="section-title">
+          <span class="title-bg">Nová akce</span>
+          <h1>Žádost o vytvoření nové akce</h1>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="actionName">Název akce</label>
+          <input type="text" class="form-control" id="actionName" aria-describedby="actionNameHelp" placeholder="Název akce">
+          <small id="actionNameHelp" class="form-text text-muted">Uveďte co nejkratší možnou formu názvu akce (delší názvy můžou být špatně viditelné na mobilních zařízeních - mobily...)</small>
+        </div>  
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email pořadatele</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email pořadatele">
+          <small id="emailHelp" class="form-text text-muted">Na tento mail budou odcházet všechny další informace, ověření, dotazy...</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="actionFrom">Od</label>
+          <input type="text" class="form-control datepicker" id="actionFrom" aria-describedby="actionFromHelp" placeholder="Datum začátku">
+          <small id="actionFromHelp" class="form-text text-muted">Uveďte den, kdy se mají první účastníci dostavit, v případě LONGu to tedy bývá čtvrteční datum</small>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="actionTo">Do</label>
+          <input type="text" class="form-control datepicker" id="actionTo" aria-describedby="actionToHelp" placeholder="Datum konce">
+          <small id="actionToHelp" class="form-text text-muted">Uveďte den, kdy oficiálně akce končí, tj. u LONGu to bývá nedělní datum</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <input type="checkbox" class="form-check-input" id="actionMcrLong">
+          <label class="form-check-label" for="actionMcrLong">MČR - LONG</label>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <input type="checkbox" class="form-check-input" id="actionMcrLong">
+          <label class="form-check-label" for="actionMcrLong">LONG</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

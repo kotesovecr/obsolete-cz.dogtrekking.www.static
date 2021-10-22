@@ -73,6 +73,8 @@
 
       <link rel="stylesheet" href="/css/gallery.css">
 
+      <link rel="stylesheet" href="/css/jquery-ui.min.css">
+
       <!-- highlighting of the inserted code -->
       <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     </head>
@@ -264,6 +266,9 @@
       <script src="/js/jquery.dataTables.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
+      <script src="/js/jquery-ui.min.js"></script>
+      <script src="/js/i18n/jquery-ui.datepicker-cs.js"></script>
+
       <script>
         $(document).ready(function () {
           $('.sortedTable').DataTable( {
@@ -278,6 +283,8 @@
             },
             "order": [[ 0, "desc" ]]
           });
+
+          $('.datepicker').datepicker($.datepicker.regional["cs"]);
         });
       </script>
     </body>
