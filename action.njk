@@ -97,7 +97,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               {%- if action.CustomApplyLink != "" -%}
                 <a href="{{ action.CustomApplyLink }}">Zde</a>
               {%- else -%}
-                Neuvedeno, vlastní na domovských stránkách
+                Neuvedeno, vlastní na domovských stránkách - <a href="{{ action.Url }}">{{ action.Url }}</a>
               {%- endif -%}
             </div>
           </div>
@@ -168,6 +168,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <div class="container">
           <div class="row">
             <div class="col">
+              Umístěné na webových stránkách závodu - <a href="{{ action.Url }}">{{ action.Url }}</a>
             </div>
           </div>
         </div>
