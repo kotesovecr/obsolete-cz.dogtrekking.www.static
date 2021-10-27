@@ -18,6 +18,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("js");
+  eleventzConfig.addPassthroughCopy("docs");
 
   eleventyConfig.addPlugin(syntaxHighlight, {
     lineSeparator: "\n"
