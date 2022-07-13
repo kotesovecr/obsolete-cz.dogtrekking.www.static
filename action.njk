@@ -352,7 +352,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                     </tr>
                     </thead>
                     <tbody>
-                      {%- for food in action.FoodsSelection -%}
+                      {%- for food in action.FoodsSelection | orderByDayPart -%}
                         <tr>
                           <td>{{ food.day_part | translateDayPart }}</td>
                           <td>{{ food.food }}</td>

@@ -437,6 +437,22 @@ module.exports = function(eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("orderByDayPart", function(foods) {
+    let result = [];
+
+    result = [...result, foods.filter(x => x.day_part === "ThursdaySupper")];
+    result = [...result, foods.filter(x => x.day_part === "FridayBreakfast")];
+    result = [...result, foods.filter(x => x.day_part === "FridayLunch")];
+    result = [...result, foods.filter(x => x.day_part === "FridaySupper")];
+    result = [...result, foods.filter(x => x.day_part === "SaturdayBreakfast")];
+    result = [...result, foods.filter(x => x.day_part === "SaturdayLunch")];
+    result = [...result, foods.filter(x => x.day_part === "SaturdaySupper")];
+    result = [...result, foods.filter(x => x.day_part === "SundayBreakfast")];
+    result = [...result, foods.filter(x => x.day_part === "SundayLunch")];
+
+    return result;
+  });
+
   eleventyConfig.addFilter("shuffle", function(array) {
     var currentIndex = array.length,  randomIndex;
 
