@@ -94,7 +94,9 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               Přihlašování:
             </div>
             <div class="col-6">
-              {%- if action.CustomApplyLink != "" -%}
+              {%- if action.CustomApplyLink == "#" -%}
+                <a href="#applying" onclick="setActiveToApplying()">Zde</a>
+              {%- elif action.CustomApplyLink != "" -%}
                 <a href="{{ action.CustomApplyLink }}">Zde</a>
               {%- else -%}
                 Neuvedeno, vlastní na domovských stránkách - <a href="{{ action.Url }}">{{ action.Url }}</a>
@@ -490,12 +492,12 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   var mapmargin = 50;
   let height = 0;
 
-  function resize(){
+  function resize() {
     if(window.innerWidth >= 980) {
       height = window.innerHeight - mapmargin; 
       document.getElementById('mapid').style.marginTop = 50;
     }
-	else {
+    else {
       height = window.innerHeight - (mapmargin+12);
       document.getElementById('mapid').style.marginTop = -21;
     }
@@ -637,20 +639,23 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         'Origin': 'localhost'
       },
       body: JSON.stringify(entry)
-  };
+    };
 
-  fetch(`https://rest.dogtrekking.cz/entries/add`, obj)
-  .then(response => response.json())
-  .then(json => {
-    console.log(json);
-
-    if (typeof(json.entry_id) !== "undefined" && json.entry_id !== null && json.entry_id > 0) {
+    fetch(`https://rest.dogtrekking.cz/entries/add`, obj)
+    .then(response => response.json())
+    .then(json => {
+      if (typeof(json.entry_id) !== "undefined" && json.entry_id !== null && json.entry_id > 0) {
         alert("OK, přihláška prošla, za chvíli by Ti měl přijít mail o registraci. Pokud nedojde, prosím, kontaktuj nás");
         window.location.reload();
-    }
-    else {
+      }
+      else {
         alert("Přihláška nebyla přijata, prosíme, ještě jednou zkontroluj, zda jsi vše vyplnil(a) správně, pokud jsi si jist(a), prosím, kontaktuj nás");
-    }
-  });
-}
+      }
+    });
+  }
+
+  function setActiveToApplying() {
+    $(".nav").find(".active").removeClass("active");
+    $("#applying").addClass("active");
+  }
 </script>
