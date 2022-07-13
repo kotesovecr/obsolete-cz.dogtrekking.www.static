@@ -460,6 +460,18 @@ module.exports = function(eleventyConfig) {
     return price;
   });
 
+  eleventyConfig.addFilter("translatePayment", function(value) {
+    if (value === 0)
+      return "---";
+
+    if (value < 0)
+      return "NE";
+
+    if (value > 0)
+      return "ANO";
+      
+  });
+
   eleventyConfig.addFilter("shuffle", function(array) {
     var currentIndex = array.length,  randomIndex;
 

@@ -389,7 +389,35 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <div class="container">
           <div class="row">
             <div class="col">
-              <h3>Bude doplněno co nejdříve, pracujeme na tom ...</h3>
+              <h3>Upravujeme, přídáváme filtry ... Bude vypadat lépe :)</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Příjmení, jméno</th>
+                    <th>Závod</th>
+                    <th>Kategorie</th>
+                    <th>Psi</th>
+                    <th>Zaplaceno</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%- for entry in action.Entries -%}
+                    <tr>
+                      <td>{{ entry.surname }}, {{ entry.name }}</td>
+                      <td>{{ entry.race_name }}</td>
+                      <td>{{ entry.category_name }}</td>
+                      <td>
+                        <ul>
+                        {%- for dog in entry.dogs -%}
+                          <li>{{ dog.name }} [{{ dog.pedigree }}]</li>
+                        {%- endfor -%}
+                        </ul>
+                      </td>
+                      <td>{{ entry.paied | translatePayment }}</td>
+                    </tr>
+                  {%- endfor -%}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
