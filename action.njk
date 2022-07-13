@@ -360,7 +360,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                           <td><input type="number" 
                                      value="0" 
                                      min="0" 
-                                     onchange="foodOrderUpdated({{ action.Id }}, {{ food.id }}, {{ food.price }}, this.value)" /></td>
+                                     onchange="foodOrderUpdated({{ action.Id }}, {{ food.id }}, {{ food.price | handleZeroPriceInPlace }}, this.value)" /></td>
                         </tr>
                       {%- endfor -%}
                     </tbody>
