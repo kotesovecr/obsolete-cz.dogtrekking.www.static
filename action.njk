@@ -181,10 +181,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <div class="container">
           <form>
             <div class="row">
-              <div class="col-3">
-                Závod:
+              <div class="col-4">
+                <h6>Závod</h6>
               </div>
-              <div class="col-9">
+              <div class="col-8">
                 <select id="raceRaces" onchange="racesChanged()">
                   <option value="0">--== VYBER ZÁVOD ==--</option>
                   {%- for race in action.Races -%}
@@ -194,10 +194,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
-                Kategorie:
+              <div class="col-4">
+                <h6>Kategorie</h6>
               </div>
-              <div class="col-9">
+              <div class="col-8">
                 <select id="raceCategories">
                   <option value="0">--== Nejdříve vyber závod ==--</option>
                 </select>
@@ -267,19 +267,19 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <div class="row">
               <div class="col-4">
-                <label for="bday">Datum narození</label>
+                <h6>Datum narození</h6>
               </div>
               <div class="col-8">
                 <div class="container">
                   <div class="row">
-                    <div class="col-3">Den:</div>
-                    <div class="col-3">Měsíc:</div>
-                    <div class="col-3">Rok:</div>
+                    <div class="col-4">Den:</div>
+                    <div class="col-4">Měsíc:</div>
+                    <div class="col-4">Rok:</div>
                   </div>
                   <div class="row">
-                    <div class="col-3"><input type="text" autocomplete="bday-day" id="bday" /></div>
-                    <div class="col-3"><input type="text" autocomplete="bday-month" id="bmonth" /></div>
-                    <div class="col-3"><input type="text" autocomplete="bday-year" id="byear" /></div>
+                    <div class="col-4"><input type="number" min="1" max="31" value="1" autocomplete="bday-day" id="bday" /></div>
+                    <div class="col-4"><input type="number" min="1" max="12" value="1" autocomplete="bday-month" id="bmonth" /></div>
+                    <div class="col-4"><input type="number" min="1922" max="2022" value="2000" autocomplete="bday-year" id="byear" /></div>
                   </div>
                 </div>
               </div>
@@ -287,7 +287,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             <hr />
             <div class="row">
               <div class="col-4">
-                <label for="dogs">Psi</label>
+                <h6>Psi</h6>
               </div>
               <div class="col-8">
                 <div class="container">
@@ -302,7 +302,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                       <label for="dog_chip">Číslo čipu</label>
                     </div>
                   </div>
-                  <hr />
                   <div class="row">
                     <div class="col-3">
                       <input type="text" id="dog_name" />
@@ -316,13 +315,13 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                   </div>
                   <div class="row">
                     <div class="col">
-                      <input type="button" value="Přidej psa" onclick="AddDog()" />
+                      <button type="button" class="btn btn-secondary" onclick="AddDog()">Přidej psa</button>
                     </div>
                   </div>
-                  <br />
+                  <hr />
                   <div class="row">
                     <div class="col">
-                      <h6>Evidovaní psi</h6>
+                      <b><i>Evidovaní psi</i></b>
                       <table id="EntryRegistratedDogs">
                         <thead>
                           <tr>
@@ -340,7 +339,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             <hr />
             <div class="row">
               <div class="col-4">
-                <label for="foods">Výběr jídla</label>
+                <h6>Výběr jídla</h6>
               </div>
               <div class="col-8">
                 <div class="container">
@@ -507,13 +506,12 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }).addTo(mymap);
 
   function foodOrderUpdated(idAction, idFood, price, count) {
-    console.log("foodOrderUpdate: ");
-    console.log(idAction);
-    console.log(idFood);
-    console.log(price);
-    console.log(count);
-
-    preparingEntryFood.push({ id: idFood, price: price, count: count });
+    let updatedFood = preparingEntryFood.find(x => x.id == idFood);
+    
+    if (updatedFood !== null)
+      updatedFood.count = count;
+    else
+      preparingEntryFood.push({ id: idFood, price: price, count: count });
   }
 
   function AddDog() {
@@ -588,6 +586,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     var d = date.getDate();
     var m = date.getMonth() + 1; //Month from 0 to 11
     var y = date.getFullYear();
+
     return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
   }
 
@@ -613,8 +612,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
       tshirts: preparingEntryTShirts,
       food: preparingEntryFood
     };
-
-    console.log(entry);
 
     let obj = {
       method: 'POST',
