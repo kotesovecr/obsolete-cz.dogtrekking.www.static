@@ -508,9 +508,9 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }).addTo(mymap);
 
   function foodOrderUpdated(idAction, idFood, price, count) {
-    let updatedFood = preparingEntryFood.find(x => x.id == idFood);
+    let updatedFood = preparingEntryFood.find(x => x.id === idFood);
     
-    if (updatedFood !== null)
+    if (typeof(updatedFood) !== "undefined" && updatedFood !== null)
       updatedFood.count = count;
     else
       preparingEntryFood.push({ id: idFood, price: price, count: count });
