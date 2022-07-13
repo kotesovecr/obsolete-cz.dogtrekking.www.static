@@ -110,7 +110,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             <div class="col-10">
               {%- for race in action.Races -%}
                 {%- if race.SerieType == 'MCR_DT' -%}
-                  <div class="col color-mcr-dt">{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m], součástí seriálu MČR Dogtrekking
+                  <div class="col color-mcr-dt">{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}], součástí seriálu MČR Dogtrekking
                   Vypsané kategorie:
                   <ul>
                       {%- for category in race.Categories -%}
@@ -119,7 +119,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                     </ul>
                   </div>
                 {%- elif race.SerieType == 'MCR_DM' -%}
-                  <div class="col color-mcr-dm">{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m], součástí seriálu MČR Dogmaraton
+                  <div class="col color-mcr-dm">{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}], součástí seriálu MČR Dogmaraton
                     Vypsané kategorie:
                       <ul>
                         {%- for category in race.Categories -%}
@@ -128,7 +128,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                       </ul>
                     </div>
                 {%- else -%}
-                  <div class="col color-other">{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m]
+                  <div class="col color-other">{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}]
                     Vypsané kategorie:
                       <ul>
                         {%- for category in race.Categories -%}
@@ -655,7 +655,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }
 
   function setActiveToApplying() {
-    $(".nav").find(".active").removeClass("active");
-    $("#applying-tab").addClass("active");
+    $('.nav-tabs a[href="#applying"]').tab('show');
   }
 </script>
