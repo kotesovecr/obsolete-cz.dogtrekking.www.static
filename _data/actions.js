@@ -45,23 +45,6 @@ module.exports = async function() {
                         theAction.Results = json;
                       });
                     });
-
-                    Promise.all(allActions.map(actionInfo => fetch(`https://rest.dogtrekking.cz/news/${actionInfo.Id}/aaa`, {
-                      method: 'GET',
-                      agent: httpsAgent,
-                    })))
-                    .then(actionsResults => 
-                      Promise.all(actionsResults.map(actionResult => actionResult.json()))
-                      .then(jsons => {
-                        return jsons;
-                      })
-                    )
-                    .then(jsons => {
-                      jsons.map(json => {
-                        let theAction = allActions.find(ele => ele.Id === json.IdAction);
-                        theAction.News = json;
-                      });
-                    });
                   })
                   .then(actionResults => {
                     return allActions;

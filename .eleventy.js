@@ -421,6 +421,22 @@ module.exports = function(eleventyConfig) {
     return actionCanceled === 1 ? 'canceledAction' : '';
   });
 
+  eleventyConfig.addFilter("translateDayPart", function(daypart) {
+    switch (daypart) {
+      case "ThursdaySupper": return "Čtvrteční večeře";
+      case "FridayBreakfast": return "Páteční snídaně";
+      case "FridayLunch": return "Páteční oběd";
+      case "FridaySupper": return "Páteční večeře";
+      case "SaturdayBreakfast": return "Sobotní snídaně";
+      case "SaturdayLunch": return "Sobotní oběd";
+      case "SaturdaySupper": return "Sobotní večeře";
+      case "SundayBreakfast": return "Nedělní snídaně";
+      case "SundayLunch": return "Nedělní oběd";
+      
+      default: return "Neznámé jídlo";
+    }
+  });
+
   eleventyConfig.addFilter("shuffle", function(array) {
     var currentIndex = array.length,  randomIndex;
 

@@ -185,7 +185,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                 Závod:
               </div>
               <div class="col-9">
-                <select id="raceRaces">
+                <select id="raceRaces" onchange="racesChanged()">
                   <option value="0">--== VYBER ZÁVOD ==--</option>
                   {%- for race in action.Races -%}
                     <option value={{ race.Id }}>{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m]</option>
@@ -203,43 +203,73 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                 </select>
               </div>
             </div>
+            <hr />
             <div class="row">
-              <div class="col-3">
+              <div class="col-4">
+                <h6>Kontaktní údaje</h6>
+              </div>
+              <div class="col-4">
                 <label for="fname">Jméno:</label>
               </div>
-              <div class="col-9">
-                <input type="text" autocomplete="given-name" id="fname" />
+              <div class="col-4">
+                <label for="lname">Příjmení:</label>
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
-                <label for="lname">Příjmení:</label>
+              <div class="col-4">
               </div>
-              <div class="col-9">
+              <div class="col-4">
+                <input type="text" autocomplete="given-name" id="fname" />
+              </div>
+              <div class="col-4">
                 <input type="text" autocomplete="family-name" id="lname" />
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-4">
+              </div>
+              <div class="col-4">
                 <label for="phone">Telefon</label>
               </div>
-              <div class="col-9">
-                <input type="tel" autocomplete="tel" id="phone" />
+              <div class="col-4">
+                <label for="mail">E-Mail</label>
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
-                <label for="mail">E-Mail</label>
+              <div class="col-4">
               </div>
-              <div class="col-9">
+              <div class="col-4">
+                <input type="tel" autocomplete="tel" id="phone" />
+              </div>
+              <div class="col-4">
                 <input type="mail" autocomplete="email" id="mail" />
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-4">
+              </div>
+              <div class="col-4">
+                <label for="address">Adresa</label>
+              </div>
+              <div class="col-4">
+                <label for="city">Město</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+              </div>
+              <div class="col-4">
+                <input type="text" autocomplete="street-address" id="address" />
+              </div>
+              <div class="col-4">
+                <input type="text" autocomplete="address-level2" id="city" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
                 <label for="bday">Datum narození</label>
               </div>
-              <div class="col-9">
+              <div class="col-8">
                 <div class="container">
                   <div class="row">
                     <div class="col-3">Den:</div>
@@ -254,45 +284,95 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                 </div>
               </div>
             </div>
+            <hr />
             <div class="row">
-              <div class="col-3">
-                <label for="address">Adresa</label>
-              </div>
-              <div class="col-9">
-                <input type="text" autocomplete="street-address" id="address" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3">
-                <label for="city">Město</label>
-              </div>
-              <div class="col-9">
-                <input type="text" autocomplete="address-level2" id="city" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3">
+              <div class="col-4">
                 <label for="dogs">Psi</label>
               </div>
-              <div class="col-9">
+              <div class="col-8">
                 <div class="container">
                   <div class="row">
                     <div class="col-3">
                       <label for="dog_name">Jméno psa</label>
                     </div>
-                    <div class="col-9">
-                      <input type="text" id="dog_name" />
-                    </div>
-                  </div>
-                  <div class="row">
                     <div class="col-3">
                       <label for="dog_pedigree">Plemeno</label>
                     </div>
-                    <div class="col-9">
+                    <div class="col-3">
+                      <label for="dog_chip">Číslo čipu</label>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-3">
+                      <input type="text" id="dog_name" />
+                    </div>
+                    <div class="col-3">
                       <input type="text" id="dog_pedigree" />
+                    </div>
+                    <div class="col-3">
+                      <input type="text" id="dog_chip" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <input type="button" value="Přidej psa" onclick="AddDog()" />
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col">
+                      <h6>Evidovaní psi</h6>
+                      <table id="EntryRegistratedDogs">
+                        <thead>
+                          <tr>
+                            <th>Čip</th><th>Jméno</th><th>Plemeno</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-4">
+                <label for="foods">Výběr jídla</label>
+              </div>
+              <div class="col-8">
+                <div class="container">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th>Den</th><th>Jídlo</th><th>Cena</th><th>Počet</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      {%- for food in action.FoodsSelection -%}
+                        <tr>
+                          <td>{{ food.day_part | translateDayPart }}</td>
+                          <td>{{ food.food }}</td>
+                          <td>{{ food.price }}</td>
+                          <td><input type="number" 
+                                     value="0" 
+                                     min="0" 
+                                     onchange="foodOrderUpdated({{ action.Id }}, {{ food.id }}, {{ food.price }}, this.value)" /></td>
+                        </tr>
+                      {%- endfor -%}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-9">
+              </div>
+              <div class="col-3">
+                <button type="button" class="btn btn-primary" onclick="sendEntryRegistration()">Odeslat</button>
               </div>
             </div>
           </form>
@@ -364,6 +444,35 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
 <a href="/Terminovka/{{ action.From | firstFour }}/">Zpět na všechny akce</a>
 
 <script>
+  var preparingEntryDogs = [];
+  {# 
+    let dogSample = {
+      chip = "987654321",
+      name = "adolfek",
+      pedigree = "Čistokrevný smrad jeden kousavý"
+    }; 
+  #}
+  
+  var preparingEntryFood = [];
+  {# 
+    let foodSample = {
+        id = 51,
+        price = 0,
+        count = 2,
+    }; 
+  #}
+
+  var preparingEntryTShirts = [];
+  {# 
+    let tshirtSample = {
+      id_type: 0,
+      size: "L",
+      color: "red",
+      count: 10
+    }; 
+  #}
+
+
   var mapmargin = 50;
   let height = 0;
 
@@ -378,7 +487,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     }
 
     document.getElementById('mapid').style.height = "" + height / 2 + "px";
-	document.getElementById('mapid').style.width = "" + height / 6 * 3 + "px";
+	  document.getElementById('mapid').style.width = "" + height / 6 * 3 + "px";
   }
 
   window.onresize = resize;
@@ -397,8 +506,44 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     zoomOffset: -1
   }).addTo(mymap);
 
+  function foodOrderUpdated(idAction, idFood, price, count) {
+    console.log("foodOrderUpdate: ");
+    console.log(idAction);
+    console.log(idFood);
+    console.log(price);
+    console.log(count);
 
-  document.getElementById("raceRaces").onchange = function(){
+    preparingEntryFood.push({ id: idFood, price: price, count: count });
+  }
+
+  function AddDog() {
+    let chipEle = document.getElementById("dog_chip");
+    let nameEle = document.getElementById("dog_name");
+    let pedigreeEle = document.getElementById("dog_pedigree");
+    let tableEle = document.getElementById("EntryRegistratedDogs");
+
+    preparingEntryDogs.push({ name: nameEle.value, chip: chipEle.value, pedigree: pedigreeEle.value });
+
+
+    let row = tableEle.insertRow(-1);
+
+
+    let cell = row.insertCell(-1);
+    cell.innerText = chipEle.value;
+
+    cell = row.insertCell(-1);
+    cell.innerText = nameEle.value;
+
+    cell = row.insertCell(-1);
+    cell.innerText = pedigreeEle.value;
+
+
+    chipEle.value = "";
+    nameEle.value = "";
+    pedigreeEle.value = "";
+  }
+
+  function racesChanged() {
     var value = document.getElementById("raceRaces").value;
     var categoriesSelect = document.getElementById("raceCategories");
 
@@ -438,4 +583,62 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
       }
     });
   };
+
+  function dateToYMD(date) {
+    var d = date.getDate();
+    var m = date.getMonth() + 1; //Month from 0 to 11
+    var y = date.getFullYear();
+    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+  }
+
+  function sendEntryRegistration() {
+    let bday = document.getElementById("bday").value;
+    let bmonth = document.getElementById("bmonth").value;
+    let byear = document.getElementById("byear").value;
+    let birthday = '' + byear + '-' + (bmonth<=9 ? '0' + bmonth : bmonth) + '-' + (bday <= 9 ? '0' + bday : bday);
+
+    let entry = {
+      action_id: {{ action.Id }},
+      race_id: document.getElementById("raceRaces").value,
+      category_id: document.getElementById("raceCategories").value,
+      name: document.getElementById("fname").value,
+      surname: document.getElementById("lname").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("mail").value,
+      birthday: birthday,
+      street: document.getElementById("address").value,
+      city: document.getElementById("city").value,
+      about: document.getElementById("about").value,
+      dogs: preparingEntryDogs,
+      tshirts: preparingEntryTShirts,
+      food: preparingEntryFood
+    };
+
+    console.log(entry);
+
+    let obj = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Host': 'www.dogtrekking.cz',
+        'Origin': 'localhost'
+      },
+      body: JSON.stringify(entry)
+  };
+
+  fetch(`https://rest.dogtrekking.cz/entries/add`, obj)
+  .then(response => response.json())
+  .then(json => {
+    console.log(json);
+
+    if (typeof(json.entry_id) !== "undefined" && json.entry_id !== null && json.entry_id > 0) {
+        alert("OK, přihláška prošla, za chvíli by Ti měl přijít mail o registraci. Pokud nedojde, prosím, kontaktuj nás");
+        window.location.reload();
+    }
+    else {
+        alert("Přihláška nebyla přijata, prosíme, ještě jednou zkontroluj, zda jsi vše vyplnil(a) správně, pokud jsi si jist(a), prosím, kontaktuj nás");
+    }
+  });
+}
 </script>
