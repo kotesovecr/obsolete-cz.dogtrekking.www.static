@@ -453,6 +453,13 @@ module.exports = function(eleventyConfig) {
     return result;
   });
 
+  eleventyConfig.addFilter("handleZeroPriceInPlace", function(price) {
+    if (typeof(price) === "undefined" || price === null || price === "" || price === 0)
+      return "Na místě";
+
+    return price;
+  });
+
   eleventyConfig.addFilter("shuffle", function(array) {
     var currentIndex = array.length,  randomIndex;
 
