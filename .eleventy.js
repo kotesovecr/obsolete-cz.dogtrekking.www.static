@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("js");
-  eleventzConfig.addPassthroughCopy("docs");
+  eleventyConfig.addPassthroughCopy("docs");
 
   eleventyConfig.addPlugin(syntaxHighlight, {
     lineSeparator: "\n"
@@ -26,7 +26,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter('log', value => {
     console.log(value)
-  })
+  });
 
   eleventyConfig.addFilter("stringify", function(obj) {
     return stringify(obj);
@@ -286,9 +286,13 @@ module.exports = function(eleventyConfig) {
     return actions.filter((action) => action.Id === idAction)[0].Start;
   });
 
-  eleventyConfig.addFilter("actionLink", function(idAction, actions) {
-    let action = actions.filter((action) => action.Id === idAction)[0];
-    return action.From + action.Name;
+  eleventyConfig.addFilter("action", function(idAction, actions) {
+    return actions.filter((action) => action.Id == idAction)[0];
+  });
+
+  eleventyConfig.addFilter("actionLink", function(action) {
+    let ret = action.From + action.Name;
+    return ret;
   });
 
   eleventyConfig.addFilter("dateToString", function(dateToString) {
@@ -392,6 +396,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("sortedActions", function(actions) {
     return actions.sort( function(a, b) {
+      if (typeof(a.From) == "undefined") {
+        console.log(a);
+        return -1;
+      }
+
+      if (typeof(b.From) == "undefined") {
+        console.log(b);
+        return 1;
+      }
+
       if (a.From > b.From) {
         return 1;
       }

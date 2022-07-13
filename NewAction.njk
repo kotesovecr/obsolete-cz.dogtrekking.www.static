@@ -49,38 +49,75 @@ title: Žádost o novou akci
     </div>
     <div class="row">
       <h4>Vzory závodů</h4>
-	  <div class="col">
-	    <div class="container"
-		  <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <input type="checkbox" class="form-check-input" id="actionMcrLong">
+                  <label class="form-check-label" for="actionMcrLong">MČR - DOGTREKKING (LONG)</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <input type="checkbox" class="form-check-input" id="actionLong">
+                  <label class="form-check-label" for="actionLong">DOGTREKKING (LONG neofic.)</label>
+                </div>
+              </div>
+          </div>
+          <div class="row">
             <div class="col-6">
-              <div class="form-group">
-                <input type="checkbox" class="form-check-input" id="actionMcrLong">
-                <label class="form-check-label" for="actionMcrLong">MČR - DOGTREKKING (LONG)</label>
+                <div class="form-group">
+                  <input type="checkbox" class="form-check-input" id="actionMcrMid">
+                  <label class="form-check-label" for="actionMcrMid">MČR - DOGMARATON (MID)</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <input type="checkbox" class="form-check-input" id="actionMid">
+                  <label class="form-check-label" for="actionMid">DOGMARATON (MID neofic.)</label>
+                </div>
               </div>
             </div>
-            <div class="col-6">
-              <div class="form-group">
-                <input type="checkbox" class="form-check-input" id="actionLong">
-                <label class="form-check-label" for="actionLong">DOGTREKKING (LONG neofic.)</label>
-              </div>
-            </div>
-		  </div>
-		  <div class="row">
-		    <div class="col-6">
-              <div class="form-group">
-                <input type="checkbox" class="form-check-input" id="actionMcrMid">
-                <label class="form-check-label" for="actionMcrMid">MČR - DOGMARATON (MID)</label>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <input type="checkbox" class="form-check-input" id="actionMid">
-                <label class="form-check-label" for="actionMid">DOGMARATON (MID neofic.)</label>
-              </div>
-            </div>
-		  </div>
-		</div>
-	  </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <input type="button" value="Odeslat" onclick="SendRequestForNewAction()" />
   </div>
 </section>
+
+
+
+<script>
+  function SendRequestForNewAction() {
+    let action = {
+      name: 'asdfasdf',
+      mail: 'radek.kotesovec@dogtrekking.cz',
+      address: '',
+      city: '',
+      www: '',
+      begin: '2022-08-06',
+      end: '2022-08-10',
+      typeDtMcr: false,
+      typeDtNonMcr: true,
+      typeDmMcr: false,
+      typeDmNonMcr: true
+    };
+    console.log(action);
+    (async () => {
+      const rawResponse = await fetch(`http://localhost:13124/actions/new`, {
+      // const rawResponse = await fetch(`https://rest.dogtrekking.cz/actions/new`, {
+                                         method: 'POST',
+                                         headers: {
+                                          'Accept': 'application/json',
+                                          'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify(action)
+      });
+      const content = await rawResponse.json();
+
+      console.log(content);
+    })();
+  };
+</script>

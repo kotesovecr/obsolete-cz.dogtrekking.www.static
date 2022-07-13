@@ -16,21 +16,21 @@ title: Aktuality
     </div>
     <div class="row">
       {%- for aktualita in actionNews.actionNews | sortedNews -%}
-      <div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
-        <div class="single-blog">
-          <div class="blog-head add-margin-bottom">
-          </div>
-          <div class="blog-bottom">
-            <div class="blog-inner">
-              <h4><a href="/action/{{ aktualita.id_action | actionLink(actions) | slug }}">{{ aktualita.id_action | enterActionName(actions) }}</a></h4>
-              <p>{{ aktualita.text | safe }}</p>
-              <div class="meta">
-                <span><i class="fa fa-calendar"></i>{{ aktualita.created }}</span>
+        <div class="col-lg-4 col-md-6 col-12 add-margin-bottom">
+          <div class="single-blog">
+            <div class="blog-head add-margin-bottom">
+            </div>
+            <div class="blog-bottom">
+              <div class="blog-inner">
+                <h4><a href="/action/{{ aktualita.id_action | action(actions) | actionLink(actions) | slug }}">{{ aktualita.id_action | enterActionName(actions) }}</a></h4>
+                <p>{{ aktualita.text | safe }}</p>
+                <div class="meta">
+                  <span><i class="fa fa-calendar"></i>{{ aktualita.created }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       {%- endfor -%}
     </div>
   </div>
