@@ -440,15 +440,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("orderByDayPart", function(foods) {
     let result = [];
 
-    result = [...result, foods.filter(x => x.day_part === "ThursdaySupper")];
-    result = [...result, foods.filter(x => x.day_part === "FridayBreakfast")];
-    result = [...result, foods.filter(x => x.day_part === "FridayLunch")];
-    result = [...result, foods.filter(x => x.day_part === "FridaySupper")];
-    result = [...result, foods.filter(x => x.day_part === "SaturdayBreakfast")];
-    result = [...result, foods.filter(x => x.day_part === "SaturdayLunch")];
-    result = [...result, foods.filter(x => x.day_part === "SaturdaySupper")];
-    result = [...result, foods.filter(x => x.day_part === "SundayBreakfast")];
-    result = [...result, foods.filter(x => x.day_part === "SundayLunch")];
+    result.push(...foods.filter(x => x.day_part === "ThursdaySupper"));
+    result.push(...foods.filter(x => x.day_part === "FridayBreakfast"));
+    result.push(...foods.filter(x => x.day_part === "FridayLunch"));
+    result.push(...foods.filter(x => x.day_part === "FridaySupper"));
+    result.push(...foods.filter(x => x.day_part === "SaturdayBreakfast"));
+    result.push(...foods.filter(x => x.day_part === "SaturdayLunch"));
+    result.push(...foods.filter(x => x.day_part === "SaturdaySupper"));
+    result.push(...foods.filter(x => x.day_part === "SundayBreakfast"));
+    result.push(...foods.filter(x => x.day_part === "SundayLunch"));
 
     return result;
   });
