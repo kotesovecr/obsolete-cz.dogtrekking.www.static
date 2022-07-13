@@ -15,18 +15,40 @@ title: Žádost o novou akci
     <hr />
     <div class="row">
       <h4>Hlavní info</h4>
-      <div class="col-6">
-        <div class="form-group">
-          <label for="actionName">Název akce</label>
-          <input type="text" class="form-control" id="actionName" aria-describedby="actionNameHelp" placeholder="Název akce">
-          <small id="actionNameHelp" class="form-text text-muted">Uveďte co nejkratší možnou formu názvu akce (delší názvy můžou být špatně viditelné na mobilních zařízeních - mobily...)</small>
-        </div>  
-      </div>
-      <div class="col-6">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email pořadatele</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email pořadatele">
-          <small id="emailHelp" class="form-text text-muted">Na tento mail budou odcházet všechny další informace, ověření, dotazy...</small>
+      <div class="container">
+        <div class="row">
+          <h5>Název a kontakt</h5>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="actionName">Název akce</label>
+              <input type="text" class="form-control" id="actionName" aria-describedby="actionNameHelp" placeholder="Název akce">
+              <small id="actionNameHelp" class="form-text text-muted">Uveďte co nejkratší možnou formu názvu akce (delší názvy můžou být špatně viditelné na mobilních zařízeních - mobily...)</small>
+            </div>  
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="actionMail">Email pořadatele</label>
+              <input type="email" class="form-control" id="actionMail" aria-describedby="emailHelp" placeholder="Email pořadatele">
+              <small id="emailHelp" class="form-text text-muted">Na tento mail budou odcházet všechny další informace, ověření, dotazy...</small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h5>Adresa</h5>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="actionCity">Město</label>
+              <input type="text" class="form-control" id="actionCity" aria-describedby="actionCityHelp" placeholder="Město">
+              <small id="actionCityHelp" class="form-text text-muted">Město (vesnice), kde se nachází kemp</small>
+            </div>  
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="actionAddress">Bližší adresa</label>
+              <input type="email" class="form-control" id="actionAddress" aria-describedby="actionAddressHelp" placeholder="Bližší adresa">
+              <small id="actionAddressHelp" class="form-text text-muted">Název kempu, jakékoli bližší údaje, kde najít start</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -90,24 +112,41 @@ title: Žádost o novou akci
 
 
 <script>
+  function dateToYMD(date) {
+    var d = date.getDate();
+    var m = date.getMonth() + 1; //Month from 0 to 11
+    var y = date.getFullYear();
+    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+  }
+
   function SendRequestForNewAction() {
+    var from = $('#actionFrom').datepicker('getDate');
+    if (from !== null) {
+      from instanceof Date;
+    }
+
+    var to = $('#actionTo').datepicker('getDate');
+    if (to !== null) {
+      to instanceof Date;
+    }
+
     let action = {
-      name: 'asdfasdf',
-      mail: 'radek.kotesovec@dogtrekking.cz',
-      address: '',
-      city: '',
+      name: document.getElementById("actionName").value,
+      mail: document.getElementById("actionMail").value,
+      address: document.getElementById("actionAddress").value,
+      city: document.getElementById("actionCity").value,
       www: '',
-      begin: '2022-08-06',
-      end: '2022-08-10',
-      typeDtMcr: false,
-      typeDtNonMcr: true,
-      typeDmMcr: false,
-      typeDmNonMcr: true
+      begin: dateToYMD(from),
+      end: dateToYMD(to),
+      typeDtMcr: document.getElementById("actionMcrLong").checked,
+      typeDtNonMcr: document.getElementById("actionLong").checked,
+      typeDmMcr: document.getElementById("actionMcrMid").checked,
+      typeDmNonMcr: document.getElementById("actionMid").checked
     };
     console.log(action);
     (async () => {
-      const rawResponse = await fetch(`http://localhost:13124/actions/new`, {
-      // const rawResponse = await fetch(`https://rest.dogtrekking.cz/actions/new`, {
+      // const rawResponse = await fetch(`http://localhost:13124/actions/new`, {
+      const rawResponse = await fetch(`https://rest.dogtrekking.cz/actions/new`, {
                                          method: 'POST',
                                          headers: {
                                           'Accept': 'application/json',
