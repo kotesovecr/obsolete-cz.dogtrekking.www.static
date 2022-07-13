@@ -181,10 +181,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <div class="container">
           <form>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
                 <h6>Závod</h6>
               </div>
-              <div class="col-8">
+              <div class="col-10">
                 <select id="raceRaces" onchange="racesChanged()">
                   <option value="0">--== VYBER ZÁVOD ==--</option>
                   {%- for race in action.Races -%}
@@ -194,10 +194,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
                 <h6>Kategorie</h6>
               </div>
-              <div class="col-8">
+              <div class="col-10">
                 <select id="raceCategories">
                   <option value="0">--== Nejdříve vyber závod ==--</option>
                 </select>
@@ -205,71 +205,71 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
                 <h6>Kontaktní údaje</h6>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <label for="fname">Jméno:</label>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <label for="lname">Příjmení:</label>
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="text" autocomplete="given-name" id="fname" />
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="text" autocomplete="family-name" id="lname" />
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <label for="phone">Telefon</label>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <label for="mail">E-Mail</label>
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="tel" autocomplete="tel" id="phone" />
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="mail" autocomplete="email" id="mail" />
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <label for="address">Adresa</label>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <label for="city">Město</label>
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="text" autocomplete="street-address" id="address" />
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="text" autocomplete="address-level2" id="city" />
               </div>
             </div>
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
                 <h6>Datum narození</h6>
               </div>
-              <div class="col-8">
+              <div class="col-10">
                 <div class="container">
                   <div class="row">
                     <div class="col-4">Den:</div>
@@ -286,35 +286,37 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
                 <h6>Psi</h6>
               </div>
-              <div class="col-8">
+              <div class="col-10">
                 <div class="container">
                   <div class="row">
-                    <div class="col-3">
+                    <div class="col-4">
                       <label for="dog_name">Jméno psa</label>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                       <label for="dog_pedigree">Plemeno</label>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                       <label for="dog_chip">Číslo čipu</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-3">
+                    <div class="col-4">
                       <input type="text" id="dog_name" />
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                       <input type="text" id="dog_pedigree" />
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                       <input type="text" id="dog_chip" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col">
+                    <div class="col-8">
+                    </div>
+                    <div class="col-4">
                       <button type="button" class="btn btn-secondary" onclick="AddDog()">Přidej psa</button>
                     </div>
                   </div>
@@ -338,10 +340,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
-              <div class="col-4">
+              <div class="col-2">
                 <h6>Výběr jídla</h6>
               </div>
-              <div class="col-8">
+              <div class="col-10">
                 <div class="container">
                   <table>
                     <thead>
