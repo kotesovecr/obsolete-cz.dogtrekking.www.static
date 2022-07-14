@@ -432,6 +432,7 @@ module.exports = function(eleventyConfig) {
       case "SaturdaySupper": return "Sobotní večeře";
       case "SundayBreakfast": return "Nedělní snídaně";
       case "SundayLunch": return "Nedělní oběd";
+      case "NoDayPart": return "Bez upřesnění dne (postupné odebírání)";
       
       default: return "Neznámé jídlo";
     }
@@ -449,6 +450,7 @@ module.exports = function(eleventyConfig) {
     result.push(...foods.filter(x => x.day_part === "SaturdaySupper"));
     result.push(...foods.filter(x => x.day_part === "SundayBreakfast"));
     result.push(...foods.filter(x => x.day_part === "SundayLunch"));
+    result.push(...foods.filter(x => x.day_part === "NoDayPart"));
 
     return result;
   });
