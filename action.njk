@@ -108,36 +108,61 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               Vypsané závody:
             </div>
             <div class="col-10">
-              {%- for race in action.Races -%}
-                {%- if race.SerieType == 'MCR_DT' -%}
-                  <div class="col color-mcr-dt">{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}], součástí seriálu MČR Dogtrekking
-                  Vypsané kategorie:
-                  <ul>
-                      {%- for category in race.Categories -%}
-                      <li>- {{ category.Name }}</li>
-                      {%- endfor -%}
-                    </ul>
+              <div class="container">
+                {%- for race in action.Races -%}
+                  <div class="row">
+                    {%- if race.SerieType == 'MCR_DT' -%}
+                      <div class="col color-mcr-dt">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col">
+                              {{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}], součástí seriálu MČR Dogtrekking
+                            </div>
+                            <div class="col">
+                              Vypsané kategorie: 
+                                {%- for category in race.Categories -%}
+                                  <span class="badge badge-secondary">{{ category.Name }}</span>
+                                {%- endfor -%}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- elif race.SerieType == 'MCR_DM' -%}
+                      <div class="col color-mcr-dm">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col">
+                              {{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}], součástí seriálu MČR Dogmaraton
+                            </div>
+                            <div class="col">
+                              Vypsané kategorie:
+                                {%- for category in race.Categories -%}
+                                  <span class="badge badge-secondary">{{ category.Name }}</span>
+                                {%- endfor -%}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- else -%}
+                      <div class="col color-other">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col">
+                              {{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}]
+                            </div>
+                            <div class="col">
+                              Vypsané kategorie:
+                                  {%- for category in race.Categories -%}
+                                    <span class="badge badge-secondary">{{ category.Name }}</span>
+                                  {%- endfor -%}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
                   </div>
-                {%- elif race.SerieType == 'MCR_DM' -%}
-                  <div class="col color-mcr-dm">{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}], součástí seriálu MČR Dogmaraton
-                    Vypsané kategorie:
-                      <ul>
-                        {%- for category in race.Categories -%}
-                        <li>- {{ category.Name }}</li>
-                        {%- endfor -%}
-                      </ul>
-                    </div>
-                {%- else -%}
-                  <div class="col color-other">{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}]
-                    Vypsané kategorie:
-                      <ul>
-                        {%- for category in race.Categories -%}
-                        <li>- {{ category.Name }}</li>
-                        {%- endfor -%}
-                      </ul>
-                  </div>
-                {%- endif -%}
-              {%- endfor -%}
+                {%- endfor -%}
+              </div>
             </div>
           </div>
           {%- if action.Latitude > 0.0 -%}
