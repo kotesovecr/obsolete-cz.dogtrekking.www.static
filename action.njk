@@ -538,7 +538,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     let pedigreeEle = document.getElementById("dog_pedigree");
     let tableEle = document.getElementById("EntryRegistratedDogs");
 
-    preparingEntryDogs.push({ name: nameEle.value, chip: chipEle.value, pedigree: pedigreeEle.value });
+    if (nameEle.value !== "") // do not add dog with no name
+        preparingEntryDogs.push({ name: nameEle.value, chip: chipEle.value, pedigree: pedigreeEle.value });
 
 
     let row = tableEle.insertRow(-1);
@@ -609,6 +610,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }
 
   function sendEntryRegistration() {
+    AddDog(); // to be sure that in case user did not pressed the AddDog - add them.
+
     let bday = document.getElementById("bday").value;
     let bmonth = document.getElementById("bmonth").value;
     let byear = document.getElementById("byear").value;
