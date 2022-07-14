@@ -207,118 +207,91 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
-              <div class="col-2">
+              <div class="col-12 col-lg-2">
                 <h6>Kontaktní údaje</h6>
               </div>
-              <div class="col-5">
+              <div class="col-12 col-lg-5">
                 <label for="fname">Jméno:</label>
-              </div>
-              <div class="col-5">
-                <label for="lname">Příjmení:</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-              </div>
-              <div class="col-5">
                 <input type="text" autocomplete="given-name" id="fname" />
               </div>
-              <div class="col-5">
+              <div class="col-12 col-lg-5">
+                <label for="lname">Příjmení:</label>
                 <input type="text" autocomplete="family-name" id="lname" />
               </div>
             </div>
             <div class="row">
-              <div class="col-2">
+              <div class="col-12 col-lg-2">
               </div>
-              <div class="col-5">
+              <div class="col-12 col-lg-5">
                 <label for="phone">Telefon</label>
-              </div>
-              <div class="col-5">
-                <label for="mail">E-Mail</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-              </div>
-              <div class="col-5">
                 <input type="tel" autocomplete="tel" id="phone" />
               </div>
-              <div class="col-5">
+              <div class="col-12 col-lg-5">
+                <label for="mail">E-Mail</label>
                 <input type="mail" autocomplete="email" id="mail" />
               </div>
             </div>
             <div class="row">
-              <div class="col-2">
+              <div class="col-12 col-lg-2">
               </div>
-              <div class="col-5">
+              <div class="col-12 col-lg-5">
                 <label for="address">Adresa</label>
-              </div>
-              <div class="col-5">
-                <label for="city">Město</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-              </div>
-              <div class="col-5">
                 <input type="text" autocomplete="street-address" id="address" />
               </div>
-              <div class="col-5">
+              <div class="col-12 col-lg-5">
+                <label for="city">Město</label>
                 <input type="text" autocomplete="address-level2" id="city" />
               </div>
             </div>
+            <hr />
             <div class="row">
-              <div class="col-2">
+              <div class="col-12 col-lg-2">
                 <h6>Datum narození</h6>
               </div>
-              <div class="col-10">
+              <div class="col-12 col-lg-10">
                 <div class="container">
                   <div class="row">
-                    <div class="col-4">Den:</div>
-                    <div class="col-4">Měsíc:</div>
-                    <div class="col-4">Rok:</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-4"><input type="number" min="1" max="31" value="1" autocomplete="bday-day" id="bday" /></div>
-                    <div class="col-4"><input type="number" min="1" max="12" value="1" autocomplete="bday-month" id="bmonth" /></div>
-                    <div class="col-4"><input type="number" min="1922" max="2022" value="2000" autocomplete="bday-year" id="byear" /></div>
+                    <div class="col-4">
+                      <label for="bday">Den</label>
+                      <input type="number" min="1" max="31" value="1" autocomplete="bday-day" id="bday" />
+                    </div>
+                    <div class="col-4">
+                      <label for="bmonth">Měsíc</label>
+                      <input type="number" min="1" max="12" value="1" autocomplete="bday-month" id="bmonth" />
+                    </div>
+                    <div class="col-4">
+                      <label for="byear">Rok</label>
+                      <input type="number" min="1922" max="2022" value="2000" autocomplete="bday-year" id="byear" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <hr />
             <div class="row">
-              <div class="col-2">
+              <div class="col-12 col-lg-2">
                 <h6>Psi</h6>
               </div>
-              <div class="col-10">
+              <div class="col-12 col-lg-10">
                 <div class="container">
                   <div class="row">
                     <div class="col-4">
                       <label for="dog_name">Jméno psa</label>
-                    </div>
-                    <div class="col-4">
-                      <label for="dog_pedigree">Plemeno</label>
-                    </div>
-                    <div class="col-4">
-                      <label for="dog_chip">Číslo čipu</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-4">
                       <input type="text" id="dog_name" />
                     </div>
                     <div class="col-4">
+                      <label for="dog_pedigree">Plemeno</label>
                       <input type="text" id="dog_pedigree" />
                     </div>
                     <div class="col-4">
+                      <label for="dog_chip">Číslo čipu</label>
                       <input type="text" id="dog_chip" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-12 col-lg-8">
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4">
                       <button type="button" class="btn btn-secondary" onclick="AddDog()">Přidej psa</button>
                     </div>
                   </div>
@@ -342,10 +315,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
-              <div class="col-2">
+              <div class="col-12 col-lg-2">
                 <h6>Výběr jídla</h6>
               </div>
-              <div class="col-10">
+              <div class="col-12 col-lg-10">
                 <div class="container">
                   <table>
                     <thead>
@@ -372,9 +345,9 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
-              <div class="col-9">
+              <div class="col-12 col-lg-9">
               </div>
-              <div class="col-3">
+              <div class="col-12 col-lg-3">
                 <button type="button" class="btn btn-primary" onclick="sendEntryRegistration()">Odeslat</button>
               </div>
             </div>
