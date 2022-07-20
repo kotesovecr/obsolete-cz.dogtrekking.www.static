@@ -48,7 +48,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         </li>
         <li class="nav-item">
           {%- if action.IsEnteringOpened >= "1" -%} {# 1 - is used local entering form, 2 - is administered by system and is used external/custom entering form #}
-            <a class="nav-item" id="stats-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistiky</a>
+            <a class="nav-link" id="stats-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistiky</a>
           {%- else -%}
             <a class="nav-link disabled" id="stats-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistiky</a>
           {%- endif -%}
@@ -394,8 +394,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <div class="container">
           <div class="row">
             <div class="col">
-              <h3>Upravujeme, přídáváme filtry ... Bude vypadat lépe :)</h3>
-              <table>
+              <table class="sortedTable-500 add-margin-bottom">
                 <thead>
                   <tr>
                     <th>Příjmení, jméno</th>
@@ -489,11 +488,20 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
 
 
             {# Results #}
-      <div class="tab-pane" id="results" role="tabpanel" aria-labelledby="results-tab">
+      <div class="tab-pane" id="statistics" role="tabpanel" aria-labelledby="stats-tab">
         <h4>Statistiky</h4>
         <hr />
         <div class="container">
-          <canvas id="statsEntering" width="100%" height="400"></canvas>
+          <div class="row">
+            <div class="col">
+              <canvas id="statsEnteringSumPerRace"></canvas>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <canvas id="statsEnteringPerRaceDay"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -704,40 +712,110 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     $('.nav-tabs a[href="#applying"]').tab('show');
   }
 
+  function enteredListOnChange(selectedRace) {
+    console.log(selectedRace.value);
+  }
 
 
   /* statistics */
   let statsLabelsEntering = [];
-  let statsDatasetEntering = [];
+  let statsDatasetEnteringPerRaceDay = [];
+  let statsDatasetEnteringSumPerRace = [];
+
+  let entries = [];
+  let dayFormatList = [];
+  {%- for entry in action.Entries -%}
+    entries.push({
+      entered_date: "{{ entry.entered_date }}",
+      id_race: {{ entry.id_race }}
+    });
+  {%- endfor -%}
+
+  let sortedEntries = entries.sort((a, b) => {
+    let aT = moment(a.entered_date, "YYYY-MM-DD");
+    let bT = moment(b.entered_date, "YYYY-MM-DD");
+
+    if (aT.entered_date > bT.entered_date)
+        return 1;
+
+    if (aT.entered_date < bT.entered_date)
+        return -1;
+
+    return 0;
+  });
+
+  sortedEntries.forEach(entry => {
+    let dayFormat = moment(entry.entered_date, "YYYY-MM-DD").format("YYYY-MM-DD");
+    let day = moment(entry.entered_date, "YYYY-MM-DD").format("DD.MM");
+            
+    if (statsLabelsEntering.filter(label => label === day).length <= 0) {
+      statsLabelsEntering.push(day);
+      dayFormatList.push(dayFormat);
+    }
+  });
+  
+  let races = [];
   {%- for race in action.Races -%}
   {
-    let rname = "{{ race.Name }}";
-    
-    {%- for catg in race.Categories -%}
-      {
-        cname = "{{ catg.Name }}";
-
-        statsLabelsEntering.push(rname + " - " + cname);
-
-        let dataset = {
-          label: 'Dataset 1',
-          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-          borderColor: "#ffbbbb",
-          backgroundColor: "#ffbbbbaa",
-        };
-        statsDatasetEntering.push(dataset);
-      }
-    {%- endfor -%}
+    races.push({
+      id: {{ race.Id }},
+      name: "{{ race.Name }}"
+    });
   }
   {%- endfor -%}
 
-  const statsDataEntering = {
+  let possibleColors = [
+    'rgba(255, 100, 150, 1)',
+    'rgba(54,  150, 250, 1)',
+    'rgba(255, 200,  50, 1)',
+    'rgba(75,  200, 200, 1)',
+    'rgba(255, 100, 250, 1)',
+    'rgba(100, 200,  50, 1)',
+    'rgba(255, 100, 200, 1)',
+    'rgba(150, 200, 150, 1)',
+  ];
+  let colorIdx = 0;
+  races.forEach(race => {
+    let sum = 0;
+    let raceEntries = entries.filter(e => e.id_race === race.id);
+    let datasetPerRaceDay = {
+        label: race.name,
+        data: [],
+        fill: false,
+        backgroundColor: possibleColors[colorIdx],
+        borderColor: possibleColors[colorIdx]
+      };
+    let datasetSumPerRace = {
+        label: race.name,
+        data: [],
+        fill: false,
+        backgroundColor: possibleColors[colorIdx],
+        borderColor: possibleColors[colorIdx]
+      }
+
+      dayFormatList.forEach(dfl => {
+        let currentDayNumber = sortedEntries.filter(e => e.id_race === race.id && moment(e.entered_date, "YYYY-MM-DD").format('YYYY-MM-DD') === dfl).length;
+
+        datasetPerRaceDay.data.push(currentDayNumber);
+        sum += currentDayNumber;
+
+        datasetSumPerRace.data.push(sum);
+      });
+
+
+      statsDatasetEnteringPerRaceDay.push(datasetPerRaceDay);
+      statsDatasetEnteringSumPerRace.push(datasetSumPerRace);
+
+      colorIdx++;
+  });
+
+  const statsDataEnteringPerRaceDay = {
     labels: statsLabelsEntering,
-    datasets: statsDatasetEntering
+    datasets: statsDatasetEnteringPerRaceDay
   };
-  const statsConfigEntering = {
+  const statsConfigEnteringPerRaceDay = {
     type: 'line',
-    data: statsDataEntering,
+    data: statsDataEnteringPerRaceDay,
     options: {
       responsive: true,
       plugins: {
@@ -746,12 +824,45 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         },
         title: {
           display: true,
-          text: 'Přihlašování'
+          text: 'Přihlašování Závod/den'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
         }
       }
     },
   };
-  const statsEnteringContext = document.getElementById('statsEntering').getContext('2d');
-  const myChart = new Chart(statsEnteringContext, statsConfigEntering);
 
+  const statsDataEnteringSumPerRace = {
+    labels: statsLabelsEntering,
+    datasets: statsDatasetEnteringSumPerRace
+  };
+  const statsConfigEnteringSumPerRace = {
+    type: 'line',
+    data: statsDataEnteringSumPerRace,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Přihlašování Závod/den celkový počet'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    },
+  };
+  const statsEnteringPerRaceDayContext = document.getElementById('statsEnteringPerRaceDay').getContext('2d');
+  const statsEnteringPerRaceDayChart = new Chart(statsEnteringPerRaceDayContext, statsConfigEnteringPerRaceDay);
+
+  const statsEnteringSumPerRaceContext = document.getElementById('statsEnteringSumPerRace').getContext('2d');
+  const statsEnteringSumPerRace = new Chart(statsEnteringSumPerRaceContext, statsConfigEnteringSumPerRace);
 </script>
