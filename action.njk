@@ -896,14 +896,14 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         let starts_{{ race.Id }} = results_{{ race.Id }}.sort((a,b) => moment(a.start).format('YYYYMMDDHHmmss') - moment(b.start).format('YYYYMMDDHHmmss'));
         let finishes_{{ race.Id }} = results_{{ race.Id }}.sort((a,b) => moment(b.finish).format('YYYYMMDDHHmmss') - moment(a.finish).format('YYYYMMDDHHmmss'));
 
-        let startTime_{{ race.Id }} = moment({{ race.Begin }}, "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD HH:mm:ss");
+        let startTime_{{ race.Id }} = moment('{{ raceResults.Start }}', "YYYY-MM-DD HH:mm:ss");
         if (starts_{{ race.Id }}.length > 0) {
-          startTime_{{ race.Id }} = moment(starts_{{ race.Id }}[0]).format("YYYY-MM-DD HH:mm:ss");
+          startTime_{{ race.Id }} = moment(starts_{{ race.Id }}[0].start);
         }
 
-        let endTime_{{ race.Id }} = moment({{ race.End }}, "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD HH:mm:ss");
+        let endTime_{{ race.Id }} = moment('{{ raceResults.Finish }}', "YYYY-MM-DD HH:mm:ss");
         if (finishes_{{ race.Id }}.length > 0) {
-          endTime_{{ race.Id }} = moment(finishes_{{ race.Id }}[0], "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD HH:mm:ss");
+          endTime_{{ race.Id }} = moment(finishes_{{ race.Id }}[0].finish);
         }
         {# resultsSortedByStart_{{ race.Id }}.forEach(race => {
           
@@ -915,12 +915,12 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               listOfXValues_{{ race.Id }}.push(moment(r.finish).format('YYYYMMDDHHmmss'));
           });
         }); #}
-        let tm = moment(startTime_{{ race.Id }}, "YYYY-MM-DD HH:mm:ss");
-        let end = moment(endTime_{{ race.Id }}, "YYYY-MM-DD HH:mm:ss");
-        while (tm < end) {
-          listOfXValues_{{ race.Id }}.push(tm.format("YYYYMMDDHHmmss"));
 
-          tm.addMinutes(15);
+        let tm_{{ race.Id }} = startTime_{{ race.Id }};
+        while (tm_{{ race.Id }} <= endTime_{{ race.Id }}) {
+          listOfXValues_{{ race.Id }}.push(tm_{{ race.Id }}.format("YYYYMMDDHHmmss"));
+
+          tm_{{ race.Id }}.add(15, 'minutes');
         }
     
         resultsSortedByStart_{{ race.Id }}.forEach(r => {
@@ -979,8 +979,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
           },
         };
 
-        console.log(statsRacingStatePerRace_{{ race.Id }}_Config);
-        
         const statsRacingStatePerRace_{{ race.Id }}_Context = document.getElementById('statsRacingStatePerRace_{{ race.Id }}').getContext('2d');
         const statsRacingStatePerRace_{{ race.Id }} = new Chart(statsRacingStatePerRace_{{ race.Id }}_Context, statsRacingStatePerRace_{{ race.Id }}_Config);
       {%- endif -%} {# results.Race == action.Race #}
