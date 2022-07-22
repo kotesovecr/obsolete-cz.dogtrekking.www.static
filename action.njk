@@ -47,11 +47,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
           <a class="nav-link" id="results-tab" data-toggle="tab" href="#results" role="tab" aria-controls="results" aria-selected="false">Výsledky</a>
         </li>
         <li class="nav-item">
-          {%- if action.IsEnteringOpened >= "1" -%} {# 1 - is used local entering form, 2 - is administered by system and is used external/custom entering form #}
-            <a class="nav-link" id="stats-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistiky</a>
-          {%- else -%}
-            <a class="nav-link disabled" id="stats-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistiky</a>
-          {%- endif -%}
+          <a class="nav-link" id="stats-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false">Statistiky</a>
         </li>
       </ul>
     </div>
@@ -492,6 +488,15 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <h4>Statistiky</h4>
         <hr />
         <div class="container">
+
+          {%- for race in action.Races -%} {#| filterOnlyStartedRaces -%} #}
+          <div class="row">
+            <div class="col">
+              <canvas id="statsRacingStatePerRace_{{ race.Id }}"></canvas>
+            </div>
+          </div>
+          {%- endfor -%}
+
           <div class="row">
             <div class="col">
               <canvas id="statsEnteringSumPerRace"></canvas>
@@ -717,10 +722,17 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }
 
 
+  var hash = window.location.hash.substr(1);
+  console.log(hash);
+  if (hash === "applying") {
+    setActiveToApplying();
+  }
+
   /* statistics */
   let statsLabelsEntering = [];
   let statsDatasetEnteringPerRaceDay = [];
   let statsDatasetEnteringSumPerRace = [];
+
 
   let entries = [];
   let dayFormatList = [];
@@ -764,16 +776,11 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }
   {%- endfor -%}
 
-  let possibleColors = [
-    'rgba(255, 100, 150, 1)',
-    'rgba(54,  150, 250, 1)',
-    'rgba(255, 200,  50, 1)',
-    'rgba(75,  200, 200, 1)',
-    'rgba(255, 100, 250, 1)',
-    'rgba(100, 200,  50, 1)',
-    'rgba(255, 100, 200, 1)',
-    'rgba(150, 200, 150, 1)',
-  ];
+  let possibleColors = [];
+  {%- for color in colors -%}
+    possibleColors.push('{{color}}');
+  {%- endfor -%}
+
   let colorIdx = 0;
   races.forEach(race => {
     let sum = 0;
@@ -865,4 +872,118 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
 
   const statsEnteringSumPerRaceContext = document.getElementById('statsEnteringSumPerRace').getContext('2d');
   const statsEnteringSumPerRace = new Chart(statsEnteringSumPerRaceContext, statsConfigEnteringSumPerRace);
+
+
+  {%- for race in action.Races -%} {# | filterOnlyStartedRaces -%} #}
+    let statsRacingStatePerRace_{{ race.Id }}_Labels = [];
+    let statsRacingStatePerRace_{{ race.Id }}_Dataset = [];
+
+
+    let results_{{ race.Id }} = [];
+    {%- for raceResults in action.Results.Races -%}
+      {%- if raceResults.Id == race.Id -%}
+        {%- for categoryResults in raceResults.Categories -%}
+          {%- for result in categoryResults.Competitors -%}
+            results_{{ race.Id }}.push({ start: moment('{{ result.Start }}', "YYYY-MM-DD HH:mm:ss"), finish: moment('{{ result.Finish }}', "YYYY-MM-DD HH:mm:ss") });
+          {%- endfor -%}
+        {%- endfor -%}
+      
+        let resultsSortedByStart_{{ race.Id }} = results_{{ race.Id }}.sort((a,b) => moment(a.start).format('YYYYMMDDHHmmss') - moment(b.start).format('YYYYMMDDHHmmss'));
+    
+        let colorIdxRaceStates_{{ race.Id }} = 0;
+        let listOfXValues_{{ race.Id }} = [];
+
+        let starts_{{ race.Id }} = results_{{ race.Id }}.sort((a,b) => moment(a.start).format('YYYYMMDDHHmmss') - moment(b.start).format('YYYYMMDDHHmmss'));
+        let finishes_{{ race.Id }} = results_{{ race.Id }}.sort((a,b) => moment(b.finish).format('YYYYMMDDHHmmss') - moment(a.finish).format('YYYYMMDDHHmmss'));
+
+        let startTime_{{ race.Id }} = moment({{ race.Begin }}, "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD HH:mm:ss");
+        if (starts_{{ race.Id }}.length > 0) {
+          startTime_{{ race.Id }} = moment(starts_{{ race.Id }}[0]).format("YYYY-MM-DD HH:mm:ss");
+        }
+
+        let endTime_{{ race.Id }} = moment({{ race.End }}, "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD HH:mm:ss");
+        if (finishes_{{ race.Id }}.length > 0) {
+          endTime_{{ race.Id }} = moment(finishes_{{ race.Id }}[0], "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD HH:mm:ss");
+        }
+        {# resultsSortedByStart_{{ race.Id }}.forEach(race => {
+          
+          resultsSortedByStart_{{ race.Id }}.forEach(r => {
+            if (listOfXValues_{{ race.Id }}.find(e => e === moment(r.start).format('YYYYMMDDHHmmss')) == null)
+              listOfXValues_{{ race.Id }}.push(moment(r.start).format('YYYYMMDDHHmmss'));
+    
+            if (listOfXValues_{{ race.Id }}.find(e => e === moment(r.finish).format('YYYYMMDDHHmmss')) == null)
+              listOfXValues_{{ race.Id }}.push(moment(r.finish).format('YYYYMMDDHHmmss'));
+          });
+        }); #}
+        let tm = moment(startTime_{{ race.Id }}, "YYYY-MM-DD HH:mm:ss");
+        let end = moment(endTime_{{ race.Id }}, "YYYY-MM-DD HH:mm:ss");
+        while (tm < end) {
+          listOfXValues_{{ race.Id }}.push(tm.format("YYYYMMDDHHmmss"));
+
+          tm.addMinutes(15);
+        }
+    
+        resultsSortedByStart_{{ race.Id }}.forEach(r => {
+          let dataset = {
+            label: '',
+            data: [],
+            fill: false,
+            backgroundColor: possibleColors[colorIdxRaceStates_{{ race.Id }}],
+            borderColor: possibleColors[colorIdxRaceStates_{{ race.Id }}]
+          };
+    
+          let data = [];
+    
+          listOfXValues_{{ race.Id }}.sort((a, b) => a-b).forEach(x => {
+            if (x > moment(r.start).format('YYYYMMDDHHmmss') && x < moment(r.finish).format('YYYYMMDDHHmmss'))
+              data.push(1);
+    
+            else
+              data.push(0);
+          });
+    
+          dataset.data = data;
+          statsRacingStatePerRace_{{ race.Id }}_Dataset.push(dataset);
+          colorIdxRaceStates_{{ race.Id }}++;
+          if (colorIdxRaceStates_{{ race.Id }} >= possibleColors.length)
+            colorIdxRaceStates_{{ race.Id }} = 0;
+        });
+    
+        listOfXValues_{{ race.Id }}.sort((a, b) => a-b).forEach(x => {
+          statsRacingStatePerRace_{{ race.Id }}_Labels.push(moment(x, 'YYYYMMDDHHmmss').format('DD HH:mm'));
+        });
+        const statsRacingStatePerRace_{{ race.Id }}_Data = {
+          labels: statsRacingStatePerRace_{{ race.Id }}_Labels,
+          datasets: statsRacingStatePerRace_{{ race.Id }}_Dataset
+        };
+    
+        let statsRacingStatePerRace_{{ race.Id }}_Config = {
+          type: 'line',
+          data: statsRacingStatePerRace_{{ race.Id }}_Data,
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Stav závodníků na trati {{ race.Name }}'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          },
+        };
+
+        console.log(statsRacingStatePerRace_{{ race.Id }}_Config);
+        
+        const statsRacingStatePerRace_{{ race.Id }}_Context = document.getElementById('statsRacingStatePerRace_{{ race.Id }}').getContext('2d');
+        const statsRacingStatePerRace_{{ race.Id }} = new Chart(statsRacingStatePerRace_{{ race.Id }}_Context, statsRacingStatePerRace_{{ race.Id }}_Config);
+      {%- endif -%} {# results.Race == action.Race #}
+    {%- endfor -%} {# action.Results.Races #}
+  {%- endfor -%} {# action.Races #}
 </script>

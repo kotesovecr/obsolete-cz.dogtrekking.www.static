@@ -265,6 +265,24 @@ module.exports = function(eleventyConfig) {
     return competitors;
   });
 
+  eleventyConfig.addFilter("filterOnlyStartedRaces", function(races) {
+    let startedRaces = races.filter(x => moment(x.Start, "YYYY-MM-DD HH:mm:ss") < moment());
+
+    return startedRaces;
+  });
+
+  eleventyConfig.addFilter("sortRaceStatsByStart", function(results) {
+    return results.sort((a, b) => {
+      if (a.start < b.start)
+        return -1;
+
+      if (a.start > b.start)
+        return 1;
+
+      return 0;
+    });
+  });
+
 // --------------------------------------------------------------------------------------------------
   eleventyConfig.addFilter("seriesCompetitorsForCategory", function(results, idOfCategory) {
     let ret = [];
