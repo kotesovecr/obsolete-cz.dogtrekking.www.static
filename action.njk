@@ -929,7 +929,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             data: [],
             fill: false,
             backgroundColor: possibleColors[colorIdxRaceStates_{{ race.Id }}],
-            borderColor: possibleColors[colorIdxRaceStates_{{ race.Id }}]
+            borderColor: possibleColors[colorIdxRaceStates_{{ race.Id }}],
+            cubicInterpolationMode: 'monotone'
           };
     
           let data = [];
