@@ -721,13 +721,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     console.log(selectedRace.value);
   }
 
-
-  var hash = window.location.hash.substr(1);
-  console.log(hash);
-  if (hash === "applying") {
-    setActiveToApplying();
-  }
-
   /* statistics */
   let statsLabelsEntering = [];
   let statsDatasetEnteringPerRaceDay = [];
@@ -996,4 +989,12 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
       {%- endif -%} {# results.Race == action.Race #}
     {%- endfor -%} {# action.Results.Races #}
   {%- endfor -%} {# action.Races #}
+
+
+  $(document).ready(function () {
+    var hash = window.location.hash.substr(1);
+    if (hash === "applying") {
+      setActiveToApplying();
+    }
+  });
 </script>
