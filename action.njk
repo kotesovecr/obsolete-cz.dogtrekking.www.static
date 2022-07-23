@@ -714,7 +714,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }
 
   function setActiveToApplying() {
-    $('.nav-tabs a[href="#applying"]').tab('show');
+    if (typeof($) === "undefined")
+      document.querySelector('.nav-tabs a[href="#applying"]').tab('show');
+    else
+      $('.nav-tabs a[href="#applying"]').tab('show');
   }
 
   function enteredListOnChange(selectedRace) {
