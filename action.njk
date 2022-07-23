@@ -975,7 +975,17 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             },
             scales: {
               y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    callback: function(value, index, ticks) {
+                      switch (value) {
+                        case 0: return "V cíli / DNS";
+                        case 1: return "Na trati";
+
+                        default: return '';
+                      }
+                    }
+                }
               }
             }
           },
