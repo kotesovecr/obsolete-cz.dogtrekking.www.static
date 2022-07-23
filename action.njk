@@ -218,7 +218,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                 <select id="raceRaces" onchange="racesChanged()">
                   <option value="0">--== VYBER ZÁVOD ==--</option>
                   {%- for race in action.Races -%}
-                    <option value={{ race.Id }}>{{ race.Name }} [{{ race.Distance }}km][{{ race.Elevation }}m]</option>
+                    <option value={{ race.Id }}>{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}]</option>
                   {%- endfor -%}
                 </select>
               </div>
