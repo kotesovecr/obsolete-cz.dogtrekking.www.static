@@ -819,7 +819,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     datasets: statsDatasetEnteringPerRaceDay
   };
   const statsConfigEnteringPerRaceDay = {
-    type: 'line',
+    type: 'bar',
     data: statsDataEnteringPerRaceDay,
     options: {
       responsive: true,
@@ -845,7 +845,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     datasets: statsDatasetEnteringSumPerRace
   };
   const statsConfigEnteringSumPerRace = {
-    type: 'bar',
+    type: 'line',
     data: statsDataEnteringSumPerRace,
     options: {
       responsive: true,
