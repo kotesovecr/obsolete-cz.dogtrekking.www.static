@@ -373,6 +373,14 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr />
             <div class="row">
+              <div class="col-12 col-lg-2">
+                <h6>Poznámka</h6>
+              </div>
+              <div class="col-12 col-lg-10">
+                <textarea name="textarea" rows="5" cols="50" id="note" placeholder="Poznámka"></textarea>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-12 col-lg-9">
               </div>
               <div class="col-12 col-lg-3">
@@ -686,7 +694,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
       about: document.getElementById("about").value,
       dogs: preparingEntryDogs,
       tshirts: preparingEntryTShirts,
-      foods: preparingEntryFood
+      foods: preparingEntryFood,
+      about: $.trim($("#note").val())
     };
 
     let obj = {
@@ -715,10 +724,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
 
   function setActiveToApplying() {
       $('.nav-tabs a[href="#applying"]').tab('show');
-  }
-
-  function enteredListOnChange(selectedRace) {
-    console.log(selectedRace.value);
   }
 
   /* statistics */
