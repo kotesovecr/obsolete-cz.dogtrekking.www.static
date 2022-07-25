@@ -876,6 +876,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     let statsRacingStatePerRace_{{ race.Id }}_Labels = [];
     let statsRacingStatePerRace_{{ race.Id }}_Dataset = [];
 
+    document.getElementById('statsRacingStatePerRace_{{ race.Id }}').style.display = "none";
+
 
     let results_{{ race.Id }} = [];
     {%- for raceResults in action.Results.Races -%}
@@ -989,6 +991,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
           },
         };
 
+        document.getElementById('statsRacingStatePerRace_{{ race.Id }}').style.display = "block";
         const statsRacingStatePerRace_{{ race.Id }}_Context = document.getElementById('statsRacingStatePerRace_{{ race.Id }}').getContext('2d');
         const statsRacingStatePerRace_{{ race.Id }} = new Chart(statsRacingStatePerRace_{{ race.Id }}_Context, statsRacingStatePerRace_{{ race.Id }}_Config);
       {%- endif -%} {# results.Race == action.Race #}
