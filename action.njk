@@ -899,7 +899,12 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         {%- for categoryResults in raceResults.Categories -%}
           {%- for result in categoryResults.Competitors -%}
             {%- if result.Start != '' -%}
-              results_{{ race.Id }}.push({ start: moment('{{ result.Start }}', "YYYY-MM-DD HH:mm:ss"), finish: moment('{{ result.Finish }}', "YYYY-MM-DD HH:mm:ss") });
+              let start_{{ result.IdEntry }} = moment('{{ result.Start }}', "YYYY-MM-DD HH:mm:ss");
+              let finish_{{ result.IdEntry }} = moment('{{ result.Finish }}', "YYYY-MM-DD HH:mm:ss");
+
+              if (start_{{ result.IdEntry }}.isValid()) {
+                results_{{ race.Id }}.push({ start: start_{{ result.IdEntry }}, finish: finish_{{ result.IdEntry }} });
+              }
             {%- endif %}
           {%- endfor -%}
         {%- endfor -%}
