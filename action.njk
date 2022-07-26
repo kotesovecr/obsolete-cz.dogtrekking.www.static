@@ -397,8 +397,23 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         <hr />
         <div class="container">
           <div class="row">
+            <div class="col-6">
+              <select id="registrationsRaceFilter" value="" onchange="registrationsRaceFilterChanged()">
+                <option value="">Všechny závody</option>
+                {%- for race in action.Races -%}
+                  <option value={{ race.Id }}>{{ race.Name }} [{{ race.Distance }}][{{ race.Elevation }}]</option>
+                {%- endfor -%}
+              </select>
+            </div>
+            <div class="col-6">
+              <select id="registrationsCategoryFilter" value="" onchange="registrationsCategoryFilterChanged()">
+                <option value="">Nejdříve vybrat závod</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
             <div class="col">
-              <table class="sortedTable-500 add-margin-bottom">
+              <table class="sortedTable-500 add-margin-bottom" id="registrations">
                 <thead>
                   <tr>
                     <th>Příjmení, jméno</th>
@@ -684,14 +699,13 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
       action_id: {{ action.Id }},
       race_id: document.getElementById("raceRaces").value,
       category_id: document.getElementById("raceCategories").value,
-      name: document.getElementById("fname").value,
-      surname: document.getElementById("lname").value,
-      phone: document.getElementById("phone").value,
-      email: document.getElementById("mail").value,
+      name: $.trim($("#fname").val()),
+      surname: $.trim($("#lname").val()),
+      phone: $.trim($("#phone").val()),
+      email: $.trim($("#mail").val()),
       birthday: birthday,
-      street: document.getElementById("address").value,
-      city: document.getElementById("city").value,
-      about: document.getElementById("about").value,
+      street: $.trim($("#address").val()),
+      city: $.trim($("#city").val()),
       dogs: preparingEntryDogs,
       tshirts: preparingEntryTShirts,
       foods: preparingEntryFood,
@@ -884,7 +898,9 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
       {%- if raceResults.Id == race.Id -%}
         {%- for categoryResults in raceResults.Categories -%}
           {%- for result in categoryResults.Competitors -%}
-            results_{{ race.Id }}.push({ start: moment('{{ result.Start }}', "YYYY-MM-DD HH:mm:ss"), finish: moment('{{ result.Finish }}', "YYYY-MM-DD HH:mm:ss") });
+            {%- if result.Start != '' -%}
+              results_{{ race.Id }}.push({ start: moment('{{ result.Start }}', "YYYY-MM-DD HH:mm:ss"), finish: moment('{{ result.Finish }}', "YYYY-MM-DD HH:mm:ss") });
+            {%- endif %}
           {%- endfor -%}
         {%- endfor -%}
       
@@ -991,18 +1007,110 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
           },
         };
 
-        document.getElementById('statsRacingStatePerRace_{{ race.Id }}').style.display = "block";
-        const statsRacingStatePerRace_{{ race.Id }}_Context = document.getElementById('statsRacingStatePerRace_{{ race.Id }}').getContext('2d');
-        const statsRacingStatePerRace_{{ race.Id }} = new Chart(statsRacingStatePerRace_{{ race.Id }}_Context, statsRacingStatePerRace_{{ race.Id }}_Config);
+        if (results_{{ race.Id }}.length > 0) {
+          document.getElementById('statsRacingStatePerRace_{{ race.Id }}').style.display = "block";
+
+          const statsRacingStatePerRace_{{ race.Id }}_Context = document.getElementById('statsRacingStatePerRace_{{ race.Id }}').getContext('2d');
+          const statsRacingStatePerRace_{{ race.Id }} = new Chart(statsRacingStatePerRace_{{ race.Id }}_Context, statsRacingStatePerRace_{{ race.Id }}_Config);
+        }
       {%- endif -%} {# results.Race == action.Race #}
     {%- endfor -%} {# action.Results.Races #}
   {%- endfor -%} {# action.Races #}
+
+
+  function registrationsRaceFilterChanged() {
+    var value = document.getElementById("registrationsRaceFilter").value;
+    var categoriesSelect = document.getElementById("registrationsCategoryFilter");
+
+    let races = [];
+    {%- for race in action.Races -%}
+    {
+      let race = {};
+      race.Id = "{{ race.Id }}";
+      race.Name = "{{ race.Name }}";
+      
+      race.Categories = [];
+
+      {%- for catg in race.Categories -%}
+        {
+          let category = {};
+
+          category.Id = "{{ catg.Id }}";
+          category.Name = "{{ catg.Name }}";
+
+          race.Categories.push(category);
+        }
+      {%- endfor -%}
+
+      races.push(race);
+    }
+    {%- endfor -%}
+
+    races.forEach(race => {
+      if (race.Id == value) {
+        var str = ""
+  
+        str = "<option value=''>Všichni</option>";
+        for (let i = 0; i < race.Categories.length; i++) {
+          str += "<option value='" + race.Categories[i].Id + "'>" + race.Categories[i].Name + "</option>"
+        }
+        categoriesSelect.innerHTML = str;
+
+        $('#registrationsCategoryFilter').val("");
+        $('#registrationsCategoryFilter').niceSelect('update');
+
+        fillRegistrationsTableByFilter($('#registrationsRaceFilter').val(), $('#registrationsCategoryFilter').val());
+      }
+    });
+  };
+
+  function registrationsCategoryFilterChanged() {
+    fillRegistrationsTableByFilter($('#registrationsRaceFilter').val(), $('#registrationsCategoryFilter').val());
+  }
+
+function fillRegistrationsTableByFilter(filterRace, filterCategory) {
+  $("#registrations tbody").empty();
+
+  let dogsContent = "";
+  {%- for entry in action.Entries -%}
+    dogsContent = "<ul>";
+    {%- for dog in entry.dogs -%}
+      dogsContent += "<li>{{ dog.name }} [{{ dog.pedigree }}]</li>";
+    {%- endfor -%}
+    dogsContent += "</ul>";
+
+    if ((filterRace === null || filterRace === "" || filterRace == {{ entry.id_race }}) 
+       && (filterCategory === null || filterCategory === "" || filterCategory == {{ entry.id_category }})) {
+         $("#registrations").find('tbody').append(
+           "<tr>" +
+             "<td>{{ entry.surname }}, {{ entry.name }}</td>" +
+             "<td>{{ entry.race_name }}</td>" +
+             "<td>{{ entry.category_name }}</td>" +
+             "<td>" + dogsContent + "</td>" +
+             "<td>{{ entry.paied | translatePayment }}</td>" +
+           "</tr>");
+    }
+  {%- endfor -%}
+}
 
 
   $(document).ready(function () {
     var hash = window.location.hash.substr(1);
     if (hash === "applying") {
       setActiveToApplying();
+    }
+    else {
+      switch (hash) {
+        case "information": $('.nav-tabs a[href="#information"]').tab('show'); break;
+        case "news": $('.nav-tabs a[href="#news"]').tab('show'); break;
+        case "propositions": $('.nav-tabs a[href="#propositions"]').tab('show'); break;
+        case "applying": $('.nav-tabs a[href="#applying"]').tab('show'); break;
+        case "entered": $('.nav-tabs a[href="#entered"]').tab('show'); break;
+        case "results": $('.nav-tabs a[href="#results"]').tab('show'); break;
+        case "statistics": $('.nav-tabs a[href="#statistics"]').tab('show'); break;
+
+        default: break;
+      }
     }
   });
 </script>
