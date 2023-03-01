@@ -303,32 +303,34 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               <div class="col-12 col-lg-10">
                 <div class="container">
                   <div class="row">
-                    <div class="col-3">
+                    <div class="col-xs-12 col-md-3">
                       <label for="dog_name">Jméno psa</label>
                       <input type="text" id="dog_name" />
                     </div>
-                    <div class="col-3">
+                    <div class="col-xs-12 col-md-3">
                       <label for="dog_pedigree">Plemeno</label>
                       <input type="text" id="dog_pedigree" />
                     </div>
-                    <div class="col-3">
+                    <div class="col-xs-12 col-md-3">
                       <label for="dog_chip">Číslo čipu</label>
                       <input type="text" id="dog_chip" />
                     </div>
                     <div class="col-3">
-                      <label for="dog_birthday">Datum narození" />
+                      <label for="dog_birthday">Datum narození</label>
                       <div class="container">
-                        <div class="col-4">
-                          <label for="dog-bday">Den</label>
-                          <input type="number" min="1" max="31" value="1" autocomplete="dog-bday-day" id="dog-bday" />
-                        </div>
-                        <div class="col-4">
-                          <label for="dog-bmonth">Měsíc</label>
-                          <input type="number" min="1" max="12" value="1" autocomplete="dog-bday-month" id="dog-bmonth" />
-                        </div>
-                        <div class="col-4">
-                          <label for="dog-byear">Rok</label>
-                          <input type="number" min="1922" max="2022" value="2000" autocomplete="dog-bday-year" id="dog-byear" />
+                        <div class="row">
+                          <div class="col-4">
+                            <label for="dog-bday">Den</label>
+                            <input type="number" min="1" max="31" value="1" autocomplete="dog-bday-day" id="dog-bday" />
+                          </div>
+                          <div class="col-4">
+                            <label for="dog-bmonth">Měsíc</label>
+                            <input type="number" min="1" max="12" value="1" autocomplete="dog-bday-month" id="dog-bmonth" />
+                          </div>
+                          <div class="col-4">
+                            <label for="dog-byear">Rok</label>
+                            <input type="number" min="1922" max="2022" value="2000" autocomplete="dog-bday-year" id="dog-byear" />
+                          </div>
                         </div>
                       </div>
                     </div>
