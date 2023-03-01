@@ -303,17 +303,34 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               <div class="col-12 col-lg-10">
                 <div class="container">
                   <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                       <label for="dog_name">Jméno psa</label>
                       <input type="text" id="dog_name" />
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                       <label for="dog_pedigree">Plemeno</label>
                       <input type="text" id="dog_pedigree" />
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                       <label for="dog_chip">Číslo čipu</label>
                       <input type="text" id="dog_chip" />
+                    </div>
+                    <div class="col-3">
+                      <label for="dog_birthday">Datum narození" />
+                      <div class="container">
+                        <div class="col-4">
+                          <label for="dog-bday">Den</label>
+                          <input type="number" min="1" max="31" value="1" autocomplete="dog-bday-day" id="dog-bday" />
+                        </div>
+                        <div class="col-4">
+                          <label for="dog-bmonth">Měsíc</label>
+                          <input type="number" min="1" max="12" value="1" autocomplete="dog-bday-month" id="dog-bmonth" />
+                        </div>
+                        <div class="col-4">
+                          <label for="dog-byear">Rok</label>
+                          <input type="number" min="1922" max="2022" value="2000" autocomplete="dog-bday-year" id="dog-byear" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="row">
@@ -614,10 +631,17 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     let chipEle = document.getElementById("dog_chip");
     let nameEle = document.getElementById("dog_name");
     let pedigreeEle = document.getElementById("dog_pedigree");
+
+    let bday = document.getElementById("dog_bday_day");
+    let bmonth = document.getElementById("dog_bday_month");
+    let byear = document.getElementById("dog_bday_year");
+
+    let bdate = '' + byear + '-' + (bmonth<=9 ? '0' + bmonth : bmonth) + '-' + (bday <= 9 ? '0' + bday : bday);
+
     let tableEle = document.getElementById("EntryRegistratedDogs");
 
     if (nameEle.value !== "") // do not add dog with no name
-        preparingEntryDogs.push({ name: nameEle.value, chip: chipEle.value, pedigree: pedigreeEle.value });
+        preparingEntryDogs.push({ name: nameEle.value, chip: chipEle.value, pedigree: pedigreeEle.value, birthday: bdate });
 
 
     let row = tableEle.insertRow(-1);
@@ -627,15 +651,20 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     cell.innerText = chipEle.value;
 
     cell = row.insertCell(-1);
+    cell.innerText = bdate;
+
+    cell = row.insertCell(-1);
     cell.innerText = nameEle.value;
 
     cell = row.insertCell(-1);
     cell.innerText = pedigreeEle.value;
 
-
     chipEle.value = "";
     nameEle.value = "";
     pedigreeEle.value = "";
+    bday.value = "1";
+    bmonth.value = "1";
+    byear.value = "2022";
   }
 
   function racesChanged() {
