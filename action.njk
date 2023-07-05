@@ -730,8 +730,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
 
     let tableEle = document.getElementById("EntryOrderedTShirts");
 
-    if (nameEle.value !== "") // do not add dog with no name
-        preparingEntryTShirts.push({ id: idEle.value, size: sizeEle.value, count: countEle.value });
+    preparingEntryTShirts.push({ id: idEle.value, size: sizeEle.value, count: countEle.value });
 
 
     var tshirt = action.TShirtsSelection.find(obj => {
