@@ -724,6 +724,11 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   }
 
   function AddTshirt() {
+    let tshirts = [];
+    {%- for tshirt in action.TShirtsSelection -%}
+      tshirts.push({ id: {{ tshirt.id }}, type: {{ tshirt.type }}, price: {{ tshirt.price }} });
+    {%- endfor -%}
+
     let idEle = document.getElementById("tshirt-type");
     let sizeEle = document.getElementById("tshirt-size");
     let countEle = document.getElementById("tshirt-count");
@@ -733,8 +738,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     preparingEntryTShirts.push({ id: idEle.value, size: sizeEle.value, count: countEle.value });
 
 
-    var tshirt = action.TShirtsSelection.find(obj => {
-      return obj.id === idEle.value
+    var tshirt = tshirts.find(tshirt => {
+      return tshirt.id === idEle.value
     });
 
     let row = tableEle.insertRow(-1);
