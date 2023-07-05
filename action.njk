@@ -321,15 +321,15 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                         <div class="row">
                           <div class="col-4">
                             <label for="dog-bday">Den</label>
-                            <input type="number" min="1" max="31" value="1" autocomplete="dog-bday-day" id="dog-bday" />
+                            <input type="number" min="1" max="31" value="1" size="4" autocomplete="dog-bday-day" id="dog-bday" />
                           </div>
                           <div class="col-4">
                             <label for="dog-bmonth">Měsíc</label>
-                            <input type="number" min="1" max="12" value="1" autocomplete="dog-bday-month" id="dog-bmonth" />
+                            <input type="number" min="1" max="12" value="1" size="4" autocomplete="dog-bday-month" id="dog-bmonth" />
                           </div>
                           <div class="col-4">
                             <label for="dog-byear">Rok</label>
-                            <input type="number" min="1922" max="2022" value="2000" autocomplete="dog-bday-year" id="dog-byear" />
+                            <input type="number" min="2010" max="2023" value="2020" size="8" autocomplete="dog-bday-year" id="dog-byear" />
                           </div>
                         </div>
                       </div>
@@ -361,7 +361,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
               </div>
             </div>
             <hr />
-            <div class="row">
+                        {# <div class="row">
               <div class="col-12 col-lg-2">
                 <h6>Výběr jídla</h6>
               </div>
@@ -392,6 +392,53 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                                      onchange="foodOrderUpdated({{ action.Id }}, {{ food.id }}, {{ food.price }}, this.value)" /></td>
                         </tr>
                       {%- endfor -%}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <hr /> #}
+            <div class="row">
+              <div class="col-12">
+                <h6>Přikoupení trička a dalšího ...</h6>
+              </div>
+              <div class="col-12">
+                <h6>Vyber co: </h6>
+                <select value="0" id="tshirt-type">
+                  {%- for tshirt in action.TShirtsSelection -%}
+                    <option value="{{ tshirt.id }}">{{ tshirt.type }} ({{ tshirt.price }},-)</option>
+                  {%- endfor -%}
+                </select>
+              </div>
+              <div class="col-12">
+                <h6>Vyber velikost:</h6>
+                <select value="--"  id="tshirt-size">
+                  <option value="--">--</option>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <h6>Vyber počet:</h6>
+                <input type="number" value="0" id="tshirt-count" />
+              </div>
+              <div class="col-12 col-lg-4">
+                <button type="button" class="btn btn-secondary" onclick="AddTshirt()">Přidej do seznamu</button>
+              </div>
+              <div class="col-12">
+                <div class="container">
+                  <table id="EntryOrderedTShirts">
+                    <thead>
+                    <tr>
+                      <th>Co</th><th>Velikost</th><th>Cena</th><th>Počet</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     </tbody>
                   </table>
                 </div>
@@ -674,6 +721,41 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     bday.value = "1";
     bmonth.value = "1";
     byear.value = "2022";
+  }
+
+  function AddTshirt() {
+    let idEle = document.getElementById("tshirt-type");
+    let sizeEle = document.getElementById("tshirt-size");
+    let countEle = document.getElementById("tshirt-count");
+
+    let tableEle = document.getElementById("EntryOrderedTShirts");
+
+    if (nameEle.value !== "") // do not add dog with no name
+        preparingEntryTShirts.push({ id: idEle.value, size: sizeEle.value, count: countEle.value });
+
+
+    var tshirt = action.TShirtsSelection.find(obj => {
+      return obj.id === idEle.value
+    });
+
+    let row = tableEle.insertRow(-1);
+
+
+    let cell = row.insertCell(-1);
+    cell.innerText = tshirt.type;
+
+    cell = row.insertCell(-1);
+    cell.innerText = sizeEle.value;
+
+    cell = row.insertCell(-1);
+    cell.innerText = tshirt.price;
+
+    cell = row.insertCell(-1);
+    cell.innerText = countEle.value;
+
+    idEle.value = "0";
+    sizeEle.value = "--";
+    countEle.value = "0";
   }
 
   function racesChanged() {
