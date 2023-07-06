@@ -857,10 +857,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
         type: "string",
         value: ""
     };
-    if (document.getElementById("meat").checked)
+    {# if (document.getElementById("meat").checked)
         foodType.value = "Masové";
     else
-        foodType.value = "Vegetariánské";
+        foodType.value = "Vegetariánské"; #}
 
     entry.variables = [[], foodType];
 
