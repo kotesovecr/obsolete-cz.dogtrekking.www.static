@@ -773,13 +773,19 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     cell = row.insertCell(-1);
     cell.innerText = countEle.value;
 
-    idEle.options[0].selected = true;
-    idEle.dispatchEvent(new Event("change"));
-    
-    sizeEle.options[0].selected = true;
-    sizeEle.dispatchEvent(new Event("change"));
+    setTimeout(function() {
+      let idEle = document.getElementById("tshirt-type");
+      let sizeEle = document.getElementById("tshirt-size");
+      let countEle = document.getElementById("tshirt-count");
 
-    countEle.value = "0";
+      idEle.options[0].selected = true;
+      idEle.dispatchEvent(new Event("change"));
+      
+      sizeEle.options[0].selected = true;
+      sizeEle.dispatchEvent(new Event("change"));
+
+      countEle.value = "0";
+    }, 200);
   }
 
   function racesChanged() {
