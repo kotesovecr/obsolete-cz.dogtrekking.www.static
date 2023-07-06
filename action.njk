@@ -688,9 +688,9 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     let nameEle = document.getElementById("dog_name");
     let pedigreeEle = document.getElementById("dog_pedigree");
 
-    let bday = document.getElementById("dog_bday_day");
-    let bmonth = document.getElementById("dog_bday_month");
-    let byear = document.getElementById("dog_bday_year");
+    let bday = document.getElementById("dog_bday");
+    let bmonth = document.getElementById("dog_bmonth");
+    let byear = document.getElementById("dog_byear");
 
     let bdate = '' + byear + '-' + (bmonth<=9 ? '0' + bmonth : bmonth) + '-' + (bday <= 9 ? '0' + bday : bday);
 
@@ -739,7 +739,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
 
 
     var tshirt = tshirts.find(tshirt => {
-      return tshirt.id === idEle.value
+      return tshirt.id == idEle.value
     });
 
     let row = tableEle.insertRow(-1);
