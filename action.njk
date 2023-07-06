@@ -411,6 +411,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                     <div class="col-12 col-lg-4">
                       <h6>Vyber co: </h6>
                       <select value="0" id="tshirt-type">
+                        <option value="0">--== Vyberte ==--</option>
                         {%- for tshirt in action.TShirtsSelection -%}
                           <option value="{{ tshirt.id }}">{{ tshirt.type }} ({{ tshirt.price }},-)</option>
                         {%- endfor -%}
