@@ -726,7 +726,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
   function AddTshirt() {
     let tshirts = [];
     {%- for tshirt in action.TShirtsSelection -%}
-      tshirts.push({ id: {{ tshirt.id }}, type: {{ tshirt.type }}, price: {{ tshirt.price }} });
+      tshirts.push({ id: {{ tshirt.id }}, type: "{{ tshirt.type }}", price: {{ tshirt.price }} });
     {%- endfor -%}
 
     let idEle = document.getElementById("tshirt-type");
