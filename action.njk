@@ -349,7 +349,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                       <table id="EntryRegistratedDogs">
                         <thead>
                           <tr>
-                            <th>Čip</th><th>Jméno</th><th>Plemeno</th>
+                            <th>Čip</th><th>Datum narození</th><th>Jméno</th><th>Plemeno</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -694,7 +694,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     let bmonth = document.getElementById("dog-bmonth");
     let byear = document.getElementById("dog-byear");
 
-    let bdate = '' + byear + '-' + (bmonth<=9 ? '0' + bmonth : bmonth) + '-' + (bday <= 9 ? '0' + bday : bday);
+    let bdate = '' + byear.value + '-' + (bmonth.value <= 9 ? '0' + bmonth.value : bmonth.value) + '-' + (bday.value <= 9 ? '0' + bday.value : bday.value);
 
     let tableEle = document.getElementById("EntryRegistratedDogs");
 
