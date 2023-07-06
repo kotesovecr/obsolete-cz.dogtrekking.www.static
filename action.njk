@@ -773,7 +773,7 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
     cell = row.insertCell(-1);
     cell.innerText = countEle.value;
 
-    idEle.value = "0";
+    idEle.options[0].selected = 'selected';
     sizeEle.value = "--";
     countEle.value = "0";
   }
