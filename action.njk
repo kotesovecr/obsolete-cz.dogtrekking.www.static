@@ -271,7 +271,6 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                 <input type="text" autocomplete="address-level2" id="city" />
               </div>
             </div>
-            <hr />
             <div class="row">
               <div class="col-12 col-lg-2">
                 <h6>Datum narození</h6>
@@ -317,8 +316,10 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col">
-                      <label for="dog_birthday">Datum narození</label>
+                    <div class="col-12 col-lg-2">
+                      <h6>Datum narození</h6>
+                    </div>
+                    <div class="col-12 col-lg-10">
                       <div class="container">
                         <div class="row">
                           <div class="col-4">
@@ -401,50 +402,60 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             </div>
             <hr /> #}
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 col-lg-2">
                 <h6>Přikoupení trička a dalšího ...</h6>
               </div>
-              <div class="col-12">
-                <h6>Vyber co: </h6>
-                <select value="0" id="tshirt-type">
-                  {%- for tshirt in action.TShirtsSelection -%}
-                    <option value="{{ tshirt.id }}">{{ tshirt.type }} ({{ tshirt.price }},-)</option>
-                  {%- endfor -%}
-                </select>
-              </div>
-              <div class="col-12">
-                <h6>Vyber velikost:</h6>
-                <select value="--"  id="tshirt-size">
-                  <option value="--">--</option>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                  <option value="XXXL">XXXL</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <h6>Vyber počet:</h6>
-                <input type="number" value="0" id="tshirt-count" />
-              </div>
-              <div class="col-12 col-lg-4">
-                <button type="button" class="btn btn-secondary" onclick="AddTshirt()">Přidej do seznamu</button>
-              </div>
-              <hr />
-              <b><i>Objednaná trička a další...</i></b>
-              <div class="col-12">
+              <div class="col-12 col-lg-10">
                 <div class="container">
-                  <table id="EntryOrderedTShirts">
-                    <thead>
-                    <tr>
-                      <th>Co</th><th>Velikost</th><th>Cena</th><th>Počet</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
+                  <div class="row">
+                    <div class="col-12 col-lg-4">
+                      <h6>Vyber co: </h6>
+                      <select value="0" id="tshirt-type">
+                        {%- for tshirt in action.TShirtsSelection -%}
+                          <option value="{{ tshirt.id }}">{{ tshirt.type }} ({{ tshirt.price }},-)</option>
+                        {%- endfor -%}
+                      </select>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                      <h6>Vyber velikost:</h6>
+                      <select value="--"  id="tshirt-size">
+                        <option value="--">--</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="XXXL">XXXL</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                      <h6>Vyber počet:</h6>
+                      <input type="number" value="0" id="tshirt-count" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <button type="button" class="btn btn-secondary" onclick="AddTshirt()">Přidej do seznamu</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <hr />
+                    <b><i>Objednaná trička a další...</i></b>
+                    <div class="col-12">
+                      <div class="container">
+                        <table id="EntryOrderedTShirts">
+                          <thead>
+                          <tr>
+                            <th>Co</th><th>Velikost</th><th>Cena</th><th>Počet</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
