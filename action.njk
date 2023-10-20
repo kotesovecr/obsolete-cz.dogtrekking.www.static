@@ -551,6 +551,8 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
             {%- else -%}
               <h4><div class="color-other">{{ race.Name }} - {{ category.Name }}</div></h4>
             {%- endif -%}
+
+            {%- if race.PublishResults == true -%}
               <table class="sortedTable add-margin-bottom" id="{{ race.Name + category.Name | slug }}">
                 <thead>
                   <tr>
@@ -587,6 +589,39 @@ permalink: "action/{{ action.From + action.Name | slug }}/"
                 {%- endfor -%} <!-- race -->
                 </tbody>
               </table>
+            {%- else -%}
+              <h5>Bez vyhlašování, bez pořadí</h5>
+              <table class="add-margin-bottom" id="{{ race.Name + category.Name | slug }}">
+                <thead>
+                  <tr>
+                    <th>Příjmení, jméno</th>
+                    <th>Start</th>
+                    <th>Cíl</th>
+                    <th>Čas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {%- for raceResults in action.Results.Races -%}
+                 {%- for categoryResults in raceResults.Categories -%}
+                  {%- if raceResults.Name == race.Name -%}
+                   {%- if categoryResults.Name == category.Name -%}
+                    {%- for competitor in categoryResults.Competitors -%}
+                      <tr>
+                        <td data-order="{{ competitor.Surname }}, {{ competitor.Name }}">
+                          <a href="/Zavodnik/{{ competitor.Id }}/index.html">{{ competitor.Surname }}, {{ competitor.Name }}</a>
+                        </td>
+                        <td data-order="{{ competitor.Start }}">{{ competitor.Start | wdTime }}</td>
+                        <td data-order="{{ competitor.Finish }}">{{ competitor.Finish | wdTime }}</td>
+                        <td data-order="{{ competitor.Time }}">{{ competitor.Time | simpleTime }}</td>
+                      </tr>
+                    {%- endfor -%} <!-- competitor -->
+                   {%- endif -%} <!-- category.Name -->
+                  {%- endif -%} <!-- result.Name -->
+                 {%- endfor -%} <!-- catogory -->
+                {%- endfor -%} <!-- race -->
+                </tbody>
+              </table>
+            {%- endif -%}
             </div>
           {%- endfor -%} {# Category #}
           </div>
